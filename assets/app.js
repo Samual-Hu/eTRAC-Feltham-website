@@ -1,4 +1,4 @@
-const carriages = [
+const q1656Carriages = [
   { order: 1, serial: "489048", image: "assets/carriages/01_489048.jpg", width: 14960, height: 1150, graffiti: 0, defects: [] },
   {
     order: 2,
@@ -53,15 +53,78 @@ const carriages = [
   { order: 10, serial: "480048", image: "assets/carriages/10_480048.jpg", width: 14960, height: 1150, graffiti: 0, defects: [] },
 ];
 
-const visualCarriages = [...carriages].reverse();
+const q4809Carriages = [
+  { order: 1, serial: "489048", image: "assets/carriages-q4809/01_489048.jpg", width: 14960, height: 1250, graffiti: 0, defects: [] },
+  {
+    order: 2,
+    serial: "488048",
+    image: "assets/carriages-q4809/02_488048.jpg",
+    width: 14960,
+    height: 1250,
+    graffiti: 0,
+    defects: [
+      { id: "q4809-488048-dirt-1", type: "dirt", label: "manual severe cleanliness mark", box: [1122, 90, 1641, 453] },
+    ],
+  },
+  { order: 3, serial: "487048", image: "assets/carriages-q4809/03_487048.jpg", width: 14960, height: 1250, graffiti: 0, defects: [] },
+  { order: 4, serial: "486048", image: "assets/carriages-q4809/04_486048.jpg", width: 14960, height: 1250, graffiti: 0, defects: [] },
+  { order: 5, serial: "485048", image: "assets/carriages-q4809/05_485048.jpg", width: 14960, height: 1250, graffiti: 0, defects: [] },
+  { order: 6, serial: "484048", image: "assets/carriages-q4809/06_484048.jpg", width: 14960, height: 1250, graffiti: 0, defects: [] },
+  { order: 7, serial: "483048", image: "assets/carriages-q4809/07_483048.jpg", width: 14960, height: 1250, graffiti: 0, defects: [] },
+  { order: 8, serial: "482048", image: "assets/carriages-q4809/08_482048.jpg", width: 14960, height: 1250, graffiti: 0, defects: [] },
+  { order: 9, serial: "481048", image: "assets/carriages-q4809/09_481048.jpg", width: 14960, height: 1250, graffiti: 0, defects: [] },
+  { order: 10, serial: "480048", image: "assets/carriages-q4809/10_480048.jpg", width: 14960, height: 1250, graffiti: 0, defects: [] },
+];
+
+const q1656Cleanliness = {
+  5: "Marginal",
+  6: "Non-Compliant",
+};
+
+const q4809Cleanliness = {
+  2: "Marginal",
+};
+
+q1656Carriages.forEach((carriage) => {
+  carriage.cleanliness = q1656Cleanliness[carriage.order] || "Compliant";
+});
+
+q4809Carriages.forEach((carriage) => {
+  carriage.cleanliness = q4809Cleanliness[carriage.order] || "Compliant";
+});
+
+const sides = {
+  q1656: {
+    label: "Side A",
+    switchLabel: "View Side B",
+    subtitle: "701048 / Side A review",
+    visualOrder: "reverse",
+    carriages: q1656Carriages,
+  },
+  q4809: {
+    label: "Side B",
+    switchLabel: "View Side A",
+    subtitle: "701048 / Side B review",
+    visualOrder: "normal",
+    carriages: q4809Carriages,
+  },
+};
 
 const state = {
   index: 0,
+  side: "q1656",
+  isSwitchingSide: false,
 };
+
+let carriages = sides[state.side].carriages;
+let visualCarriages = visualCarriagesFor(sides[state.side]);
 
 const viewport = document.querySelector("[data-carriage-viewport]");
 const track = document.querySelector("[data-carriage-track]");
 const tableBody = document.querySelector("[data-condition-table]");
+const sideToggle = document.querySelector("[data-side-toggle]");
+const brandSubtitle = document.querySelector("[data-brand-subtitle]");
+const summaryNote = document.querySelector("[data-summary-note]");
 const magnifier = document.createElement("div");
 magnifier.className = "magnifier";
 magnifier.setAttribute("aria-hidden", "true");
@@ -71,12 +134,33 @@ function defectsOf(carriage, type) {
   return carriage.defects.filter((defect) => defect.type === type);
 }
 
+function visualCarriagesFor(side) {
+  return side.visualOrder === "reverse" ? [...side.carriages].reverse() : [...side.carriages];
+}
+
+function cleanlinessClass(value) {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 function tableIndexBySerial(serial) {
   return carriages.findIndex((carriage) => carriage.serial === serial);
 }
 
 function visualIndexBySerial(serial) {
   return visualCarriages.findIndex((carriage) => carriage.serial === serial);
+}
+
+function panelBySerial(serial) {
+  return document.querySelector(`[data-carriage-panel][data-serial="${serial}"]`);
+}
+
+function nearestPanelToViewport() {
+  const panels = [...document.querySelectorAll("[data-carriage-panel]")];
+  if (!panels.length) return null;
+  return panels.reduce((nearest, panel) => {
+    const distance = Math.abs(panel.offsetLeft - viewport.scrollLeft);
+    return distance < nearest.distance ? { panel, distance } : nearest;
+  }, { panel: panels[0], distance: Number.POSITIVE_INFINITY }).panel;
 }
 
 function boxStyle(defect, carriage) {
@@ -137,6 +221,7 @@ function bindMagnifier(stage, img) {
 }
 
 function renderCarriages() {
+  track.innerHTML = "";
   visualCarriages.forEach((carriage) => {
     const panel = document.createElement("article");
     panel.className = "carriage-panel";
@@ -149,7 +234,7 @@ function renderCarriages() {
     const img = document.createElement("img");
     img.className = "carriage-image";
     img.src = carriage.image;
-    img.alt = `Exterior panorama for carriage ${carriage.serial}`;
+    img.alt = `Exterior panorama for carriage ${carriage.serial} on ${sides[state.side].label}`;
     img.loading = carriage.order <= 2 ? "eager" : "lazy";
     stage.appendChild(img);
     bindMagnifier(stage, img);
@@ -175,13 +260,14 @@ function renderCarriages() {
   });
 }
 
-function countButton(carriage, index, type) {
+function countButton(carriage, index, type, className = type) {
   const count = type === "graffiti" ? carriage.graffiti : defectsOf(carriage, type).length;
   const disabled = count ? "" : "disabled";
-  return `<button class="count-button count-${type}" type="button" data-jump-index="${index}" data-highlight-type="${type}" ${disabled}>${count}</button>`;
+  return `<button class="count-button count-${className}" type="button" data-jump-index="${index}" data-highlight-type="${type}" ${disabled}>${count}</button>`;
 }
 
 function renderTable() {
+  tableBody.innerHTML = "";
   carriages.forEach((carriage, index) => {
     const row = document.createElement("tr");
     row.dataset.carriageRow = "";
@@ -189,7 +275,8 @@ function renderTable() {
     row.innerHTML = `
       <td>${carriage.order}</td>
       <td><button class="serial-button" type="button" data-jump-index="${index}">${carriage.serial}</button></td>
-      <td>${countButton(carriage, index, "dirt")}</td>
+      <td><span class="cleanliness-status cleanliness-${cleanlinessClass(carriage.cleanliness)}">${carriage.cleanliness}</span></td>
+      <td>${countButton(carriage, index, "dirt", "severe")}</td>
       <td>${countButton(carriage, index, "scratch")}</td>
       <td>${countButton(carriage, index, "graffiti")}</td>
     `;
@@ -207,17 +294,27 @@ function setActive(index) {
   document.querySelectorAll("[data-carriage-row]").forEach((row) => {
     row.classList.toggle("is-active", row.dataset.serial === active.serial);
   });
-
 }
 
 function scrollToCarriage(index, behavior = "smooth") {
   setActive(index);
   const serial = carriages[state.index].serial;
   const visualIndex = visualIndexBySerial(serial);
-  viewport.scrollTo({
-    left: viewport.clientWidth * visualIndex,
-    behavior,
-  });
+  const panel = panelBySerial(serial);
+  if (panel) {
+    panel.scrollIntoView({
+      behavior: behavior === "auto" ? "instant" : behavior,
+      block: "nearest",
+      inline: "start",
+    });
+    return;
+  }
+  const left = viewport.clientWidth * visualIndex;
+  if (behavior === "auto") {
+    viewport.scrollLeft = left;
+    return;
+  }
+  viewport.scrollTo({ left, behavior });
 }
 
 function flashDefects(index, type) {
@@ -236,6 +333,34 @@ function flashDefects(index, type) {
   });
 }
 
+function updateSideUi() {
+  sideToggle.textContent = sides[state.side].switchLabel;
+  brandSubtitle.textContent = sides[state.side].subtitle;
+  summaryNote.textContent = `${sides[state.side].label} exterior surface defects`;
+}
+
+function setSide(sideId, behavior = "auto") {
+  const currentSerial = carriages[state.index]?.serial;
+  state.side = sideId;
+  carriages = sides[state.side].carriages;
+  visualCarriages = visualCarriagesFor(sides[state.side]);
+  const targetIndex = Math.max(0, carriages.findIndex((carriage) => carriage.serial === currentSerial));
+  state.index = targetIndex;
+  state.isSwitchingSide = true;
+  renderCarriages();
+  renderTable();
+  updateSideUi();
+  hideMagnifier();
+  scrollToCarriage(targetIndex, behavior);
+  window.requestAnimationFrame(() => {
+    scrollToCarriage(targetIndex, "auto");
+    window.requestAnimationFrame(() => {
+      scrollToCarriage(targetIndex, "auto");
+      state.isSwitchingSide = false;
+    });
+  });
+}
+
 function bindControls() {
   tableBody.addEventListener("click", (event) => {
     const button = event.target.closest("[data-jump-index]");
@@ -248,11 +373,15 @@ function bindControls() {
     scrollToCarriage(index);
   });
 
+  sideToggle.addEventListener("click", () => {
+    setSide(state.side === "q1656" ? "q4809" : "q1656");
+  });
+
   viewport.addEventListener("scroll", () => {
-    const visualIndex = Math.round(viewport.scrollLeft / Math.max(1, viewport.clientWidth));
-    const visualCarriage = visualCarriages[visualIndex];
-    if (!visualCarriage) return;
-    const tableIndex = tableIndexBySerial(visualCarriage.serial);
+    if (state.isSwitchingSide) return;
+    const panel = nearestPanelToViewport();
+    if (!panel) return;
+    const tableIndex = tableIndexBySerial(panel.dataset.serial);
     if (tableIndex !== state.index) {
       setActive(tableIndex);
     }
@@ -261,5 +390,6 @@ function bindControls() {
 
 renderCarriages();
 renderTable();
+updateSideUi();
 bindControls();
 scrollToCarriage(0, "auto");
