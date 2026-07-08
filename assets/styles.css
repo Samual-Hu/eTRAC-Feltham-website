@@ -7,6 +7,7 @@
   --accent: #0075a8;
   --accent-dark: #005d86;
   --dirt: #d92d20;
+  --severe: #7c3aed;
   --scratch: #155eef;
 }
 
@@ -29,9 +30,9 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   min-height: 60px;
   padding: 9px 16px;
   border-bottom: 1px solid var(--line);
@@ -42,6 +43,7 @@ body {
 .brand {
   display: inline-flex;
   align-items: center;
+  justify-self: start;
   gap: 12px;
   min-width: 0;
   color: inherit;
@@ -77,6 +79,28 @@ body {
   line-height: 1.1;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.side-toggle {
+  justify-self: center;
+  min-height: 38px;
+  padding: 0 16px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: #ffffff;
+  color: var(--accent-dark);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.side-toggle:hover {
+  background: #eaf7fc;
+}
+
+.topbar-spacer {
+  justify-self: end;
 }
 
 .serial-button:hover {
@@ -167,7 +191,7 @@ body {
 }
 
 .defect-dirt {
-  border-color: var(--dirt);
+  border-color: var(--severe);
 }
 
 .defect-scratch {
@@ -239,7 +263,7 @@ body {
 
 .condition-table {
   width: 100%;
-  min-width: 620px;
+  min-width: 760px;
   border-collapse: collapse;
   font-size: 18px;
 }
@@ -281,8 +305,26 @@ body {
   color: var(--accent-dark);
 }
 
-.count-dirt {
+.cleanliness-status {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.cleanliness-compliant {
+  color: #1f7a4c;
+}
+
+.cleanliness-marginal {
+  color: #9a6700;
+}
+
+.cleanliness-non-compliant {
   color: var(--dirt);
+}
+
+.count-severe,
+.count-dirt {
+  color: var(--severe);
 }
 
 .count-scratch {
@@ -301,8 +343,19 @@ body {
 
 @media (max-width: 720px) {
   .topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
     min-height: 54px;
     padding: 8px 10px;
+  }
+
+  .topbar-spacer {
+    display: none;
+  }
+
+  .side-toggle {
+    min-height: 34px;
+    padding: 0 10px;
+    font-size: 13px;
   }
 
   .brand-subtitle {

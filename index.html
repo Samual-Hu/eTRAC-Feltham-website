@@ -12,9 +12,11 @@
         <img class="brand-mark" src="assets/eyya-brandmark.svg" alt="Eyya">
         <span class="brand-text">
           <span class="brand-title">Train Surface Viewer</span>
-          <span class="brand-subtitle">701048 / one-side carriage review</span>
+          <span class="brand-subtitle" data-brand-subtitle>701048 / Side A review</span>
         </span>
       </a>
+      <button class="side-toggle" type="button" data-side-toggle>View Side B</button>
+      <span class="topbar-spacer" aria-hidden="true"></span>
     </header>
 
     <main>
@@ -27,7 +29,7 @@
       <section class="summary-section" aria-label="Carriage defect summary">
         <div class="summary-header">
           <h1>Carriage Defect Summary</h1>
-          <p>Reviewed exterior surface defects</p>
+          <p data-summary-note>Side A exterior surface defects</p>
         </div>
 
         <div class="table-wrap">
@@ -36,7 +38,8 @@
               <tr>
                 <th scope="col">Order</th>
                 <th scope="col">Serial</th>
-                <th scope="col">Dirt</th>
+                <th scope="col">Cleanliness</th>
+                <th scope="col">Severe</th>
                 <th scope="col">Scratch</th>
                 <th scope="col">Graffiti</th>
               </tr>
