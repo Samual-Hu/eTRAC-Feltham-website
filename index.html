@@ -3,53 +3,34 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eyya Train Surface Viewer</title>
+    <title>Eyya Train Capture Library</title>
+    <meta name="description" content="Browse train surface captures by date or unit number.">
     <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/library.css">
   </head>
-  <body>
-    <header class="topbar">
-      <a class="brand" href="index.html" aria-label="Eyya train surface viewer home">
+  <body class="library-page">
+    <header class="topbar library-topbar">
+      <a class="brand" href="index.html" aria-label="Capture library home">
         <img class="brand-mark" src="assets/eyya-brandmark.svg" alt="Eyya">
-        <span class="brand-text">
-          <span class="brand-title">Train Surface Viewer</span>
-          <span class="brand-subtitle" data-brand-subtitle>701048 / Side A review</span>
-        </span>
+        <span class="brand-title">Train Surface Viewer</span>
       </a>
-      <button class="side-toggle" type="button" data-side-toggle>View Side B</button>
-      <span class="topbar-spacer" aria-hidden="true"></span>
+      <label class="unit-search" aria-label="Search by unit number">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 5 5"></path></svg>
+        <input type="search" inputmode="numeric" placeholder="Search unit" data-unit-search>
+      </label>
+      <div class="library-actions"><span class="library-count" data-result-count></span><button class="date-filter-button" type="button" data-dates-open><span aria-hidden="true">▦</span> Dates</button></div>
     </header>
-
-    <main>
-      <section class="viewer-shell" aria-label="Carriage panoramas">
-        <div class="carriage-viewport" data-carriage-viewport tabindex="0">
-          <div class="carriage-track" data-carriage-track></div>
-        </div>
-      </section>
-
-      <section class="summary-section" aria-label="Carriage defect summary">
-        <div class="summary-header">
-          <h1>Carriage Defect Summary</h1>
-          <p data-summary-note>Side A exterior surface defects</p>
-        </div>
-
-        <div class="table-wrap">
-          <table class="condition-table">
-            <thead>
-              <tr>
-                <th scope="col">Order</th>
-                <th scope="col">Serial</th>
-                <th scope="col">Cleanliness</th>
-                <th scope="col">Severe</th>
-                <th scope="col">Scratch</th>
-                <th scope="col">Graffiti</th>
-              </tr>
-            </thead>
-            <tbody data-condition-table></tbody>
-          </table>
-        </div>
-      </section>
+    <div class="drawer-backdrop" hidden data-dates-backdrop></div>
+    <aside class="date-drawer" aria-label="Filter captures by date" aria-hidden="true" data-dates-drawer><header><strong>Capture dates</strong><button type="button" aria-label="Close date filters" data-dates-close>×</button></header><nav class="date-tabs" data-date-tabs></nav></aside>
+    <main class="library-main">
+      <section class="capture-grid" aria-live="polite" data-capture-grid></section>
+      <section class="empty-state" hidden data-empty-state><strong>No matching captures</strong></section>
     </main>
-
-    <script src="assets/app.js"></script>
+    <dialog class="video-dialog library-video-dialog" data-video-dialog>
+      <div class="dialog-bar"><strong data-video-title></strong><button type="button" data-video-close aria-label="Close video">×</button></div>
+      <video controls playsinline data-video></video>
+    </dialog>
+    <script src="assets/catalog.js"></script>
+    <script src="assets/library.js"></script>
   </body>
 </html>

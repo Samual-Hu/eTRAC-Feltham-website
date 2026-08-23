@@ -1,0 +1,3083 @@
+{
+  "generatedFrom": "materials + human reviewed temporal_ground_truth.json",
+  "revision": "1787516960985829200",
+  "events": [
+    {
+      "id": "458428-2026-08-19-U",
+      "unit": "458428",
+      "date": "2026-08-19",
+      "time": "04:53",
+      "side": "",
+      "mode": "video",
+      "cover": "assets/media/458428-2026-08-19-U/26-08-19_04-53-22_458428.jpg",
+      "video": "assets/media/458428-2026-08-19-U/26-08-19_04-53-22_458428.mp4",
+      "carriages": []
+    },
+    {
+      "id": "701001-2026-07-18-B",
+      "unit": "701001",
+      "date": "2026-07-18",
+      "time": "05:07",
+      "side": "B",
+      "mode": "panorama",
+      "cover": "assets/media/701001-2026-07-18-B/26-07-18_05-07-20_701001_B.jpg",
+      "video": "assets/media/701001-2026-07-18-B/26-07-18_05-07-20_701001_B.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "489001",
+          "image": "assets/media/701001-2026-07-18-B/0_489001_260718.jpg",
+          "width": 13027,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "488001",
+          "image": "assets/media/701001-2026-07-18-B/1_488001_260718.jpg",
+          "width": 12383,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "487001",
+          "image": "assets/media/701001-2026-07-18-B/2_487001_260718.jpg",
+          "width": 12277,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "486001",
+          "image": "assets/media/701001-2026-07-18-B/3_486001_260718.jpg",
+          "width": 12252,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "485001",
+          "image": "assets/media/701001-2026-07-18-B/4_485001_260718.jpg",
+          "width": 12699,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "484001",
+          "image": "assets/media/701001-2026-07-18-B/5_484001_260718.jpg",
+          "width": 12696,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "483001",
+          "image": "assets/media/701001-2026-07-18-B/6_483001_260718.jpg",
+          "width": 12250,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "482001",
+          "image": "assets/media/701001-2026-07-18-B/7_482001_260718.jpg",
+          "width": 12317,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 8,
+          "serial": "481001",
+          "image": "assets/media/701001-2026-07-18-B/8_481001_260718.jpg",
+          "width": 12395,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 9,
+          "serial": "480001",
+          "image": "assets/media/701001-2026-07-18-B/9_480001_260718.jpg",
+          "width": 12906,
+          "height": 1185,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "701009-2026-08-19-A",
+      "unit": "701009",
+      "date": "2026-08-19",
+      "time": "04:33",
+      "side": "A",
+      "mode": "video",
+      "cover": "assets/media/701009-2026-08-19-A/26-08-19_04-33-05_701009_A.jpg",
+      "video": "assets/media/701009-2026-08-19-A/26-08-19_04-33-05_701009_A.mp4",
+      "carriages": []
+    },
+    {
+      "id": "701018-2026-08-19-B",
+      "unit": "701018",
+      "date": "2026-08-19",
+      "time": "05:10",
+      "side": "B",
+      "mode": "video",
+      "cover": "assets/media/701018-2026-08-19-B/26-08-19_05-10-58_701018_B.jpg",
+      "video": "assets/media/701018-2026-08-19-B/26-08-19_05-10-58_701018_B.mp4",
+      "carriages": []
+    },
+    {
+      "id": "701022-2026-07-16-B",
+      "unit": "701022",
+      "date": "2026-07-16",
+      "time": "05:28",
+      "side": "B",
+      "mode": "panorama",
+      "cover": "assets/media/701022-2026-07-16-B/26-07-16_05-28-59_701022_B.jpg",
+      "video": "assets/media/701022-2026-07-16-B/26-07-16_05-28-59_701022_B.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "489022",
+          "image": "assets/media/701022-2026-07-16-B/0_489022_260716.jpg",
+          "width": 13264,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "488022",
+          "image": "assets/media/701022-2026-07-16-B/1_488022_260716.jpg",
+          "width": 12642,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "487022",
+          "image": "assets/media/701022-2026-07-16-B/2_487022_260716.jpg",
+          "width": 12649,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "486022",
+          "image": "assets/media/701022-2026-07-16-B/3_486022_260716.jpg",
+          "width": 12460,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "485022",
+          "image": "assets/media/701022-2026-07-16-B/4_485022_260716.jpg",
+          "width": 12946,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "484022",
+          "image": "assets/media/701022-2026-07-16-B/5_484022_260716.jpg",
+          "width": 13145,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "483022",
+          "image": "assets/media/701022-2026-07-16-B/6_483022_260716.jpg",
+          "width": 12515,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "482022",
+          "image": "assets/media/701022-2026-07-16-B/7_482022_260716.jpg",
+          "width": 12658,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 8,
+          "serial": "481022",
+          "image": "assets/media/701022-2026-07-16-B/8_481022_260716.jpg",
+          "width": 12520,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 9,
+          "serial": "480022",
+          "image": "assets/media/701022-2026-07-16-B/9_480022_260716.jpg",
+          "width": 13027,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "701022-2026-08-01-A",
+      "unit": "701022",
+      "date": "2026-08-01",
+      "time": "05:51",
+      "side": "A",
+      "mode": "panorama",
+      "cover": "assets/media/701022-2026-08-01-A/26-08-01_05-51-38_701022_A.jpg",
+      "video": "assets/media/701022-2026-08-01-A/26-08-01_05-51-38_701022_A.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "480022",
+          "image": "assets/media/701022-2026-08-01-A/0_480022_260801.jpg",
+          "width": 13139,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "489022",
+          "image": "assets/media/701022-2026-08-01-A/1_489022_260801.jpg",
+          "width": 13286,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "488022",
+          "image": "assets/media/701022-2026-08-01-A/2_488022_260801.jpg",
+          "width": 12866,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "487022",
+          "image": "assets/media/701022-2026-08-01-A/3_487022_260801.jpg",
+          "width": 12867,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "486022",
+          "image": "assets/media/701022-2026-08-01-A/4_486022_260801.jpg",
+          "width": 12841,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "485022",
+          "image": "assets/media/701022-2026-08-01-A/5_485022_260801.jpg",
+          "width": 13234,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "484022",
+          "image": "assets/media/701022-2026-08-01-A/6_484022_260801.jpg",
+          "width": 13180,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "483022",
+          "image": "assets/media/701022-2026-08-01-A/7_483022_260801.jpg",
+          "width": 12781,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 8,
+          "serial": "482022",
+          "image": "assets/media/701022-2026-08-01-A/8_482022_260801.jpg",
+          "width": 12837,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 9,
+          "serial": "481022",
+          "image": "assets/media/701022-2026-08-01-A/9_481022_260801.jpg",
+          "width": 12785,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "701042-2026-07-14-A",
+      "unit": "701042",
+      "date": "2026-07-14",
+      "time": "19:18",
+      "side": "A",
+      "mode": "panorama",
+      "cover": "assets/media/701042-2026-07-14-A/26-07-14_19-18-10_701042_A.jpg",
+      "video": "assets/media/701042-2026-07-14-A/26-07-14_19-18-10_701042_A.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "480042",
+          "image": "assets/media/701042-2026-07-14-A/0_480042_260714.jpg",
+          "width": 13440,
+          "height": 1210,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "D001",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                4881,
+                948,
+                5237,
+                1153
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-480042-D001-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-480042-D001-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 1,
+          "serial": "481042",
+          "image": "assets/media/701042-2026-07-14-A/1_481042_260714.jpg",
+          "width": 12850,
+          "height": 1210,
+          "cleanliness": "Non-Compliant",
+          "defects": [
+            {
+              "id": "D001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                8390,
+                402,
+                8469,
+                434
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-481042-D001-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-481042-D001-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "D002",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                8618,
+                374,
+                8687,
+                484
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-481042-D002-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-481042-D002-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "D003",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                8748,
+                362,
+                8868,
+                424
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-481042-D003-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-481042-D003-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "D004",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9672,
+                917,
+                9727,
+                963
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-481042-D004-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-481042-D004-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "serial": "482042",
+          "image": "assets/media/701042-2026-07-14-A/2_482042_260714.jpg",
+          "width": 12850,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "WEB-1787515545166",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6541,
+                1040,
+                6579,
+                1088
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-482042-WEB-1787515545166-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-482042-WEB-1787515545166-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "serial": "483042",
+          "image": "assets/media/701042-2026-07-14-A/3_483042_260714.jpg",
+          "width": 12821,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "484042",
+          "image": "assets/media/701042-2026-07-14-A/4_484042_260714.jpg",
+          "width": 13189,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "485042",
+          "image": "assets/media/701042-2026-07-14-A/5_485042_260714.jpg",
+          "width": 13189,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "486042",
+          "image": "assets/media/701042-2026-07-14-A/6_486042_260714.jpg",
+          "width": 12821,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "487042",
+          "image": "assets/media/701042-2026-07-14-A/7_487042_260714.jpg",
+          "width": 12814,
+          "height": 1210,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S016",
+              "type": "severe",
+              "label": "Reviewed prominent stain region",
+              "box": [
+                12527,
+                757,
+                12733,
+                902
+              ],
+              "source": "human_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-487042-S016-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-487042-S016-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "serial": "488042",
+          "image": "assets/media/701042-2026-07-14-A/8_488042_260714.jpg",
+          "width": 12792,
+          "height": 1210,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                255,
+                941,
+                334,
+                977
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-488042-S002-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-488042-S002-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "S029",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9238,
+                1000,
+                9352,
+                1016
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-488042-S029-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-488042-S029-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 9,
+          "serial": "489042",
+          "image": "assets/media/701042-2026-07-14-A/9_489042_260714.jpg",
+          "width": 13245,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "701042-2026-08-01-A",
+      "unit": "701042",
+      "date": "2026-08-01",
+      "time": "06:03",
+      "side": "A",
+      "mode": "panorama",
+      "cover": "assets/media/701042-2026-08-01-A/26-08-01_06-03-53_701042_A.jpg",
+      "video": "assets/media/701042-2026-08-01-A/26-08-01_06-03-53_701042_A.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "480042",
+          "image": "assets/media/701042-2026-08-01-A/0_480042_260801.jpg",
+          "width": 13649,
+          "height": 1210,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "D001",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                5206,
+                1051,
+                5381,
+                1150
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-480042-D001-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-480042-D001-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 1,
+          "serial": "481042",
+          "image": "assets/media/701042-2026-08-01-A/1_481042_260801.jpg",
+          "width": 12906,
+          "height": 1210,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "D003",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                8774,
+                360,
+                8893,
+                422
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-481042-D003-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-481042-D003-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "D004",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                8775,
+                360,
+                8894,
+                422
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-481042-D004-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-481042-D004-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "D005",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                9727,
+                917,
+                9777,
+                960
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-481042-D005-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-481042-D005-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "serial": "482042",
+          "image": "assets/media/701042-2026-08-01-A/2_482042_260801.jpg",
+          "width": 12930,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "WEB-1787515545175",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6609,
+                1052,
+                6634,
+                1081
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-482042-WEB-1787515545175-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-482042-WEB-1787515545175-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "serial": "483042",
+          "image": "assets/media/701042-2026-08-01-A/3_483042_260801.jpg",
+          "width": 12905,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "484042",
+          "image": "assets/media/701042-2026-08-01-A/4_484042_260801.jpg",
+          "width": 13296,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "485042",
+          "image": "assets/media/701042-2026-08-01-A/5_485042_260801.jpg",
+          "width": 13295,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "486042",
+          "image": "assets/media/701042-2026-08-01-A/6_486042_260801.jpg",
+          "width": 12884,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "487042",
+          "image": "assets/media/701042-2026-08-01-A/7_487042_260801.jpg",
+          "width": 12891,
+          "height": 1210,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S016",
+              "type": "severe",
+              "label": "Reviewed prominent stain region",
+              "box": [
+                12597,
+                754,
+                12794,
+                900
+              ],
+              "source": "human_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-487042-S016-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-487042-S016-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "serial": "488042",
+          "image": "assets/media/701042-2026-08-01-A/8_488042_260801.jpg",
+          "width": 12897,
+          "height": 1210,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S002",
+              "type": "severe",
+              "label": "Reviewed prominent stain region",
+              "box": [
+                281,
+                941,
+                355,
+                973
+              ],
+              "source": "human_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-488042-S002-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-488042-S002-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 9,
+          "serial": "489042",
+          "image": "assets/media/701042-2026-08-01-A/9_489042_260801.jpg",
+          "width": 13212,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "701042-2026-08-14-A",
+      "unit": "701042",
+      "date": "2026-08-14",
+      "time": "05:51",
+      "side": "A",
+      "mode": "panorama",
+      "cover": "assets/media/701042-2026-08-14-A/26-08-14_05-51-03_701042_A.jpg",
+      "video": "assets/media/701042-2026-08-14-A/26-08-14_05-51-03_701042_A.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "480042",
+          "image": "assets/media/701042-2026-08-14-A/0_480042_260814.jpg",
+          "width": 15329,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "D001",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                5744,
+                1084,
+                5894,
+                1191
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-14-A-480042-D001-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-08-14-A-480042-D001-to-701042-2026-08-01-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 1,
+          "serial": "481042",
+          "image": "assets/media/701042-2026-08-14-A/1_481042_260814.jpg",
+          "width": 14226,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "482042",
+          "image": "assets/media/701042-2026-08-14-A/2_482042_260814.jpg",
+          "width": 14200,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "483042",
+          "image": "assets/media/701042-2026-08-14-A/3_483042_260814.jpg",
+          "width": 14192,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "484042",
+          "image": "assets/media/701042-2026-08-14-A/4_484042_260814.jpg",
+          "width": 14199,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "485042",
+          "image": "assets/media/701042-2026-08-14-A/5_485042_260814.jpg",
+          "width": 14544,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "486042",
+          "image": "assets/media/701042-2026-08-14-A/6_486042_260814.jpg",
+          "width": 14199,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "487042",
+          "image": "assets/media/701042-2026-08-14-A/7_487042_260814.jpg",
+          "width": 14273,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 8,
+          "serial": "488042",
+          "image": "assets/media/701042-2026-08-14-A/8_488042_260814.jpg",
+          "width": 14190,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 9,
+          "serial": "489042",
+          "image": "assets/media/701042-2026-08-14-A/9_489042_260814.jpg",
+          "width": 14834,
+          "height": 1200,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "701042-2026-08-19-A",
+      "unit": "701042",
+      "date": "2026-08-19",
+      "time": "23:31",
+      "side": "A",
+      "mode": "video",
+      "cover": "assets/media/701042-2026-08-19-A/26-08-19_23-31-26_701042_L0.jpg",
+      "video": "assets/media/701042-2026-08-19-A/26-08-19_23-31-26_701042_L0.mp4",
+      "carriages": []
+    },
+    {
+      "id": "701046-2026-07-11-B",
+      "unit": "701046",
+      "date": "2026-07-11",
+      "time": "05:48",
+      "side": "B",
+      "mode": "panorama",
+      "cover": "assets/media/701046-2026-07-11-B/26-07-11_05-48-40_701046_B.jpg",
+      "video": "assets/media/701046-2026-07-11-B/26-07-11_05-48-40_701046_B.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "489046",
+          "image": "assets/media/701046-2026-07-11-B/0_489046_260711.jpg",
+          "width": 12964,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "488046",
+          "image": "assets/media/701046-2026-07-11-B/1_488046_260711.jpg",
+          "width": 12840,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "487046",
+          "image": "assets/media/701046-2026-07-11-B/2_487046_260711.jpg",
+          "width": 12840,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "486046",
+          "image": "assets/media/701046-2026-07-11-B/3_486046_260711.jpg",
+          "width": 12850,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "485046",
+          "image": "assets/media/701046-2026-07-11-B/4_485046_260711.jpg",
+          "width": 13074,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "484046",
+          "image": "assets/media/701046-2026-07-11-B/5_484046_260711.jpg",
+          "width": 13146,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "483046",
+          "image": "assets/media/701046-2026-07-11-B/6_483046_260711.jpg",
+          "width": 12834,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "482046",
+          "image": "assets/media/701046-2026-07-11-B/7_482046_260711.jpg",
+          "width": 12856,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 8,
+          "serial": "481046",
+          "image": "assets/media/701046-2026-07-11-B/8_481046_260711.jpg",
+          "width": 12825,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 9,
+          "serial": "480046",
+          "image": "assets/media/701046-2026-07-11-B/9_480046_260711.jpg",
+          "width": 13052,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "701046-2026-08-07-B",
+      "unit": "701046",
+      "date": "2026-08-07",
+      "time": "06:11",
+      "side": "B",
+      "mode": "panorama",
+      "cover": "assets/media/701046-2026-08-07-B/26-08-07_06-11-35_701046_B.jpg",
+      "video": "assets/media/701046-2026-08-07-B/26-08-07_06-11-35_701046_B.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "489046",
+          "image": "assets/media/701046-2026-08-07-B/0_489046_260807.jpg",
+          "width": 12855,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "488046",
+          "image": "assets/media/701046-2026-08-07-B/1_488046_260807.jpg",
+          "width": 12614,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "487046",
+          "image": "assets/media/701046-2026-08-07-B/2_487046_260807.jpg",
+          "width": 12567,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "486046",
+          "image": "assets/media/701046-2026-08-07-B/3_486046_260807.jpg",
+          "width": 12646,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "485046",
+          "image": "assets/media/701046-2026-08-07-B/4_485046_260807.jpg",
+          "width": 13002,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "484046",
+          "image": "assets/media/701046-2026-08-07-B/5_484046_260807.jpg",
+          "width": 13056,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "483046",
+          "image": "assets/media/701046-2026-08-07-B/6_483046_260807.jpg",
+          "width": 12540,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "482046",
+          "image": "assets/media/701046-2026-08-07-B/7_482046_260807.jpg",
+          "width": 12410,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 8,
+          "serial": "481046",
+          "image": "assets/media/701046-2026-08-07-B/8_481046_260807.jpg",
+          "width": 12601,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 9,
+          "serial": "480046",
+          "image": "assets/media/701046-2026-08-07-B/9_480046_260807.jpg",
+          "width": 13136,
+          "height": 1210,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "701048-2026-07-04-A",
+      "unit": "701048",
+      "date": "2026-07-04",
+      "time": "06:01",
+      "side": "A",
+      "mode": "panorama",
+      "cover": "assets/media/701048-2026-07-04-A/26-07-04_06-01-10_701048_A.jpg",
+      "video": "assets/media/701048-2026-07-04-A/26-07-04_06-01-10_701048_A.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "480048",
+          "image": "assets/media/701048-2026-07-04-A/0_480048_260704.jpg",
+          "width": 14960,
+          "height": 1150,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "481048",
+          "image": "assets/media/701048-2026-07-04-A/1_481048_260704.jpg",
+          "width": 14352,
+          "height": 1150,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "482048",
+          "image": "assets/media/701048-2026-07-04-A/2_482048_260704.jpg",
+          "width": 14332,
+          "height": 1150,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "483048",
+          "image": "assets/media/701048-2026-07-04-A/3_483048_260704.jpg",
+          "width": 14365,
+          "height": 1150,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "484048",
+          "image": "assets/media/701048-2026-07-04-A/4_484048_260704.jpg",
+          "width": 14569,
+          "height": 1150,
+          "cleanliness": "Non-Compliant",
+          "defects": [
+            {
+              "id": "legacy-484048-01",
+              "type": "severe",
+              "label": "Human-reviewed legacy region",
+              "box": [
+                0,
+                223,
+                636,
+                996
+              ],
+              "source": "legacy_human_review_migrated",
+              "compareOptions": []
+            },
+            {
+              "id": "legacy-484048-02",
+              "type": "severe",
+              "label": "Human-reviewed legacy region",
+              "box": [
+                11525,
+                32,
+                11894,
+                813
+              ],
+              "source": "legacy_human_review_migrated",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "serial": "485048",
+          "image": "assets/media/701048-2026-07-04-A/5_485048_260704.jpg",
+          "width": 14773,
+          "height": 1150,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "legacy-485048-01",
+              "type": "severe",
+              "label": "Human-reviewed legacy region",
+              "box": [
+                4174,
+                237,
+                4231,
+                421
+              ],
+              "source": "legacy_human_review_migrated",
+              "compareOptions": []
+            },
+            {
+              "id": "legacy-485048-02",
+              "type": "severe",
+              "label": "Human-reviewed legacy region",
+              "box": [
+                11365,
+                243,
+                11438,
+                303
+              ],
+              "source": "legacy_human_review_migrated",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "serial": "486048",
+          "image": "assets/media/701048-2026-07-04-A/6_486048_260704.jpg",
+          "width": 14340,
+          "height": 1150,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "487048",
+          "image": "assets/media/701048-2026-07-04-A/7_487048_260704.jpg",
+          "width": 14352,
+          "height": 1150,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "legacy-487048-01",
+              "type": "minor",
+              "label": "Human-reviewed legacy region",
+              "box": [
+                14175,
+                446,
+                14269,
+                540
+              ],
+              "source": "legacy_human_review_migrated",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "serial": "488048",
+          "image": "assets/media/701048-2026-07-04-A/8_488048_260704.jpg",
+          "width": 14194,
+          "height": 1150,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "legacy-488048-01",
+              "type": "minor",
+              "label": "Human-reviewed legacy region",
+              "box": [
+                11134,
+                715,
+                11197,
+                852
+              ],
+              "source": "legacy_human_review_migrated",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 9,
+          "serial": "489048",
+          "image": "assets/media/701048-2026-07-04-A/9_489048_260704.jpg",
+          "width": 14671,
+          "height": 1150,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "701048-2026-07-04-B",
+      "unit": "701048",
+      "date": "2026-07-04",
+      "time": "06:01",
+      "side": "B",
+      "mode": "panorama",
+      "cover": "assets/media/701048-2026-07-04-B/26-07-04_06-01-19_701048_A.jpg",
+      "video": "assets/media/701048-2026-07-04-B/26-07-04_06-01-19_701048_A.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "489048",
+          "image": "assets/media/701048-2026-07-04-B/0_489048_260704.jpg",
+          "width": 14780,
+          "height": 1250,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "488048",
+          "image": "assets/media/701048-2026-07-04-B/1_488048_260704.jpg",
+          "width": 14541,
+          "height": 1250,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "legacy-488048-01",
+              "type": "severe",
+              "label": "Human-reviewed legacy region",
+              "box": [
+                936,
+                90,
+                1455,
+                453
+              ],
+              "source": "legacy_human_review_migrated",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "serial": "487048",
+          "image": "assets/media/701048-2026-07-04-B/2_487048_260704.jpg",
+          "width": 14562,
+          "height": 1250,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "486048",
+          "image": "assets/media/701048-2026-07-04-B/3_486048_260704.jpg",
+          "width": 14578,
+          "height": 1250,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "485048",
+          "image": "assets/media/701048-2026-07-04-B/4_485048_260704.jpg",
+          "width": 14492,
+          "height": 1250,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "484048",
+          "image": "assets/media/701048-2026-07-04-B/5_484048_260704.jpg",
+          "width": 14523,
+          "height": 1250,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "483048",
+          "image": "assets/media/701048-2026-07-04-B/6_483048_260704.jpg",
+          "width": 14511,
+          "height": 1250,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "482048",
+          "image": "assets/media/701048-2026-07-04-B/7_482048_260704.jpg",
+          "width": 14553,
+          "height": 1250,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 8,
+          "serial": "481048",
+          "image": "assets/media/701048-2026-07-04-B/8_481048_260704.jpg",
+          "width": 14529,
+          "height": 1250,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 9,
+          "serial": "480048",
+          "image": "assets/media/701048-2026-07-04-B/9_480048_260704.jpg",
+          "width": 14706,
+          "height": 1250,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "701042-2026-07-14-A-480042-D001-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "480042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-480042-D001-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-480042-D001-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        4881,
+        948,
+        5237,
+        1153
+      ],
+      "targetBox": [
+        5206,
+        1051,
+        5381,
+        1150
+      ],
+      "sourceFocus": [
+        392,
+        394,
+        748,
+        599
+      ],
+      "targetFocus": [
+        192,
+        201,
+        367,
+        300
+      ],
+      "sourceTileSize": [
+        1140,
+        656
+      ],
+      "targetTileSize": [
+        560,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D001",
+      "stainId": "D001"
+    },
+    {
+      "id": "701042-2026-07-14-A-480042-D001-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "480042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-480042-D001-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-480042-D001-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        4881,
+        948,
+        5237,
+        1153
+      ],
+      "targetBox": [
+        5744,
+        1084,
+        5894,
+        1191
+      ],
+      "sourceFocus": [
+        392,
+        394,
+        748,
+        599
+      ],
+      "targetFocus": [
+        165,
+        244,
+        315,
+        351
+      ],
+      "sourceTileSize": [
+        1140,
+        656
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D001",
+      "stainId": "D001"
+    },
+    {
+      "id": "701042-2026-07-14-A-481042-D001-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-481042-D001-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-481042-D001-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        8390,
+        402,
+        8469,
+        434
+      ],
+      "targetBox": [
+        8427,
+        402,
+        8506,
+        434
+      ],
+      "sourceFocus": [
+        200,
+        164,
+        279,
+        196
+      ],
+      "targetFocus": [
+        201,
+        164,
+        280,
+        196
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D001",
+      "stainId": "D001"
+    },
+    {
+      "id": "701042-2026-07-14-A-481042-D001-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-481042-D001-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-481042-D001-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        8390,
+        402,
+        8469,
+        434
+      ],
+      "targetBox": [
+        9288,
+        399,
+        9376,
+        430
+      ],
+      "sourceFocus": [
+        200,
+        164,
+        279,
+        196
+      ],
+      "targetFocus": [
+        196,
+        165,
+        284,
+        196
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D001",
+      "stainId": "D001"
+    },
+    {
+      "id": "701042-2026-07-14-A-481042-D002-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-481042-D002-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-481042-D002-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        8618,
+        374,
+        8687,
+        484
+      ],
+      "targetBox": [
+        8656,
+        374,
+        8725,
+        484
+      ],
+      "sourceFocus": [
+        206,
+        125,
+        275,
+        235
+      ],
+      "targetFocus": [
+        206,
+        125,
+        275,
+        235
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D002",
+      "stainId": "D002"
+    },
+    {
+      "id": "701042-2026-07-14-A-481042-D002-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-481042-D002-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-481042-D002-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        8618,
+        374,
+        8687,
+        484
+      ],
+      "targetBox": [
+        9541,
+        371,
+        9617,
+        480
+      ],
+      "sourceFocus": [
+        206,
+        125,
+        275,
+        235
+      ],
+      "targetFocus": [
+        202,
+        125,
+        278,
+        234
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D002",
+      "stainId": "D002"
+    },
+    {
+      "id": "701042-2026-07-14-A-481042-D003-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-481042-D003-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-481042-D003-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        8748,
+        362,
+        8868,
+        424
+      ],
+      "targetBox": [
+        8774,
+        360,
+        8893,
+        422
+      ],
+      "sourceFocus": [
+        180,
+        149,
+        300,
+        211
+      ],
+      "targetFocus": [
+        180,
+        149,
+        299,
+        211
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D003",
+      "stainId": "D003"
+    },
+    {
+      "id": "701042-2026-07-14-A-481042-D003-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-481042-D003-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-481042-D003-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        8748,
+        362,
+        8868,
+        424
+      ],
+      "targetBox": [
+        9685,
+        359,
+        9818,
+        420
+      ],
+      "sourceFocus": [
+        180,
+        149,
+        300,
+        211
+      ],
+      "targetFocus": [
+        173,
+        149,
+        306,
+        210
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D003",
+      "stainId": "D003"
+    },
+    {
+      "id": "701042-2026-07-14-A-481042-D004-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-481042-D004-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-481042-D004-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        9672,
+        917,
+        9727,
+        963
+      ],
+      "targetBox": [
+        8775,
+        360,
+        8894,
+        422
+      ],
+      "sourceFocus": [
+        212,
+        157,
+        267,
+        203
+      ],
+      "targetFocus": [
+        181,
+        149,
+        300,
+        211
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D004",
+      "stainId": "D004"
+    },
+    {
+      "id": "701042-2026-07-14-A-481042-D004-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-481042-D004-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-481042-D004-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        9672,
+        917,
+        9727,
+        963
+      ],
+      "targetBox": [
+        10708,
+        909,
+        10769,
+        955
+      ],
+      "sourceFocus": [
+        212,
+        157,
+        267,
+        203
+      ],
+      "targetFocus": [
+        210,
+        157,
+        271,
+        203
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D004",
+      "stainId": "D004"
+    },
+    {
+      "id": "701042-2026-07-14-A-482042-WEB-1787515545166-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "482042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-482042-WEB-1787515545166-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-482042-WEB-1787515545166-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        6541,
+        1040,
+        6579,
+        1088
+      ],
+      "targetBox": [
+        6609,
+        1052,
+        6634,
+        1081
+      ],
+      "sourceFocus": [
+        221,
+        190,
+        259,
+        238
+      ],
+      "targetFocus": [
+        227,
+        202,
+        252,
+        231
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787515545175",
+      "stainId": "WEB-1787515545166"
+    },
+    {
+      "id": "701042-2026-07-14-A-482042-WEB-1787515545166-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "482042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-482042-WEB-1787515545166-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-482042-WEB-1787515545166-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        6541,
+        1040,
+        6579,
+        1088
+      ],
+      "targetBox": [
+        7228,
+        1031,
+        7270,
+        1079
+      ],
+      "sourceFocus": [
+        221,
+        190,
+        259,
+        238
+      ],
+      "targetFocus": [
+        219,
+        191,
+        261,
+        239
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "WEB-1787515545166",
+      "stainId": "WEB-1787515545166"
+    },
+    {
+      "id": "701042-2026-07-14-A-487042-S016-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "487042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-487042-S016-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-487042-S016-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        12527,
+        757,
+        12733,
+        902
+      ],
+      "targetBox": [
+        12597,
+        754,
+        12794,
+        900
+      ],
+      "sourceFocus": [
+        372,
+        159,
+        578,
+        304
+      ],
+      "targetFocus": [
+        336,
+        161,
+        533,
+        307
+      ],
+      "sourceTileSize": [
+        659,
+        464
+      ],
+      "targetTileSize": [
+        630,
+        468
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "S016",
+      "stainId": "S016"
+    },
+    {
+      "id": "701042-2026-07-14-A-487042-S016-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "487042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-487042-S016-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-487042-S016-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        12527,
+        757,
+        12733,
+        902
+      ],
+      "targetBox": [
+        13953,
+        751,
+        14183,
+        895
+      ],
+      "sourceFocus": [
+        372,
+        159,
+        578,
+        304
+      ],
+      "targetFocus": [
+        416,
+        158,
+        646,
+        302
+      ],
+      "sourceTileSize": [
+        659,
+        464
+      ],
+      "targetTileSize": [
+        736,
+        460
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "S016",
+      "stainId": "S016"
+    },
+    {
+      "id": "701042-2026-07-14-A-488042-S002-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "488042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-488042-S002-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-488042-S002-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        255,
+        941,
+        334,
+        977
+      ],
+      "targetBox": [
+        281,
+        941,
+        355,
+        973
+      ],
+      "sourceFocus": [
+        201,
+        162,
+        280,
+        198
+      ],
+      "targetFocus": [
+        203,
+        164,
+        277,
+        196
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "S002",
+      "stainId": "S002"
+    },
+    {
+      "id": "701042-2026-07-14-A-488042-S002-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "488042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-488042-S002-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-488042-S002-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        255,
+        941,
+        334,
+        977
+      ],
+      "targetBox": [
+        283,
+        933,
+        371,
+        969
+      ],
+      "sourceFocus": [
+        201,
+        162,
+        280,
+        198
+      ],
+      "targetFocus": [
+        196,
+        162,
+        284,
+        198
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "S002",
+      "stainId": "S002"
+    },
+    {
+      "id": "701042-2026-07-14-A-488042-S029-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "488042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-488042-S029-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-488042-S029-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        9238,
+        1000,
+        9352,
+        1016
+      ],
+      "targetBox": [
+        9314,
+        1000,
+        9429,
+        1016
+      ],
+      "sourceFocus": [
+        183,
+        172,
+        297,
+        188
+      ],
+      "targetFocus": [
+        182,
+        172,
+        297,
+        188
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "S029",
+      "stainId": "S029"
+    },
+    {
+      "id": "701042-2026-07-14-A-488042-S029-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "488042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-488042-S029-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-488042-S029-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        9238,
+        1000,
+        9352,
+        1016
+      ],
+      "targetBox": [
+        10248,
+        992,
+        10374,
+        1008
+      ],
+      "sourceFocus": [
+        183,
+        172,
+        297,
+        188
+      ],
+      "targetFocus": [
+        177,
+        172,
+        303,
+        188
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "S029",
+      "stainId": "S029"
+    },
+    {
+      "id": "701042-2026-08-01-A-480042-D001-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "480042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-480042-D001-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-480042-D001-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        5206,
+        1051,
+        5381,
+        1150
+      ],
+      "targetBox": [
+        4881,
+        948,
+        5237,
+        1153
+      ],
+      "sourceFocus": [
+        192,
+        201,
+        367,
+        300
+      ],
+      "targetFocus": [
+        392,
+        394,
+        748,
+        599
+      ],
+      "sourceTileSize": [
+        560,
+        360
+      ],
+      "targetTileSize": [
+        1140,
+        656
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D001",
+      "stainId": "D001"
+    },
+    {
+      "id": "701042-2026-08-01-A-480042-D001-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "480042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-480042-D001-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-480042-D001-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        5206,
+        1051,
+        5381,
+        1150
+      ],
+      "targetBox": [
+        5744,
+        1084,
+        5894,
+        1191
+      ],
+      "sourceFocus": [
+        192,
+        201,
+        367,
+        300
+      ],
+      "targetFocus": [
+        165,
+        244,
+        315,
+        351
+      ],
+      "sourceTileSize": [
+        560,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D001",
+      "stainId": "D001"
+    },
+    {
+      "id": "701042-2026-08-01-A-481042-D003-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-481042-D003-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-481042-D003-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        8774,
+        360,
+        8893,
+        422
+      ],
+      "targetBox": [
+        8748,
+        362,
+        8868,
+        424
+      ],
+      "sourceFocus": [
+        180,
+        149,
+        299,
+        211
+      ],
+      "targetFocus": [
+        180,
+        149,
+        300,
+        211
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D003",
+      "stainId": "D003"
+    },
+    {
+      "id": "701042-2026-08-01-A-481042-D003-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-481042-D003-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-481042-D003-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        8774,
+        360,
+        8893,
+        422
+      ],
+      "targetBox": [
+        9671,
+        357,
+        9803,
+        419
+      ],
+      "sourceFocus": [
+        180,
+        149,
+        299,
+        211
+      ],
+      "targetFocus": [
+        174,
+        149,
+        306,
+        211
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D003",
+      "stainId": "D003"
+    },
+    {
+      "id": "701042-2026-08-01-A-481042-D004-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-481042-D004-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-481042-D004-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        8775,
+        360,
+        8894,
+        422
+      ],
+      "targetBox": [
+        9672,
+        917,
+        9727,
+        963
+      ],
+      "sourceFocus": [
+        181,
+        149,
+        300,
+        211
+      ],
+      "targetFocus": [
+        212,
+        157,
+        267,
+        203
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D004",
+      "stainId": "D004"
+    },
+    {
+      "id": "701042-2026-08-01-A-481042-D004-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-481042-D004-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-481042-D004-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        8775,
+        360,
+        8894,
+        422
+      ],
+      "targetBox": [
+        9672,
+        357,
+        9804,
+        419
+      ],
+      "sourceFocus": [
+        181,
+        149,
+        300,
+        211
+      ],
+      "targetFocus": [
+        174,
+        149,
+        306,
+        211
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D004",
+      "stainId": "D004"
+    },
+    {
+      "id": "701042-2026-08-01-A-481042-D005-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-481042-D005-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-481042-D005-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        9727,
+        917,
+        9777,
+        960
+      ],
+      "targetBox": [
+        9685,
+        917,
+        9735,
+        960
+      ],
+      "sourceFocus": [
+        215,
+        159,
+        265,
+        202
+      ],
+      "targetFocus": [
+        215,
+        159,
+        265,
+        202
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D005",
+      "stainId": "D005"
+    },
+    {
+      "id": "701042-2026-08-01-A-481042-D005-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-481042-D005-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-481042-D005-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        9727,
+        917,
+        9777,
+        960
+      ],
+      "targetBox": [
+        10722,
+        909,
+        10777,
+        952
+      ],
+      "sourceFocus": [
+        215,
+        159,
+        265,
+        202
+      ],
+      "targetFocus": [
+        212,
+        159,
+        267,
+        202
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "D005",
+      "stainId": "D005"
+    },
+    {
+      "id": "701042-2026-08-01-A-482042-WEB-1787515545175-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "482042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-482042-WEB-1787515545175-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-482042-WEB-1787515545175-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        6609,
+        1052,
+        6634,
+        1081
+      ],
+      "targetBox": [
+        6541,
+        1040,
+        6579,
+        1088
+      ],
+      "sourceFocus": [
+        227,
+        202,
+        252,
+        231
+      ],
+      "targetFocus": [
+        221,
+        190,
+        259,
+        238
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787515545166",
+      "stainId": "WEB-1787515545175"
+    },
+    {
+      "id": "701042-2026-08-01-A-482042-WEB-1787515545175-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "482042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-482042-WEB-1787515545175-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-482042-WEB-1787515545175-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        6609,
+        1052,
+        6634,
+        1081
+      ],
+      "targetBox": [
+        7258,
+        1043,
+        7286,
+        1072
+      ],
+      "sourceFocus": [
+        227,
+        202,
+        252,
+        231
+      ],
+      "targetFocus": [
+        226,
+        203,
+        254,
+        232
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "WEB-1787515545175",
+      "stainId": "WEB-1787515545175"
+    },
+    {
+      "id": "701042-2026-08-01-A-487042-S016-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "487042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-487042-S016-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-487042-S016-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        12597,
+        754,
+        12794,
+        900
+      ],
+      "targetBox": [
+        12527,
+        757,
+        12733,
+        902
+      ],
+      "sourceFocus": [
+        336,
+        161,
+        533,
+        307
+      ],
+      "targetFocus": [
+        372,
+        159,
+        578,
+        304
+      ],
+      "sourceTileSize": [
+        630,
+        468
+      ],
+      "targetTileSize": [
+        659,
+        464
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "S016",
+      "stainId": "S016"
+    },
+    {
+      "id": "701042-2026-08-01-A-487042-S016-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "487042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-487042-S016-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-487042-S016-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        12597,
+        754,
+        12794,
+        900
+      ],
+      "targetBox": [
+        13947,
+        748,
+        14166,
+        893
+      ],
+      "sourceFocus": [
+        336,
+        161,
+        533,
+        307
+      ],
+      "targetFocus": [
+        375,
+        160,
+        594,
+        305
+      ],
+      "sourceTileSize": [
+        630,
+        468
+      ],
+      "targetTileSize": [
+        701,
+        464
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "S016",
+      "stainId": "S016"
+    },
+    {
+      "id": "701042-2026-08-01-A-488042-S002-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "488042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-488042-S002-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-488042-S002-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        281,
+        941,
+        355,
+        973
+      ],
+      "targetBox": [
+        255,
+        941,
+        334,
+        977
+      ],
+      "sourceFocus": [
+        203,
+        164,
+        277,
+        196
+      ],
+      "targetFocus": [
+        201,
+        162,
+        280,
+        198
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "S002",
+      "stainId": "S002"
+    },
+    {
+      "id": "701042-2026-08-01-A-488042-S002-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "488042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-488042-S002-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-488042-S002-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        281,
+        941,
+        355,
+        973
+      ],
+      "targetBox": [
+        309,
+        933,
+        391,
+        965
+      ],
+      "sourceFocus": [
+        203,
+        164,
+        277,
+        196
+      ],
+      "targetFocus": [
+        199,
+        164,
+        281,
+        196
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "S002",
+      "stainId": "S002"
+    },
+    {
+      "id": "701042-2026-08-14-A-480042-D001-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "480042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-480042-D001-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-480042-D001-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        5744,
+        1084,
+        5894,
+        1191
+      ],
+      "targetBox": [
+        4881,
+        948,
+        5237,
+        1153
+      ],
+      "sourceFocus": [
+        165,
+        244,
+        315,
+        351
+      ],
+      "targetFocus": [
+        392,
+        394,
+        748,
+        599
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        1140,
+        656
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D001",
+      "stainId": "D001"
+    },
+    {
+      "id": "701042-2026-08-14-A-480042-D001-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "480042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-480042-D001-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-480042-D001-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        5744,
+        1084,
+        5894,
+        1191
+      ],
+      "targetBox": [
+        5206,
+        1051,
+        5381,
+        1150
+      ],
+      "sourceFocus": [
+        165,
+        244,
+        315,
+        351
+      ],
+      "targetFocus": [
+        192,
+        201,
+        367,
+        300
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        560,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D001",
+      "stainId": "D001"
+    }
+  ]
+}

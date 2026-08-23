@@ -8,7 +8,7 @@
   --accent-dark: #005d86;
   --dirt: #d92d20;
   --severe: #7c3aed;
-  --scratch: #155eef;
+  --minor: #155eef;
 }
 
 * {
@@ -194,8 +194,9 @@ body {
   border-color: var(--severe);
 }
 
+.defect-minor,
 .defect-scratch {
-  border-color: var(--scratch);
+  border-color: var(--minor);
 }
 
 .defect-box.is-flashing {
@@ -217,8 +218,8 @@ body {
   position: fixed;
   z-index: 40;
   display: none;
-  width: min(620px, calc(100vw - 24px));
-  height: min(380px, calc(100vh - 24px));
+  width: min(820px, calc(100vw - 24px));
+  height: min(500px, calc(100vh - 24px));
   border: 2px solid rgba(255, 255, 255, 0.92);
   border-radius: 6px;
   background-color: #ffffff;
@@ -327,8 +328,9 @@ body {
   color: var(--severe);
 }
 
+.count-minor,
 .count-scratch {
-  color: var(--scratch);
+  color: var(--minor);
 }
 
 .count-graffiti {

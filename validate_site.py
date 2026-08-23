@@ -1,33 +1,41 @@
-from pathlib import Path
+from __future__ import annotations
+
+import json
 import re
+from pathlib import Path
+
 
 root = Path(__file__).resolve().parent
-index = (root / "index.html").read_text(encoding="utf-8")
-js = (root / "assets" / "app.js").read_text(encoding="utf-8")
-css = (root / "assets" / "styles.css").read_text(encoding="utf-8")
-
-asset_refs = set(re.findall(r'(?:src|href)="([^"]+)"', index))
-asset_refs.update(re.findall(r'"(assets/[^"]+)"', js))
-
-print("asset references")
-for ref in sorted(asset_refs):
-    if ref.startswith("#"):
+errors = []
+catalog = {"events": [], "comparisons": []}
+for name in ("index.html", "event.html", "compare.html"):
+    path = root / name
+    if not path.exists():
+        errors.append(f"missing page: {name}")
         continue
-    target = root / ref
-    print(f"{ref}: {target.exists()}")
-
-print("q1656 carriage images:", js.count("assets/carriages/"))
-print("q4809 carriage images:", js.count("assets/carriages-q4809/"))
-print("side toggle removed:", "data-side-toggle" not in index and "sideToggle" not in js)
-print("navigation arrows removed:", "nav-arrow" not in index and "data-prev-carriage" not in index and "data-next-carriage" not in index)
-print("defect count buttons:", "data-highlight-type" in js)
-print("cleanliness column:", "Cleanliness" in index and "cleanliness" in js)
-print("severe column:", "Severe" in index and "count-severe" in css)
-print("position columns removed:", "Dirt positions" not in index and "Scratch positions" not in index)
-print("dirt header removed:", "<th scope=\"col\">Dirt</th>" not in index)
-print("graffiti column:", "Graffiti" in index and "graffiti: 0" in js)
-print("q1656 visual order reversed:", 'visualOrder: "reverse"' in js)
-print("q4809 visual order normal:", 'visualOrder: "normal"' in js)
-print("public side labels:", "View Side B" in index and "Side A exterior surface defects" in index)
-print("public camera labels hidden:", "Q1656" not in index and "Q4809" not in index)
-print("magnifier added:", "magnifier" in js and ".magnifier" in css)
+    text = path.read_text(encoding="utf-8")
+    for reference in re.findall(r'(?:src|href)="([^"?#]+)', text):
+        if reference.startswith(("http:", "https:", "javascript:")):
+            continue
+        if not (root / reference).exists():
+            errors.append(f"{name}: missing {reference}")
+catalog_path = root / "assets" / "catalog.json"
+if not catalog_path.exists():
+    errors.append("missing assets/catalog.json")
+else:
+    catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    for event in catalog.get("events", []):
+        for field in ("cover", "video"):
+            value = event.get(field)
+            if value and not (root / value).exists():
+                errors.append(f"{event['id']}: missing {value}")
+        for carriage in event.get("carriages", []):
+            if not (root / carriage["image"]).exists():
+                errors.append(f"{event['id']}: missing {carriage['image']}")
+    for comparison in catalog.get("comparisons", []):
+        for field in ("sourceTile", "targetTile"):
+            if not (root / comparison[field]).exists():
+                errors.append(f"{comparison['id']}: missing {comparison[field]}")
+if errors:
+    raise SystemExit("\n".join(errors))
+print(f"Site valid: {len(catalog['events'])} events, {len(catalog['comparisons'])} comparisons")

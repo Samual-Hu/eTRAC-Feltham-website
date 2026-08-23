@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Eyya Train Surface Event</title><link rel="stylesheet" href="assets/styles.css"><link rel="stylesheet" href="assets/event.css"></head>
+  <body>
+    <header class="topbar event-topbar">
+      <div class="event-left"><a class="brand" href="index.html" aria-label="Capture library"><img class="brand-mark" src="assets/eyya-brandmark.svg" alt="Eyya"><span class="brand-text"><span class="brand-title" data-title>Train Surface Viewer</span><span class="brand-subtitle" data-subtitle></span></span></a><button class="icon-button" type="button" hidden data-video-button aria-label="Play capture video" title="Play capture video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></button></div>
+      <button class="side-toggle" type="button" hidden data-side-toggle aria-label="Switch train side"></button>
+      <span></span>
+    </header>
+    <main class="event-page">
+      <section data-panorama-content>
+        <section class="event-viewer"><div class="event-viewport" data-viewport tabindex="0"><div class="event-track" data-track></div></div></section>
+        <section class="event-summary"><div class="table-wrap"><table class="condition-table"><thead><tr><th>Order</th><th>Carriage</th><th>Cleanliness</th><th>Severe</th><th>Minor</th><th>Graffiti</th></tr></thead><tbody data-table></tbody></table></div></section>
+      </section>
+      <section class="video-fallback" hidden data-video-only><button type="button" data-video-button aria-label="Play evidence video"><img data-video-cover alt="Capture evidence cover"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></span></button></section>
+    </main>
+    <div class="magnifier" aria-hidden="true" data-magnifier></div>
+    <dialog class="video-dialog" data-video-dialog><button class="dialog-close" type="button" data-video-close aria-label="Close video">×</button><video controls playsinline data-video></video></dialog>
+    <script src="assets/catalog.js"></script><script src="assets/dev.js"></script><script src="assets/event.js"></script>
+  </body>
+</html>
