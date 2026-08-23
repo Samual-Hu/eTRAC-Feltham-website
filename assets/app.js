@@ -8,7 +8,7 @@ const q1656Carriages = [
     height: 1150,
     graffiti: 0,
     defects: [
-      { id: "488048-scratch-1", type: "scratch", label: "manual scratch mark", box: [11134, 715, 11197, 852] },
+      { id: "488048-minor-1", type: "minor", label: "minor stain", box: [11134, 715, 11197, 852] },
     ],
   },
   {
@@ -19,7 +19,7 @@ const q1656Carriages = [
     height: 1150,
     graffiti: 0,
     defects: [
-      { id: "487048-scratch-1", type: "scratch", label: "manual scratch mark", box: [14232, 446, 14326, 540] },
+      { id: "487048-minor-1", type: "minor", label: "minor stain", box: [14232, 446, 14326, 540] },
     ],
   },
   { order: 4, serial: "486048", image: "assets/carriages/04_486048.jpg", width: 14960, height: 1150, graffiti: 0, defects: [] },
@@ -277,7 +277,7 @@ function renderTable() {
       <td><button class="serial-button" type="button" data-jump-index="${index}">${carriage.serial}</button></td>
       <td><span class="cleanliness-status cleanliness-${cleanlinessClass(carriage.cleanliness)}">${carriage.cleanliness}</span></td>
       <td>${countButton(carriage, index, "dirt", "severe")}</td>
-      <td>${countButton(carriage, index, "scratch")}</td>
+      <td>${countButton(carriage, index, "minor")}</td>
       <td>${countButton(carriage, index, "graffiti")}</td>
     `;
     tableBody.appendChild(row);
