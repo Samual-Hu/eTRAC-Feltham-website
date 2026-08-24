@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import secrets
+import subprocess
 import sys
 import webbrowser
 from datetime import datetime, timezone
@@ -19,30 +20,57 @@ from stain_demo.web_review import (  # noqa: E402
     VALID_TYPES,
     load_overrides,
     save_overrides,
+    set_link,
     state_key,
 )
 
 
 TOKEN = secrets.token_urlsafe(24)
+CLIENT_MODE = "--client" in sys.argv[1:]
+NO_BROWSER = "--no-browser" in sys.argv[1:]
+API_VERSION = 2
+HISTORY_PATH = ROOT / "annotations" / "web_review_history.jsonl"
+
+
+def _site_image(value: object) -> Path:
+    relative = Path(str(value or ""))
+    candidate = (SITE / relative).resolve()
+    if SITE.resolve() not in candidate.parents or candidate.suffix.lower() not in {".jpg", ".jpeg", ".png", ".bmp", ".webp"} or not candidate.is_file():
+        raise ValueError("A valid website panorama image is required")
+    # The website copy is generated output. Launch the annotation App with the
+    # original material so a later site refresh can never invalidate its input.
+    if len(relative.parts) >= 4 and relative.parts[:2] == ("assets", "media"):
+        matches = [path.resolve() for path in (ROOT / "materials").rglob(relative.name) if path.is_file()]
+        if len(matches) == 1:
+            return matches[0]
+        event_id = relative.parts[2]
+        event_bits = event_id.split("-")
+        compact_date = "".join(event_bits[1:4])[2:] if len(event_bits) >= 4 else ""
+        narrowed = [path for path in matches if event_bits[0] in path.parent.name and compact_date in path.parent.name]
+        if len(narrowed) == 1:
+            return narrowed[0]
+    return candidate
+
+
+def launch_annotation_app(payload: dict) -> dict:
+    earlier = _site_image(payload.get("earlierImage"))
+    later = _site_image(payload.get("laterImage"))
+    pythonw = ROOT / ".venv" / "Scripts" / "pythonw.exe"
+    python = pythonw if pythonw.exists() else ROOT / ".venv" / "Scripts" / "python.exe"
+    if not python.exists():
+        raise ValueError("The local annotation runtime is missing")
+    flags = 0 if python == pythonw else getattr(subprocess, "CREATE_NO_WINDOW", 0)
+    process = subprocess.Popen(
+        [str(python), str(ROOT / "annotation_app.py"), "--earlier", str(earlier), "--later", str(later)],
+        cwd=str(ROOT),
+        creationflags=flags,
+        close_fds=True,
+    )
+    return {"ok": True, "message": "Annotation app launched", "pid": process.pid}
 
 
 def _valid_box(value) -> bool:
     return isinstance(value, list) and len(value) == 4 and all(isinstance(number, (int, float)) for number in value) and value[0] < value[2] and value[1] < value[3]
-
-
-def _seed_state(state: dict, payload: dict) -> None:
-    if state.get("annotations"):
-        return
-    state["annotations"] = [
-        {
-            "annotation_id": item["id"],
-            "type": item.get("type", "severe"),
-            "bbox": [round(number) for number in item["box"]],
-            "source": "human_web_review",
-        }
-        for item in payload.get("seedAnnotations", [])
-        if item.get("id") and item.get("type") in VALID_TYPES and _valid_box(item.get("box"))
-    ]
 
 
 def apply_edit(payload: dict) -> dict:
@@ -52,7 +80,6 @@ def apply_edit(payload: dict) -> dict:
         raise ValueError("A six-digit carriage number and ISO date are required")
     document = load_overrides()
     state = document["states"].setdefault(state_key(serial, date), {"serial": serial, "date": date, "annotations": [], "deleted_annotation_ids": []})
-    _seed_state(state, payload)
     if action == "comparison":
         source_id = str(payload.get("sourceId", ""))
         source_box = payload.get("sourceBBox")
@@ -71,7 +98,6 @@ def apply_edit(payload: dict) -> dict:
         if payload.get("sourceGrade") in VALID_GRADES:
             state["grade"] = payload["sourceGrade"]
         target_state = document["states"].setdefault(state_key(serial, target_date), {"serial": serial, "date": target_date, "annotations": [], "deleted_annotation_ids": []})
-        _seed_state(target_state, {"seedAnnotations": payload.get("targetSeed", [])})
         target_box = payload.get("targetBBox")
         if target_id and _valid_box(target_box):
             target_item = {"annotation_id": target_id, "type": payload.get("targetType", "severe"), "bbox": [round(number) for number in target_box], "source": "human_web_review"}
@@ -85,8 +111,7 @@ def apply_edit(payload: dict) -> dict:
                 target_items[target_index] = target_item
         if payload.get("targetGrade") in VALID_GRADES:
             target_state["grade"] = payload["targetGrade"]
-        document["links"] = [link for link in document.get("links", []) if not (link.get("serial") == serial and link.get("source_date") == date and link.get("source_id") == source_id and link.get("target_date") == target_date)]
-        document["links"].append({"serial": serial, "source_date": date, "source_id": source_id, "target_date": target_date, "target_id": target_id})
+        set_link(document, serial, date, source_id, target_date, target_id)
         target_state["updated_at"] = datetime.now(timezone.utc).isoformat()
     elif action == "grade":
         if payload.get("grade") not in VALID_GRADES:
@@ -117,14 +142,13 @@ def apply_edit(payload: dict) -> dict:
         target_id = payload.get("targetId")
         if len(target_date) != 10 or not source_id:
             raise ValueError("Source annotation and target date are required")
-        document["links"] = [
-            link for link in document.get("links", [])
-            if not (link.get("serial") == serial and link.get("source_date") == date and link.get("source_id") == source_id and link.get("target_date") == target_date)
-        ]
-        document["links"].append({"serial": serial, "source_date": date, "source_id": source_id, "target_date": target_date, "target_id": target_id or None})
+        set_link(document, serial, date, source_id, target_date, target_id or None)
     else:
         raise ValueError("Unsupported edit action")
     state["updated_at"] = datetime.now(timezone.utc).isoformat()
+    HISTORY_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with HISTORY_PATH.open("a", encoding="utf-8") as history:
+        history.write(json.dumps({"saved_at": datetime.now(timezone.utc).isoformat(), "payload": payload}, ensure_ascii=False) + "\n")
     save_overrides(document)
     catalog = export_site_data()
     matching = next((item for item in catalog["comparisons"] if item.get("serial") == serial and item.get("sourceDate") == date and item.get("stainId") == str(payload.get("sourceId", "")) and item.get("targetDate") == str(payload.get("targetDate", ""))), None)
@@ -151,12 +175,15 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         if self.path == "/api/dev/status":
-            self._json(200, {"enabled": True, "token": TOKEN})
+            self._json(200, {"enabled": not CLIENT_MODE, "mode": "customer" if CLIENT_MODE else "development", "apiVersion": API_VERSION, "token": TOKEN if not CLIENT_MODE else None})
             return
         super().do_GET()
 
     def do_POST(self):
-        if self.path != "/api/dev/edit":
+        if CLIENT_MODE:
+            self._json(403, {"error": "Customer preview is read-only"})
+            return
+        if self.path not in {"/api/dev/edit", "/api/dev/launch-annotation"}:
             self._json(404, {"error": "Not found"})
             return
         if self.headers.get("X-Dev-Token") != TOKEN:
@@ -165,7 +192,7 @@ class Handler(SimpleHTTPRequestHandler):
         try:
             length = int(self.headers.get("Content-Length", "0"))
             payload = json.loads(self.rfile.read(length).decode("utf-8"))
-            self._json(200, apply_edit(payload))
+            self._json(200, launch_annotation_app(payload) if self.path == "/api/dev/launch-annotation" else apply_edit(payload))
         except (ValueError, json.JSONDecodeError) as exc:
             self._json(400, {"error": str(exc)})
         except Exception as exc:
@@ -173,7 +200,8 @@ class Handler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    requested_port = int(sys.argv[1]) if len(sys.argv) > 1 else 8080
+    port_args = [value for value in sys.argv[1:] if value.isdigit()]
+    requested_port = int(port_args[0]) if port_args else 8080
     server = None
     for port in range(requested_port, requested_port + 20):
         try:
@@ -184,8 +212,9 @@ if __name__ == "__main__":
     if server is None:
         raise SystemExit("No free local preview port was found")
     url = f"http://127.0.0.1:{port}/"
-    print(f"Development editing enabled at {url}")
-    webbrowser.open(url)
+    print(f"{'Customer preview (read-only)' if CLIENT_MODE else 'Development editing enabled'} at {url}")
+    if not NO_BROWSER:
+        webbrowser.open(url)
     try:
         server.serve_forever()
     except KeyboardInterrupt:

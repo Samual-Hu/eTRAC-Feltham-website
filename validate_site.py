@@ -27,14 +27,14 @@ else:
     for event in catalog.get("events", []):
         for field in ("cover", "video"):
             value = event.get(field)
-            if value and not (root / value).exists():
+            if value and (not (root / value).is_file() or (root / value).stat().st_size == 0):
                 errors.append(f"{event['id']}: missing {value}")
         for carriage in event.get("carriages", []):
-            if not (root / carriage["image"]).exists():
+            if not (root / carriage["image"]).is_file() or (root / carriage["image"]).stat().st_size == 0:
                 errors.append(f"{event['id']}: missing {carriage['image']}")
     for comparison in catalog.get("comparisons", []):
         for field in ("sourceTile", "targetTile"):
-            if not (root / comparison[field]).exists():
+            if not (root / comparison[field]).is_file() or (root / comparison[field]).stat().st_size == 0:
                 errors.append(f"{comparison['id']}: missing {comparison[field]}")
 if errors:
     raise SystemExit("\n".join(errors))

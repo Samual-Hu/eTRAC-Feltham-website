@@ -26,6 +26,43 @@ body {
   min-width: 320px;
 }
 
+.customer-preview-badge {
+  position: fixed;
+  z-index: 100;
+  right: 10px;
+  bottom: 10px;
+  padding: 7px 10px;
+  border: 1px solid #78d7e7;
+  border-radius: 999px;
+  background: #06283ae8;
+  color: #dffaff;
+  font: 700 10px/1 Arial, sans-serif;
+  letter-spacing: .08em;
+  box-shadow: 0 5px 18px #00131f66;
+  pointer-events: none;
+}
+
+.outdated-server-warning {
+  position: fixed;
+  z-index: 110;
+  left: 50%;
+  top: 18px;
+  display: grid;
+  gap: 5px;
+  width: min(620px, calc(100vw - 28px));
+  padding: 12px 14px;
+  border: 2px solid #ffb000;
+  border-radius: 9px;
+  background: #102337f5;
+  color: #fff;
+  box-shadow: 0 16px 42px #0008;
+  font: 12px/1.35 Arial, sans-serif;
+  transform: translateX(-50%);
+}
+
+.outdated-server-warning strong { color: #ffcf5a; }
+.outdated-server-warning a { color: #72e6ff; font-weight: 700; }
+
 .topbar {
   position: sticky;
   top: 0;

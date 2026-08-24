@@ -1,6 +1,6 @@
 {
   "generatedFrom": "materials + human reviewed temporal_ground_truth.json",
-  "revision": "1787516960985829200",
+  "revision": "1787560337648513900",
   "events": [
     {
       "id": "458428-2026-08-19-U",
@@ -389,7 +389,7 @@
           "image": "assets/media/701042-2026-07-14-A/1_481042_260714.jpg",
           "width": 12850,
           "height": 1210,
-          "cleanliness": "Non-Compliant",
+          "cleanliness": "Marginal",
           "defects": [
             {
               "id": "D001",
@@ -519,8 +519,75 @@
           "image": "assets/media/701042-2026-07-14-A/3_483042_260714.jpg",
           "width": 12821,
           "height": 1210,
-          "cleanliness": "Compliant",
-          "defects": []
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "WEB-1787518573234",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                11211,
+                683,
+                11263,
+                820
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-483042-WEB-1787518573234-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-483042-WEB-1787518573234-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "WEB-1787521481548",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                10178,
+                569,
+                10317,
+                733
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-483042-WEB-1787521481548-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-483042-WEB-1787521481548-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "WEB-1787521721004",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                10554,
+                916,
+                10646,
+                1144
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-483042-WEB-1787521721004-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-483042-WEB-1787521721004-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 4,
@@ -538,7 +605,52 @@
           "width": 13189,
           "height": 1210,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260801-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                127,
+                867,
+                171,
+                921
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-485042-20260801-001-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-485042-20260801-001-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "20260801-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6248,
+                811,
+                6313,
+                830
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-485042-20260801-002-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-485042-20260801-002-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 6,
@@ -547,7 +659,30 @@
           "width": 12821,
           "height": 1210,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260801-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                256,
+                1017,
+                298,
+                1200
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-07-14-A-486042-20260801-001-to-701042-2026-08-01-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-07-14-A-486042-20260801-001-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 7,
@@ -560,14 +695,14 @@
             {
               "id": "S016",
               "type": "severe",
-              "label": "Reviewed prominent stain region",
+              "label": "Human-reviewed region",
               "box": [
                 12527,
                 757,
                 12733,
                 902
               ],
-              "source": "human_ground_truth",
+              "source": "human_pairwise_ground_truth",
               "compareOptions": [
                 {
                   "date": "2026-08-01",
@@ -701,10 +836,10 @@
               "type": "severe",
               "label": "Human-reviewed region",
               "box": [
-                8774,
-                360,
-                8893,
-                422
+                8646,
+                373,
+                8711,
+                480
               ],
               "source": "human_pairwise_ground_truth",
               "compareOptions": [
@@ -742,7 +877,7 @@
             },
             {
               "id": "D005",
-              "type": "severe",
+              "type": "minor",
               "label": "Human-reviewed region",
               "box": [
                 9727,
@@ -803,7 +938,74 @@
           "width": 12905,
           "height": 1210,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "WEB-1787518573240",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                11272,
+                683,
+                11330,
+                820
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-483042-WEB-1787518573240-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-483042-WEB-1787518573240-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "WEB-1787521481556",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                10234,
+                579,
+                10375,
+                734
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-483042-WEB-1787521481556-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-483042-WEB-1787521481556-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "WEB-1787521721011",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                10605,
+                914,
+                10724,
+                1145
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-483042-WEB-1787521721011-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-483042-WEB-1787521721011-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 4,
@@ -811,8 +1013,31 @@
           "image": "assets/media/701042-2026-08-01-A/4_484042_260801.jpg",
           "width": 13296,
           "height": 1210,
-          "cleanliness": "Compliant",
-          "defects": []
+          "cleanliness": "Non-Compliant",
+          "defects": [
+            {
+              "id": "20260801-001",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                3933,
+                442,
+                4777,
+                1012
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-484042-20260801-001-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-484042-20260801-001-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 5,
@@ -821,7 +1046,74 @@
           "width": 13295,
           "height": 1210,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260801-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                150,
+                864,
+                193,
+                918
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-485042-20260801-001-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-485042-20260801-001-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "20260801-003",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6334,
+                811,
+                6402,
+                827
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-485042-20260801-003-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-485042-20260801-003-to-701042-2026-08-14-A"
+                }
+              ]
+            },
+            {
+              "id": "20260801-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6335,
+                814,
+                6401,
+                825
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-485042-20260801-002-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-485042-20260801-002-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 6,
@@ -830,7 +1122,30 @@
           "width": 12884,
           "height": 1210,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260801-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                284,
+                1022,
+                326,
+                1210
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-486042-20260801-001-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-486042-20260801-001-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 7,
@@ -874,15 +1189,15 @@
           "defects": [
             {
               "id": "S002",
-              "type": "severe",
-              "label": "Reviewed prominent stain region",
+              "type": "minor",
+              "label": "Human-reviewed region",
               "box": [
                 281,
                 941,
                 355,
                 973
               ],
-              "source": "human_ground_truth",
+              "source": "human_pairwise_ground_truth",
               "compareOptions": [
                 {
                   "date": "2026-07-14",
@@ -903,7 +1218,30 @@
           "width": 13212,
           "height": 1210,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260801-001",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                9971,
+                559,
+                10117,
+                587
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-01-A-489042-20260801-001-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-14",
+                  "comparisonId": "701042-2026-08-01-A-489042-20260801-001-to-701042-2026-08-14-A"
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -955,8 +1293,141 @@
           "image": "assets/media/701042-2026-08-14-A/1_481042_260814.jpg",
           "width": 14226,
           "height": 1200,
-          "cleanliness": "Compliant",
-          "defects": []
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "20260814-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10697,
+                938,
+                10765,
+                994
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-001-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-001-to-701042-2026-08-01-A"
+                }
+              ]
+            },
+            {
+              "id": "20260814-002",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                9680,
+                310,
+                9831,
+                387
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-002-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-002-to-701042-2026-08-01-A"
+                }
+              ]
+            },
+            {
+              "id": "20260814-003",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                9532,
+                324,
+                9617,
+                449
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-003-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-003-to-701042-2026-08-01-A"
+                }
+              ]
+            },
+            {
+              "id": "20260814-004",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                8186,
+                568,
+                8292,
+                604
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-004-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-004-to-701042-2026-08-01-A"
+                }
+              ]
+            },
+            {
+              "id": "20260814-005",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6853,
+                578,
+                6943,
+                604
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-005-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-005-to-701042-2026-08-01-A"
+                }
+              ]
+            },
+            {
+              "id": "20260814-006",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                5528,
+                573,
+                5611,
+                599
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-006-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-08-14-A-481042-20260814-006-to-701042-2026-08-01-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 2,
@@ -974,7 +1445,30 @@
           "width": 14192,
           "height": 1200,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "WEB-1787521481548",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                11232,
+                543,
+                11395,
+                725
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-14-A-483042-WEB-1787521481548-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-08-14-A-483042-WEB-1787521481548-to-701042-2026-08-01-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 4,
@@ -1010,7 +1504,30 @@
           "width": 14273,
           "height": 1200,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "S016",
+              "type": "severe",
+              "label": "Human-reviewed region",
+              "box": [
+                13986,
+                754,
+                14203,
+                923
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-07-14",
+                  "comparisonId": "701042-2026-08-14-A-487042-S016-to-701042-2026-07-14-A"
+                },
+                {
+                  "date": "2026-08-01",
+                  "comparisonId": "701042-2026-08-14-A-487042-S016-to-701042-2026-08-01-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 8,
@@ -1725,7 +2242,7 @@
         480,
         360
       ],
-      "targetReviewed": false,
+      "targetReviewed": true,
       "targetAnnotationId": "D001",
       "stainId": "D001"
     },
@@ -1745,10 +2262,10 @@
         484
       ],
       "targetBox": [
-        8656,
-        374,
-        8725,
-        484
+        8646,
+        373,
+        8711,
+        480
       ],
       "sourceFocus": [
         206,
@@ -1757,10 +2274,10 @@
         235
       ],
       "targetFocus": [
-        206,
-        125,
-        275,
-        235
+        208,
+        127,
+        273,
+        234
       ],
       "sourceTileSize": [
         480,
@@ -1770,8 +2287,8 @@
         480,
         360
       ],
-      "targetReviewed": false,
-      "targetAnnotationId": "D002",
+      "targetReviewed": true,
+      "targetAnnotationId": "D003",
       "stainId": "D002"
     },
     {
@@ -1790,10 +2307,10 @@
         484
       ],
       "targetBox": [
-        9541,
-        371,
+        9532,
+        324,
         9617,
-        480
+        449
       ],
       "sourceFocus": [
         206,
@@ -1802,10 +2319,10 @@
         235
       ],
       "targetFocus": [
-        202,
-        125,
-        278,
-        234
+        198,
+        138,
+        283,
+        263
       ],
       "sourceTileSize": [
         480,
@@ -1813,10 +2330,10 @@
       ],
       "targetTileSize": [
         480,
-        360
+        400
       ],
-      "targetReviewed": false,
-      "targetAnnotationId": "D002",
+      "targetReviewed": true,
+      "targetAnnotationId": "20260814-003",
       "stainId": "D002"
     },
     {
@@ -1835,9 +2352,9 @@
         424
       ],
       "targetBox": [
-        8774,
+        8775,
         360,
-        8893,
+        8894,
         422
       ],
       "sourceFocus": [
@@ -1847,9 +2364,9 @@
         211
       ],
       "targetFocus": [
-        180,
+        181,
         149,
-        299,
+        300,
         211
       ],
       "sourceTileSize": [
@@ -1861,7 +2378,7 @@
         360
       ],
       "targetReviewed": true,
-      "targetAnnotationId": "D003",
+      "targetAnnotationId": "D004",
       "stainId": "D003"
     },
     {
@@ -1880,10 +2397,10 @@
         424
       ],
       "targetBox": [
-        9685,
-        359,
-        9818,
-        420
+        9680,
+        310,
+        9831,
+        387
       ],
       "sourceFocus": [
         180,
@@ -1892,21 +2409,21 @@
         211
       ],
       "targetFocus": [
-        173,
-        149,
-        306,
-        210
+        166,
+        142,
+        317,
+        219
       ],
       "sourceTileSize": [
         480,
         360
       ],
       "targetTileSize": [
-        480,
+        483,
         360
       ],
-      "targetReviewed": false,
-      "targetAnnotationId": "D003",
+      "targetReviewed": true,
+      "targetAnnotationId": "20260814-002",
       "stainId": "D003"
     },
     {
@@ -1925,10 +2442,10 @@
         963
       ],
       "targetBox": [
-        8775,
-        360,
-        8894,
-        422
+        9727,
+        917,
+        9777,
+        960
       ],
       "sourceFocus": [
         212,
@@ -1937,10 +2454,10 @@
         203
       ],
       "targetFocus": [
-        181,
-        149,
-        300,
-        211
+        215,
+        159,
+        265,
+        202
       ],
       "sourceTileSize": [
         480,
@@ -1951,7 +2468,7 @@
         360
       ],
       "targetReviewed": true,
-      "targetAnnotationId": "D004",
+      "targetAnnotationId": "D005",
       "stainId": "D004"
     },
     {
@@ -1970,10 +2487,10 @@
         963
       ],
       "targetBox": [
-        10708,
-        909,
-        10769,
-        955
+        10697,
+        938,
+        10765,
+        994
       ],
       "sourceFocus": [
         212,
@@ -1982,10 +2499,10 @@
         203
       ],
       "targetFocus": [
-        210,
-        157,
-        271,
-        203
+        206,
+        152,
+        274,
+        208
       ],
       "sourceTileSize": [
         480,
@@ -1995,8 +2512,8 @@
         480,
         360
       ],
-      "targetReviewed": false,
-      "targetAnnotationId": "D004",
+      "targetReviewed": true,
+      "targetAnnotationId": "20260814-001",
       "stainId": "D004"
     },
     {
@@ -2090,6 +2607,546 @@
       "stainId": "WEB-1787515545166"
     },
     {
+      "id": "701042-2026-07-14-A-483042-WEB-1787518573234-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "483042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787518573234-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787518573234-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        11211,
+        683,
+        11263,
+        820
+      ],
+      "targetBox": [
+        11272,
+        683,
+        11330,
+        820
+      ],
+      "sourceFocus": [
+        214,
+        151,
+        266,
+        288
+      ],
+      "targetFocus": [
+        211,
+        151,
+        269,
+        288
+      ],
+      "sourceTileSize": [
+        480,
+        439
+      ],
+      "targetTileSize": [
+        480,
+        439
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787518573240",
+      "stainId": "WEB-1787518573234"
+    },
+    {
+      "id": "701042-2026-07-14-A-483042-WEB-1787518573234-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "483042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787518573234-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787518573234-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        11211,
+        683,
+        11263,
+        820
+      ],
+      "targetBox": [
+        12410,
+        677,
+        12467,
+        813
+      ],
+      "sourceFocus": [
+        214,
+        151,
+        266,
+        288
+      ],
+      "targetFocus": [
+        212,
+        150,
+        269,
+        286
+      ],
+      "sourceTileSize": [
+        480,
+        439
+      ],
+      "targetTileSize": [
+        480,
+        436
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "WEB-1787518573234",
+      "stainId": "WEB-1787518573234"
+    },
+    {
+      "id": "701042-2026-07-14-A-483042-WEB-1787521481548-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "483042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787521481548-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787521481548-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        10178,
+        569,
+        10317,
+        733
+      ],
+      "targetBox": [
+        10234,
+        579,
+        10375,
+        734
+      ],
+      "sourceFocus": [
+        170,
+        180,
+        309,
+        344
+      ],
+      "targetFocus": [
+        170,
+        171,
+        311,
+        326
+      ],
+      "sourceTileSize": [
+        480,
+        524
+      ],
+      "targetTileSize": [
+        480,
+        496
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787521481556",
+      "stainId": "WEB-1787521481548"
+    },
+    {
+      "id": "701042-2026-07-14-A-483042-WEB-1787521481548-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "483042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787521481548-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787521481548-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        10178,
+        569,
+        10317,
+        733
+      ],
+      "targetBox": [
+        11232,
+        543,
+        11395,
+        725
+      ],
+      "sourceFocus": [
+        170,
+        180,
+        309,
+        344
+      ],
+      "targetFocus": [
+        179,
+        200,
+        342,
+        382
+      ],
+      "sourceTileSize": [
+        480,
+        524
+      ],
+      "targetTileSize": [
+        521,
+        582
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787521481548",
+      "stainId": "WEB-1787521481548"
+    },
+    {
+      "id": "701042-2026-07-14-A-483042-WEB-1787521721004-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "483042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787521721004-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787521721004-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        10554,
+        916,
+        10646,
+        1144
+      ],
+      "targetBox": [
+        10605,
+        914,
+        10724,
+        1145
+      ],
+      "sourceFocus": [
+        194,
+        436,
+        286,
+        664
+      ],
+      "targetFocus": [
+        181,
+        443,
+        300,
+        674
+      ],
+      "sourceTileSize": [
+        480,
+        730
+      ],
+      "targetTileSize": [
+        480,
+        739
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787521721011",
+      "stainId": "WEB-1787521721004"
+    },
+    {
+      "id": "701042-2026-07-14-A-483042-WEB-1787521721004-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "483042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787521721004-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-483042-WEB-1787521721004-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        10554,
+        916,
+        10646,
+        1144
+      ],
+      "targetBox": [
+        11683,
+        908,
+        11784,
+        1135
+      ],
+      "sourceFocus": [
+        194,
+        436,
+        286,
+        664
+      ],
+      "targetFocus": [
+        189,
+        434,
+        290,
+        661
+      ],
+      "sourceTileSize": [
+        480,
+        730
+      ],
+      "targetTileSize": [
+        480,
+        726
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "WEB-1787521721004",
+      "stainId": "WEB-1787521721004"
+    },
+    {
+      "id": "701042-2026-07-14-A-485042-20260801-001-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "485042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-485042-20260801-001-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-485042-20260801-001-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        127,
+        867,
+        171,
+        921
+      ],
+      "targetBox": [
+        150,
+        864,
+        193,
+        918
+      ],
+      "sourceFocus": [
+        127,
+        153,
+        171,
+        207
+      ],
+      "targetFocus": [
+        150,
+        153,
+        193,
+        207
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
+      "id": "701042-2026-07-14-A-485042-20260801-001-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "485042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-485042-20260801-001-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-485042-20260801-001-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        127,
+        867,
+        171,
+        921
+      ],
+      "targetBox": [
+        140,
+        860,
+        189,
+        913
+      ],
+      "sourceFocus": [
+        127,
+        153,
+        171,
+        207
+      ],
+      "targetFocus": [
+        140,
+        154,
+        189,
+        207
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
+      "id": "701042-2026-07-14-A-485042-20260801-002-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "485042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-485042-20260801-002-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-485042-20260801-002-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        6248,
+        811,
+        6313,
+        830
+      ],
+      "targetBox": [
+        6335,
+        814,
+        6401,
+        825
+      ],
+      "sourceFocus": [
+        208,
+        171,
+        273,
+        190
+      ],
+      "targetFocus": [
+        207,
+        174,
+        273,
+        185
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260801-002",
+      "stainId": "20260801-002"
+    },
+    {
+      "id": "701042-2026-07-14-A-485042-20260801-002-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "485042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-485042-20260801-002-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-485042-20260801-002-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        6248,
+        811,
+        6313,
+        830
+      ],
+      "targetBox": [
+        6890,
+        804,
+        6962,
+        823
+      ],
+      "sourceFocus": [
+        208,
+        171,
+        273,
+        190
+      ],
+      "targetFocus": [
+        204,
+        170,
+        276,
+        189
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-002",
+      "stainId": "20260801-002"
+    },
+    {
+      "id": "701042-2026-07-14-A-486042-20260801-001-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "486042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-486042-20260801-001-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-486042-20260801-001-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        256,
+        1017,
+        298,
+        1200
+      ],
+      "targetBox": [
+        284,
+        1022,
+        326,
+        1210
+      ],
+      "sourceFocus": [
+        219,
+        393,
+        261,
+        576
+      ],
+      "targetFocus": [
+        219,
+        414,
+        261,
+        602
+      ],
+      "sourceTileSize": [
+        480,
+        586
+      ],
+      "targetTileSize": [
+        480,
+        602
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
+      "id": "701042-2026-07-14-A-486042-20260801-001-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-07-14-A",
+      "serial": "486042",
+      "sourceDate": "2026-07-14",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-07-14-A-486042-20260801-001-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-07-14-A-486042-20260801-001-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        256,
+        1017,
+        298,
+        1200
+      ],
+      "targetBox": [
+        284,
+        1009,
+        330,
+        1190
+      ],
+      "sourceFocus": [
+        219,
+        393,
+        261,
+        576
+      ],
+      "targetFocus": [
+        217,
+        388,
+        263,
+        569
+      ],
+      "sourceTileSize": [
+        480,
+        586
+      ],
+      "targetTileSize": [
+        480,
+        579
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
       "id": "701042-2026-07-14-A-487042-S016-to-701042-2026-08-01-A",
       "unit": "701042",
       "sourceEventId": "701042-2026-07-14-A",
@@ -2150,10 +3207,10 @@
         902
       ],
       "targetBox": [
-        13953,
-        751,
-        14183,
-        895
+        13986,
+        754,
+        14203,
+        923
       ],
       "sourceFocus": [
         372,
@@ -2162,20 +3219,20 @@
         304
       ],
       "targetFocus": [
-        416,
-        158,
-        646,
-        302
+        407,
+        186,
+        624,
+        355
       ],
       "sourceTileSize": [
         659,
         464
       ],
       "targetTileSize": [
-        736,
-        460
+        694,
+        541
       ],
-      "targetReviewed": false,
+      "targetReviewed": true,
       "targetAnnotationId": "S016",
       "stainId": "S016"
     },
@@ -2459,28 +3516,28 @@
       "sourceTile": "assets/compare/701042-2026-08-01-A-481042-D003-to-701042-2026-07-14-A-source.jpg",
       "targetTile": "assets/compare/701042-2026-08-01-A-481042-D003-to-701042-2026-07-14-A-target.jpg",
       "sourceBox": [
-        8774,
-        360,
-        8893,
-        422
+        8646,
+        373,
+        8711,
+        480
       ],
       "targetBox": [
-        8748,
-        362,
-        8868,
-        424
+        8618,
+        374,
+        8687,
+        484
       ],
       "sourceFocus": [
-        180,
-        149,
-        299,
-        211
+        208,
+        127,
+        273,
+        234
       ],
       "targetFocus": [
-        180,
-        149,
-        300,
-        211
+        206,
+        125,
+        275,
+        235
       ],
       "sourceTileSize": [
         480,
@@ -2491,7 +3548,7 @@
         360
       ],
       "targetReviewed": true,
-      "targetAnnotationId": "D003",
+      "targetAnnotationId": "D002",
       "stainId": "D003"
     },
     {
@@ -2504,28 +3561,28 @@
       "sourceTile": "assets/compare/701042-2026-08-01-A-481042-D003-to-701042-2026-08-14-A-source.jpg",
       "targetTile": "assets/compare/701042-2026-08-01-A-481042-D003-to-701042-2026-08-14-A-target.jpg",
       "sourceBox": [
-        8774,
-        360,
-        8893,
-        422
+        8646,
+        373,
+        8711,
+        480
       ],
       "targetBox": [
-        9671,
-        357,
-        9803,
-        419
+        9532,
+        324,
+        9617,
+        449
       ],
       "sourceFocus": [
-        180,
-        149,
-        299,
-        211
+        208,
+        127,
+        273,
+        234
       ],
       "targetFocus": [
-        174,
-        149,
-        306,
-        211
+        198,
+        138,
+        283,
+        263
       ],
       "sourceTileSize": [
         480,
@@ -2533,10 +3590,10 @@
       ],
       "targetTileSize": [
         480,
-        360
+        400
       ],
-      "targetReviewed": false,
-      "targetAnnotationId": "D003",
+      "targetReviewed": true,
+      "targetAnnotationId": "20260814-003",
       "stainId": "D003"
     },
     {
@@ -2555,10 +3612,10 @@
         422
       ],
       "targetBox": [
-        9672,
-        917,
-        9727,
-        963
+        8748,
+        362,
+        8868,
+        424
       ],
       "sourceFocus": [
         181,
@@ -2567,10 +3624,10 @@
         211
       ],
       "targetFocus": [
-        212,
-        157,
-        267,
-        203
+        180,
+        149,
+        300,
+        211
       ],
       "sourceTileSize": [
         480,
@@ -2581,7 +3638,7 @@
         360
       ],
       "targetReviewed": true,
-      "targetAnnotationId": "D004",
+      "targetAnnotationId": "D003",
       "stainId": "D004"
     },
     {
@@ -2600,10 +3657,10 @@
         422
       ],
       "targetBox": [
-        9672,
-        357,
-        9804,
-        419
+        9680,
+        310,
+        9831,
+        387
       ],
       "sourceFocus": [
         181,
@@ -2612,21 +3669,21 @@
         211
       ],
       "targetFocus": [
-        174,
-        149,
-        306,
-        211
+        166,
+        142,
+        317,
+        219
       ],
       "sourceTileSize": [
         480,
         360
       ],
       "targetTileSize": [
-        480,
+        483,
         360
       ],
-      "targetReviewed": false,
-      "targetAnnotationId": "D004",
+      "targetReviewed": true,
+      "targetAnnotationId": "20260814-002",
       "stainId": "D004"
     },
     {
@@ -2645,10 +3702,10 @@
         960
       ],
       "targetBox": [
-        9685,
+        9672,
         917,
-        9735,
-        960
+        9727,
+        963
       ],
       "sourceFocus": [
         215,
@@ -2657,10 +3714,10 @@
         202
       ],
       "targetFocus": [
-        215,
-        159,
-        265,
-        202
+        212,
+        157,
+        267,
+        203
       ],
       "sourceTileSize": [
         480,
@@ -2670,8 +3727,8 @@
         480,
         360
       ],
-      "targetReviewed": false,
-      "targetAnnotationId": "D005",
+      "targetReviewed": true,
+      "targetAnnotationId": "D004",
       "stainId": "D005"
     },
     {
@@ -2690,10 +3747,10 @@
         960
       ],
       "targetBox": [
-        10722,
-        909,
-        10777,
-        952
+        10697,
+        938,
+        10765,
+        994
       ],
       "sourceFocus": [
         215,
@@ -2702,10 +3759,10 @@
         202
       ],
       "targetFocus": [
-        212,
-        159,
-        267,
-        202
+        206,
+        152,
+        274,
+        208
       ],
       "sourceTileSize": [
         480,
@@ -2715,8 +3772,8 @@
         480,
         360
       ],
-      "targetReviewed": false,
-      "targetAnnotationId": "D005",
+      "targetReviewed": true,
+      "targetAnnotationId": "20260814-001",
       "stainId": "D005"
     },
     {
@@ -2810,6 +3867,726 @@
       "stainId": "WEB-1787515545175"
     },
     {
+      "id": "701042-2026-08-01-A-483042-WEB-1787518573240-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "483042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787518573240-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787518573240-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        11272,
+        683,
+        11330,
+        820
+      ],
+      "targetBox": [
+        11211,
+        683,
+        11263,
+        820
+      ],
+      "sourceFocus": [
+        211,
+        151,
+        269,
+        288
+      ],
+      "targetFocus": [
+        214,
+        151,
+        266,
+        288
+      ],
+      "sourceTileSize": [
+        480,
+        439
+      ],
+      "targetTileSize": [
+        480,
+        439
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787518573234",
+      "stainId": "WEB-1787518573240"
+    },
+    {
+      "id": "701042-2026-08-01-A-483042-WEB-1787518573240-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "483042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787518573240-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787518573240-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        11272,
+        683,
+        11330,
+        820
+      ],
+      "targetBox": [
+        12396,
+        677,
+        12460,
+        813
+      ],
+      "sourceFocus": [
+        211,
+        151,
+        269,
+        288
+      ],
+      "targetFocus": [
+        208,
+        150,
+        272,
+        286
+      ],
+      "sourceTileSize": [
+        480,
+        439
+      ],
+      "targetTileSize": [
+        480,
+        436
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "WEB-1787518573240",
+      "stainId": "WEB-1787518573240"
+    },
+    {
+      "id": "701042-2026-08-01-A-483042-WEB-1787521481556-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "483042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787521481556-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787521481556-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        10234,
+        579,
+        10375,
+        734
+      ],
+      "targetBox": [
+        10178,
+        569,
+        10317,
+        733
+      ],
+      "sourceFocus": [
+        170,
+        171,
+        311,
+        326
+      ],
+      "targetFocus": [
+        170,
+        180,
+        309,
+        344
+      ],
+      "sourceTileSize": [
+        480,
+        496
+      ],
+      "targetTileSize": [
+        480,
+        524
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787521481548",
+      "stainId": "WEB-1787521481556"
+    },
+    {
+      "id": "701042-2026-08-01-A-483042-WEB-1787521481556-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "483042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787521481556-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787521481556-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        10234,
+        579,
+        10375,
+        734
+      ],
+      "targetBox": [
+        11232,
+        543,
+        11395,
+        725
+      ],
+      "sourceFocus": [
+        170,
+        171,
+        311,
+        326
+      ],
+      "targetFocus": [
+        179,
+        200,
+        342,
+        382
+      ],
+      "sourceTileSize": [
+        480,
+        496
+      ],
+      "targetTileSize": [
+        521,
+        582
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787521481548",
+      "stainId": "WEB-1787521481556"
+    },
+    {
+      "id": "701042-2026-08-01-A-483042-WEB-1787521721011-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "483042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787521721011-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787521721011-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        10605,
+        914,
+        10724,
+        1145
+      ],
+      "targetBox": [
+        10554,
+        916,
+        10646,
+        1144
+      ],
+      "sourceFocus": [
+        181,
+        443,
+        300,
+        674
+      ],
+      "targetFocus": [
+        194,
+        436,
+        286,
+        664
+      ],
+      "sourceTileSize": [
+        480,
+        739
+      ],
+      "targetTileSize": [
+        480,
+        730
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787521721004",
+      "stainId": "WEB-1787521721011"
+    },
+    {
+      "id": "701042-2026-08-01-A-483042-WEB-1787521721011-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "483042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787521721011-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-483042-WEB-1787521721011-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        10605,
+        914,
+        10724,
+        1145
+      ],
+      "targetBox": [
+        11663,
+        906,
+        11793,
+        1136
+      ],
+      "sourceFocus": [
+        181,
+        443,
+        300,
+        674
+      ],
+      "targetFocus": [
+        175,
+        442,
+        305,
+        672
+      ],
+      "sourceTileSize": [
+        480,
+        739
+      ],
+      "targetTileSize": [
+        480,
+        736
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "WEB-1787521721011",
+      "stainId": "WEB-1787521721011"
+    },
+    {
+      "id": "701042-2026-08-01-A-484042-20260801-001-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "484042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-484042-20260801-001-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-484042-20260801-001-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        3933,
+        442,
+        4777,
+        1012
+      ],
+      "targetBox": [
+        3901,
+        442,
+        4739,
+        1012
+      ],
+      "sourceFocus": [
+        928,
+        442,
+        1772,
+        1012
+      ],
+      "targetFocus": [
+        922,
+        442,
+        1760,
+        1012
+      ],
+      "sourceTileSize": [
+        2700,
+        1210
+      ],
+      "targetTileSize": [
+        2682,
+        1210
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
+      "id": "701042-2026-08-01-A-484042-20260801-001-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "484042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-484042-20260801-001-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-484042-20260801-001-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        3933,
+        442,
+        4777,
+        1012
+      ],
+      "targetBox": [
+        4200,
+        438,
+        5101,
+        1004
+      ],
+      "sourceFocus": [
+        928,
+        442,
+        1772,
+        1012
+      ],
+      "targetFocus": [
+        991,
+        438,
+        1892,
+        1004
+      ],
+      "sourceTileSize": [
+        2700,
+        1210
+      ],
+      "targetTileSize": [
+        2883,
+        1200
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
+      "id": "701042-2026-08-01-A-485042-20260801-001-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "485042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-485042-20260801-001-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-485042-20260801-001-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        150,
+        864,
+        193,
+        918
+      ],
+      "targetBox": [
+        127,
+        867,
+        171,
+        921
+      ],
+      "sourceFocus": [
+        150,
+        153,
+        193,
+        207
+      ],
+      "targetFocus": [
+        127,
+        153,
+        171,
+        207
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
+      "id": "701042-2026-08-01-A-485042-20260801-001-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "485042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-485042-20260801-001-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-485042-20260801-001-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        150,
+        864,
+        193,
+        918
+      ],
+      "targetBox": [
+        164,
+        857,
+        211,
+        910
+      ],
+      "sourceFocus": [
+        150,
+        153,
+        193,
+        207
+      ],
+      "targetFocus": [
+        164,
+        153,
+        211,
+        206
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
+      "id": "701042-2026-08-01-A-485042-20260801-003-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "485042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-485042-20260801-003-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-485042-20260801-003-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        6334,
+        811,
+        6402,
+        827
+      ],
+      "targetBox": [
+        6283,
+        811,
+        6351,
+        827
+      ],
+      "sourceFocus": [
+        206,
+        172,
+        274,
+        188
+      ],
+      "targetFocus": [
+        206,
+        172,
+        274,
+        188
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-003",
+      "stainId": "20260801-003"
+    },
+    {
+      "id": "701042-2026-08-01-A-485042-20260801-003-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "485042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-485042-20260801-003-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-485042-20260801-003-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        6334,
+        811,
+        6402,
+        827
+      ],
+      "targetBox": [
+        6929,
+        804,
+        7003,
+        820
+      ],
+      "sourceFocus": [
+        206,
+        172,
+        274,
+        188
+      ],
+      "targetFocus": [
+        203,
+        172,
+        277,
+        188
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-003",
+      "stainId": "20260801-003"
+    },
+    {
+      "id": "701042-2026-08-01-A-485042-20260801-002-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "485042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-485042-20260801-002-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-485042-20260801-002-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        6335,
+        814,
+        6401,
+        825
+      ],
+      "targetBox": [
+        6248,
+        811,
+        6313,
+        830
+      ],
+      "sourceFocus": [
+        207,
+        174,
+        273,
+        185
+      ],
+      "targetFocus": [
+        208,
+        171,
+        273,
+        190
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260801-002",
+      "stainId": "20260801-002"
+    },
+    {
+      "id": "701042-2026-08-01-A-485042-20260801-002-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "485042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-485042-20260801-002-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-485042-20260801-002-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        6335,
+        814,
+        6401,
+        825
+      ],
+      "targetBox": [
+        6930,
+        807,
+        7002,
+        818
+      ],
+      "sourceFocus": [
+        207,
+        174,
+        273,
+        185
+      ],
+      "targetFocus": [
+        204,
+        175,
+        276,
+        186
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-002",
+      "stainId": "20260801-002"
+    },
+    {
+      "id": "701042-2026-08-01-A-486042-20260801-001-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "486042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-486042-20260801-001-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-486042-20260801-001-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        284,
+        1022,
+        326,
+        1210
+      ],
+      "targetBox": [
+        256,
+        1017,
+        298,
+        1200
+      ],
+      "sourceFocus": [
+        219,
+        414,
+        261,
+        602
+      ],
+      "targetFocus": [
+        219,
+        393,
+        261,
+        576
+      ],
+      "sourceTileSize": [
+        480,
+        602
+      ],
+      "targetTileSize": [
+        480,
+        586
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
+      "id": "701042-2026-08-01-A-486042-20260801-001-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "486042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-486042-20260801-001-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-486042-20260801-001-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        284,
+        1022,
+        326,
+        1210
+      ],
+      "targetBox": [
+        313,
+        1014,
+        359,
+        1200
+      ],
+      "sourceFocus": [
+        219,
+        414,
+        261,
+        602
+      ],
+      "targetFocus": [
+        217,
+        409,
+        263,
+        595
+      ],
+      "sourceTileSize": [
+        480,
+        602
+      ],
+      "targetTileSize": [
+        480,
+        595
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
       "id": "701042-2026-08-01-A-487042-S016-to-701042-2026-07-14-A",
       "unit": "701042",
       "sourceEventId": "701042-2026-08-01-A",
@@ -2870,10 +4647,10 @@
         900
       ],
       "targetBox": [
-        13947,
-        748,
-        14166,
-        893
+        13986,
+        754,
+        14203,
+        923
       ],
       "sourceFocus": [
         336,
@@ -2882,20 +4659,20 @@
         307
       ],
       "targetFocus": [
-        375,
-        160,
-        594,
-        305
+        407,
+        186,
+        624,
+        355
       ],
       "sourceTileSize": [
         630,
         468
       ],
       "targetTileSize": [
-        701,
-        464
+        694,
+        541
       ],
-      "targetReviewed": false,
+      "targetReviewed": true,
       "targetAnnotationId": "S016",
       "stainId": "S016"
     },
@@ -2990,6 +4767,96 @@
       "stainId": "S002"
     },
     {
+      "id": "701042-2026-08-01-A-489042-20260801-001-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "489042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-489042-20260801-001-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-489042-20260801-001-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        9971,
+        559,
+        10117,
+        587
+      ],
+      "targetBox": [
+        9996,
+        559,
+        10142,
+        587
+      ],
+      "sourceFocus": [
+        167,
+        166,
+        313,
+        194
+      ],
+      "targetFocus": [
+        167,
+        166,
+        313,
+        194
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
+      "id": "701042-2026-08-01-A-489042-20260801-001-to-701042-2026-08-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-01-A",
+      "serial": "489042",
+      "sourceDate": "2026-08-01",
+      "targetDate": "2026-08-14",
+      "sourceTile": "assets/compare/701042-2026-08-01-A-489042-20260801-001-to-701042-2026-08-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-01-A-489042-20260801-001-to-701042-2026-08-14-A-target.jpg",
+      "sourceBox": [
+        9971,
+        559,
+        10117,
+        587
+      ],
+      "targetBox": [
+        11195,
+        554,
+        11359,
+        582
+      ],
+      "sourceFocus": [
+        167,
+        166,
+        313,
+        194
+      ],
+      "targetFocus": [
+        180,
+        166,
+        344,
+        194
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        524,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260801-001",
+      "stainId": "20260801-001"
+    },
+    {
       "id": "701042-2026-08-14-A-480042-D001-to-701042-2026-07-14-A",
       "unit": "701042",
       "sourceEventId": "701042-2026-08-14-A",
@@ -3078,6 +4945,726 @@
       "targetReviewed": true,
       "targetAnnotationId": "D001",
       "stainId": "D001"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-001-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-001-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-001-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        10697,
+        938,
+        10765,
+        994
+      ],
+      "targetBox": [
+        9672,
+        917,
+        9727,
+        963
+      ],
+      "sourceFocus": [
+        206,
+        152,
+        274,
+        208
+      ],
+      "targetFocus": [
+        212,
+        157,
+        267,
+        203
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D004",
+      "stainId": "20260814-001"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-001-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-001-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-001-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        10697,
+        938,
+        10765,
+        994
+      ],
+      "targetBox": [
+        9727,
+        917,
+        9777,
+        960
+      ],
+      "sourceFocus": [
+        206,
+        152,
+        274,
+        208
+      ],
+      "targetFocus": [
+        215,
+        159,
+        265,
+        202
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D005",
+      "stainId": "20260814-001"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-002-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-002-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-002-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        9680,
+        310,
+        9831,
+        387
+      ],
+      "targetBox": [
+        8748,
+        362,
+        8868,
+        424
+      ],
+      "sourceFocus": [
+        166,
+        142,
+        317,
+        219
+      ],
+      "targetFocus": [
+        180,
+        149,
+        300,
+        211
+      ],
+      "sourceTileSize": [
+        483,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D003",
+      "stainId": "20260814-002"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-002-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-002-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-002-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        9680,
+        310,
+        9831,
+        387
+      ],
+      "targetBox": [
+        8775,
+        360,
+        8894,
+        422
+      ],
+      "sourceFocus": [
+        166,
+        142,
+        317,
+        219
+      ],
+      "targetFocus": [
+        181,
+        149,
+        300,
+        211
+      ],
+      "sourceTileSize": [
+        483,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D004",
+      "stainId": "20260814-002"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-003-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-003-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-003-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        9532,
+        324,
+        9617,
+        449
+      ],
+      "targetBox": [
+        8618,
+        374,
+        8687,
+        484
+      ],
+      "sourceFocus": [
+        198,
+        138,
+        283,
+        263
+      ],
+      "targetFocus": [
+        206,
+        125,
+        275,
+        235
+      ],
+      "sourceTileSize": [
+        480,
+        400
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D002",
+      "stainId": "20260814-003"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-003-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-003-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-003-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        9532,
+        324,
+        9617,
+        449
+      ],
+      "targetBox": [
+        8646,
+        373,
+        8711,
+        480
+      ],
+      "sourceFocus": [
+        198,
+        138,
+        283,
+        263
+      ],
+      "targetFocus": [
+        208,
+        127,
+        273,
+        234
+      ],
+      "sourceTileSize": [
+        480,
+        400
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "D003",
+      "stainId": "20260814-003"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-004-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-004-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-004-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        8186,
+        568,
+        8292,
+        604
+      ],
+      "targetBox": [
+        7394,
+        573,
+        7490,
+        609
+      ],
+      "sourceFocus": [
+        187,
+        162,
+        293,
+        198
+      ],
+      "targetFocus": [
+        192,
+        162,
+        288,
+        198
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260814-004",
+      "stainId": "20260814-004"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-004-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-004-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-004-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        8186,
+        568,
+        8292,
+        604
+      ],
+      "targetBox": [
+        7426,
+        573,
+        7523,
+        609
+      ],
+      "sourceFocus": [
+        187,
+        162,
+        293,
+        198
+      ],
+      "targetFocus": [
+        192,
+        162,
+        289,
+        198
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260814-004",
+      "stainId": "20260814-004"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-005-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-005-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-005-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        6853,
+        578,
+        6943,
+        604
+      ],
+      "targetBox": [
+        6190,
+        583,
+        6271,
+        609
+      ],
+      "sourceFocus": [
+        195,
+        167,
+        285,
+        193
+      ],
+      "targetFocus": [
+        200,
+        167,
+        281,
+        193
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260814-005",
+      "stainId": "20260814-005"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-005-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-005-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-005-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        6853,
+        578,
+        6943,
+        604
+      ],
+      "targetBox": [
+        6217,
+        583,
+        6299,
+        609
+      ],
+      "sourceFocus": [
+        195,
+        167,
+        285,
+        193
+      ],
+      "targetFocus": [
+        199,
+        167,
+        281,
+        193
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260814-005",
+      "stainId": "20260814-005"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-006-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-006-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-006-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        5528,
+        573,
+        5611,
+        599
+      ],
+      "targetBox": [
+        4993,
+        578,
+        5068,
+        604
+      ],
+      "sourceFocus": [
+        198,
+        167,
+        281,
+        193
+      ],
+      "targetFocus": [
+        203,
+        167,
+        278,
+        193
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260814-006",
+      "stainId": "20260814-006"
+    },
+    {
+      "id": "701042-2026-08-14-A-481042-20260814-006-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "481042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-481042-20260814-006-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-481042-20260814-006-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        5528,
+        573,
+        5611,
+        599
+      ],
+      "targetBox": [
+        5015,
+        578,
+        5090,
+        604
+      ],
+      "sourceFocus": [
+        198,
+        167,
+        281,
+        193
+      ],
+      "targetFocus": [
+        203,
+        167,
+        278,
+        193
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": "20260814-006",
+      "stainId": "20260814-006"
+    },
+    {
+      "id": "701042-2026-08-14-A-483042-WEB-1787521481548-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "483042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-483042-WEB-1787521481548-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-483042-WEB-1787521481548-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        11232,
+        543,
+        11395,
+        725
+      ],
+      "targetBox": [
+        10178,
+        569,
+        10317,
+        733
+      ],
+      "sourceFocus": [
+        179,
+        200,
+        342,
+        382
+      ],
+      "targetFocus": [
+        170,
+        180,
+        309,
+        344
+      ],
+      "sourceTileSize": [
+        521,
+        582
+      ],
+      "targetTileSize": [
+        480,
+        524
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787521481548",
+      "stainId": "WEB-1787521481548"
+    },
+    {
+      "id": "701042-2026-08-14-A-483042-WEB-1787521481548-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "483042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-483042-WEB-1787521481548-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-483042-WEB-1787521481548-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        11232,
+        543,
+        11395,
+        725
+      ],
+      "targetBox": [
+        10234,
+        579,
+        10375,
+        734
+      ],
+      "sourceFocus": [
+        179,
+        200,
+        342,
+        382
+      ],
+      "targetFocus": [
+        170,
+        171,
+        311,
+        326
+      ],
+      "sourceTileSize": [
+        521,
+        582
+      ],
+      "targetTileSize": [
+        480,
+        496
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "WEB-1787521481556",
+      "stainId": "WEB-1787521481548"
+    },
+    {
+      "id": "701042-2026-08-14-A-487042-S016-to-701042-2026-07-14-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "487042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-07-14",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-487042-S016-to-701042-2026-07-14-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-487042-S016-to-701042-2026-07-14-A-target.jpg",
+      "sourceBox": [
+        13986,
+        754,
+        14203,
+        923
+      ],
+      "targetBox": [
+        12527,
+        757,
+        12733,
+        902
+      ],
+      "sourceFocus": [
+        407,
+        186,
+        624,
+        355
+      ],
+      "targetFocus": [
+        372,
+        159,
+        578,
+        304
+      ],
+      "sourceTileSize": [
+        694,
+        541
+      ],
+      "targetTileSize": [
+        659,
+        464
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "S016",
+      "stainId": "S016"
+    },
+    {
+      "id": "701042-2026-08-14-A-487042-S016-to-701042-2026-08-01-A",
+      "unit": "701042",
+      "sourceEventId": "701042-2026-08-14-A",
+      "serial": "487042",
+      "sourceDate": "2026-08-14",
+      "targetDate": "2026-08-01",
+      "sourceTile": "assets/compare/701042-2026-08-14-A-487042-S016-to-701042-2026-08-01-A-source.jpg",
+      "targetTile": "assets/compare/701042-2026-08-14-A-487042-S016-to-701042-2026-08-01-A-target.jpg",
+      "sourceBox": [
+        13986,
+        754,
+        14203,
+        923
+      ],
+      "targetBox": [
+        12597,
+        754,
+        12794,
+        900
+      ],
+      "sourceFocus": [
+        407,
+        186,
+        624,
+        355
+      ],
+      "targetFocus": [
+        336,
+        161,
+        533,
+        307
+      ],
+      "sourceTileSize": [
+        694,
+        541
+      ],
+      "targetTileSize": [
+        630,
+        468
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "S016",
+      "stainId": "S016"
     }
   ]
 }
