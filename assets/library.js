@@ -15,6 +15,7 @@ const backdrop = document.querySelector('[data-dates-backdrop]');
 const playIcon = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg>';
 const panoramaIcon = '<b>PANO</b>';
 function readableDate(value) { return new Intl.DateTimeFormat('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).format(new Date(`${value}T12:00:00`)); }
+function shortTime(value) { return value ? value.slice(0, 5) : ''; }
 function shortDate(value) { return new Intl.DateTimeFormat('en-GB', { day: '2-digit', month: 'short' }).format(new Date(`${value}T12:00:00`)); }
 function sessions(events) {
   const grouped = new Map();
@@ -42,7 +43,7 @@ function renderCards() {
     const attrs = isVideo ? `type="button" data-video-event="${event.id}"` : `href="event.html?event=${encodeURIComponent(event.id)}"`;
     const tag = isVideo ? 'button' : 'a';
     const badge = sideBadge(session.items);
-    return `<${tag} class="capture-card ${isVideo ? 'is-video' : 'is-panorama'}" ${attrs}><span class="capture-cover"><img src="${event.cover}" alt="Unit ${event.unit}, ${readableDate(event.date)}"><span class="capture-action ${isVideo ? '' : 'panorama-action'}" aria-hidden="true">${isVideo ? playIcon : panoramaIcon}</span>${badge ? `<span class="side-badge">${badge}</span>` : ''}</span><span class="capture-copy"><strong>${event.unit}</strong><span>${readableDate(event.date)}${event.time?` · ${event.time}`:''}</span>${event.mode === 'panorama' ? `<small>${event.carriages.length} panoramas</small>` : '<small>Video audit</small>'}</span></${tag}>`;
+    return `<${tag} class="capture-card ${isVideo ? 'is-video' : 'is-panorama'}" ${attrs}><span class="capture-cover"><img src="${event.cover}" alt="Unit ${event.unit}, ${readableDate(event.date)}"><span class="capture-action ${isVideo ? '' : 'panorama-action'}" aria-hidden="true">${isVideo ? playIcon : panoramaIcon}</span>${badge ? `<span class="side-badge">${badge}</span>` : ''}</span><span class="capture-copy"><strong>${event.unit}</strong><span class="capture-when">${readableDate(event.date)}${event.time?` <time>${shortTime(event.time)}</time>`:''}</span>${event.mode === 'panorama' ? `<small>${event.carriages.length} panoramas</small>` : '<small>Video audit</small>'}</span></${tag}>`;
   }).join('');
 }
 function openVideo(eventId) { const capture = catalog.events.find((item) => item.id === eventId); if (!capture?.video) return; videoTitle.textContent = `Unit ${capture.unit} · ${readableDate(capture.date)}${capture.time?` · ${capture.time}`:''}`; video.src = capture.video; dialog.showModal(); video.play().catch(() => {}); }

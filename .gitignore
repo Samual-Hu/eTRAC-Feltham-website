@@ -1,3 +1,4 @@
 assets/panoramas/
 server.*.log
 __pycache__/
+assets/.site-export.lock
