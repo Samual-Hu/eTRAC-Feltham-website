@@ -200,6 +200,12 @@ class Handler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
+    print("Refreshing website data from materials...", flush=True)
+    try:
+        refreshed = export_site_data()
+    except Exception as exc:
+        raise SystemExit(f"Website refresh failed; the previous catalog was kept intact: {exc}") from exc
+    print(f"Website data ready: {len(refreshed['events'])} captures, {len(refreshed['comparisons'])} comparisons", flush=True)
     port_args = [value for value in sys.argv[1:] if value.isdigit()]
     requested_port = int(port_args[0]) if port_args else 8080
     server = None
