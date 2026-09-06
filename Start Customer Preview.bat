@@ -1,4 +1,4 @@
 @echo off
 chcp 65001 >nul
 cd /d "%~dp0"
-"..\.venv\Scripts\python.exe" dev_server.py --client 8180
+"..\.venv\Scripts\python.exe" dev_server.py --client 8280

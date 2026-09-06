@@ -1,0 +1,65 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const catalog=JSON.parse(fs.readFileSync(__dirname+'/assets/catalog.json','utf8'));
+const nodes=new Map();const node=s=>{if(!nodes.has(s))nodes.set(s,{value:s==='[data-period-mode]'?'calendar':'',innerHTML:'',append(){},addEventListener(){},classList:{toggle(){}},setAttribute(){}});return nodes.get(s);};
+const ctx=vm.createContext({URL,URLSearchParams,Intl,Date,console,location:'http://localhost/index.html',history:{pushState(){}},window:{EYYA_CATALOG:catalog,addEventListener(){},scrollTo(){}},document:{querySelector:node,addEventListener(){}}});
+vm.runInContext(fs.readFileSync(__dirname+'/assets/fleet.js','utf8'),ctx);
+assert.equal(new Set(catalog.events.map(e=>e.id)).size,catalog.events.length);
+assert.equal(catalog.events.filter(e=>e.sourceFolder.endsWith('0904')).length,10);
+vm.runInContext("activeDate='2026-08-19'; $('[data-period-mode]').value='overnight'; render();",ctx);
+const stats=vm.runInContext("({captures:sessions(filtered()).length,units:new Set(filtered().map(e=>e.unit)).size,carriages:[...new Set(filtered().map(e=>e.unit))].reduce((n,u)=>n+carriageCount(u),0),wash:sessions(filtered()).filter(s=>s.items.some(e=>e.washed)).length})",ctx);
+assert.equal(stats.captures,10);assert.equal(stats.units,7);assert.equal(stats.carriages,64);assert.equal(stats.wash,7);
+// Explicit boundaries: evening included, early morning excluded at 07:00.
+vm.runInContext(`catalog.events.push(...['18:59','19:00'].map(time=>({unit:'999999',date:'2026-08-19',time})),...['06:59','07:00'].map(time=>({unit:'999999',date:'2026-08-20',time})));`,ctx);
+assert.equal(vm.runInContext("filtered().filter(e=>e.unit==='999999').map(e=>e.time).join(',')",ctx),'19:00,06:59');
+vm.runInContext("catalog.events=catalog.events.filter(e=>e.unit!=='999999')",ctx);
+vm.runInContext("route('701042')",ctx);
+const html=node('[data-dashboard]').innerHTML;
+assert.equal((html.match(/class="carriage-chart"/g)||[]).length,10);
+assert(html.includes('&amp;carriage=480042'));assert(html.includes('Not assessed'));
+assert(!html.includes('Not recorded'));assert(!html.includes('◆ Washed'));
+assert.equal((html.match(/class="chart-wash"/g)||[]).length,20);
+assert(html.includes('data-video-event="701042-2026-08-10-A"'));
+assert(html.includes('data-video-event="701042-2026-08-19-A"'));
+assert(html.includes('issue-severe issue-metric'));
+assert(html.includes('highlight=severe'));
+assert(!html.includes('<aside'));
+vm.runInContext("route('701022')",ctx);
+let sideHtml=node('[data-dashboard]').innerHTML;
+assert(sideHtml.includes('history · Side A'));
+assert(!sideHtml.includes('event=701022-2026-07-16-B'));
+vm.runInContext("historySide='B';render()",ctx);
+sideHtml=node('[data-dashboard]').innerHTML;
+assert(sideHtml.includes('history · Side B'));
+assert(!sideHtml.includes('event=701022-2026-08-01-A'));
+vm.runInContext("route('701048')",ctx);
+assert(!node('[data-dashboard]').innerHTML.includes('event=701048-2026-07-04-B'));
+vm.runInContext("historySide='B';render()",ctx);
+assert(!node('[data-dashboard]').innerHTML.includes('event=701048-2026-07-04-A'));
+const markers=vm.runInContext("washMarkers([{e:{date:'2026-08-10',time:'19:21'}},{e:{date:'2026-08-14',time:'05:51'}},{e:{date:'2026-08-20',time:'05:39'}}],[{date:'2026-08-10',time:'19:21'},{date:'2026-08-19',time:'23:31'}],i=>35+i*90)",ctx);
+const xs=[...markers.matchAll(/translate\(([\d.]+),8\)/g)].map(m=>Number(m[1]));
+assert(xs[0]>35&&xs[0]<125);assert(xs[1]>125&&xs[1]<215);
+console.log('Fleet checks passed:',stats);
+const latest=vm.runInContext(`latestIssue([
+{id:'old',mode:'panorama',date:'2026-08-01',time:'20:00',carriages:[{order:0,serial:'480042',defects:[{type:'graffiti'}]}]},
+{id:'new',mode:'panorama',date:'2026-08-20',time:'05:00',carriages:[{order:0,serial:'481042',defects:[{type:'graffiti'}]}]},
+{id:'new-clean',mode:'panorama',date:'2026-08-21',time:'05:00',carriages:[{order:0,serial:'482042',defects:[]}]}
+], 'graffiti')`,ctx);
+assert.equal(latest,'event.html?event=new&carriage=481042&highlight=graffiti');
+assert.equal(vm.runInContext("latestIssue([], 'severe')",ctx),'');
+vm.runInContext("route('');activeDate='*';render()",ctx);
+const overview=node('[data-dashboard]').innerHTML;
+assert(!overview.includes('<small>'));assert(!overview.includes('Train classes'));assert(!overview.includes('<h2>Train history'));
+assert(overview.includes('highlight=graffiti'));assert(node('[data-history-select]').innerHTML.includes('701042'));
+let onLoad, jumped;
+vm.runInNewContext(fs.readFileSync(__dirname+'/assets/event.js','utf8').split('const capture =')[0],{window:{addEventListener:(name,fn)=>{onLoad=fn;}},URLSearchParams,location:{search:'?carriage=481042&highlight=graffiti'},jump:(...args)=>{jumped=args;}});
+onLoad();assert.deepEqual(jumped,['481042','graffiti']);
+console.log('Issue navigation passed: latest matching capture, empty results, flash on arrival');
+vm.runInContext("route('701042')",ctx);
+assert(!node('[data-dashboard]').innerHTML.includes('<h1>Fleet overview'));
+assert(!node('[data-dashboard]').innerHTML.includes('Wash-entry records'));
+assert(node('[data-dashboard]').innerHTML.includes('data-overview'));
+assert.equal(node('.fleet-toolbar').hidden,true);
+vm.runInContext("route('')",ctx);
+assert(!node('[data-dashboard]').innerHTML.includes('Wash-entry records'));
+assert(node('[data-dashboard]').innerHTML.includes('metric-icon'));
+assert.equal(node('.fleet-toolbar').hidden,false);

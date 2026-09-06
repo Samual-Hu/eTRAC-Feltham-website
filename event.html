@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Eyya Train Surface Event</title><link rel="stylesheet" href="assets/styles.css?v=20260823g"><link rel="stylesheet" href="assets/event.css?v=20260823g"></head>
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Eyya Train Surface Event</title><link rel="stylesheet" href="assets/styles.css?v=20260823g"><link rel="stylesheet" href="assets/event.css?v=20260823g"><link rel="stylesheet" href="assets/review-refinements.css?v=20260906c"></head>
   <body>
     <header class="topbar event-topbar">
       <div class="event-left"><a class="brand" href="index.html" aria-label="Capture library"><img class="brand-mark" src="assets/eyya-brandmark.svg" alt="Eyya"><span class="brand-text"><span class="brand-title" data-title>Train Surface Viewer</span><span class="brand-subtitle" data-subtitle></span></span></a><button class="icon-button" type="button" hidden data-video-button aria-label="Play capture video" title="Play capture video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></button></div>
       <button class="side-toggle" type="button" hidden data-side-toggle aria-label="Switch train side"></button>
-      <span></span>
+      <nav class="event-date-nav" data-event-dates aria-label="Other inspection dates" hidden><button type="button" data-earlier-event aria-label="Previous inspection date">‹</button><select data-event-date aria-label="Inspection date"></select><button type="button" data-later-event aria-label="Next inspection date">›</button></nav>
     </header>
     <main class="event-page">
       <section data-panorama-content>
@@ -16,6 +16,7 @@
     </main>
     <div class="magnifier" aria-hidden="true" data-magnifier></div>
     <dialog class="video-dialog" data-video-dialog><button class="dialog-close" type="button" data-video-close aria-label="Close video">×</button><video controls playsinline data-video></video></dialog>
-    <script src="assets/catalog.js?v=20260823g"></script><script src="assets/dev.js?v=20260823g"></script><script src="assets/event.js?v=20260823g"></script>
+    <script src="assets/catalog.js?v=20260906c"></script><script src="assets/dev.js?v=20260823g"></script><script src="assets/event.js?v=20260906c"></script>
+    <script src="assets/event-dates.js?v=20260906c"></script>
   </body>
 </html>

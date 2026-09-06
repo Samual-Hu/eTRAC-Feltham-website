@@ -1,0 +1,12 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const make=()=>({handlers:{},addEventListener(k,v){this.handlers[k]=v},append(){},setAttribute(){}});
+let back;
+const select=make(),prev=make(),next=make();
+const nav={querySelector:s=>s==='select'?select:s==='[data-earlier-event]'?prev:next};
+const events=['2026-07-14','2026-08-01','2026-08-14'].map((date,i)=>({id:'event'+i,date,time:'06:00',unit:'701042',side:'A',mode:'panorama',carriages:[{serial:'483042'}]}));
+const location={href:'http://localhost/event.html?event=event1'};
+vm.runInNewContext(fs.readFileSync(__dirname+'/assets/event-dates.js','utf8'),{URL,location,capture:events[1],catalog:{events:[...events,{...events[0],id:'wrong-side',side:'B'}]},readableDate:d=>d,document:{createElement:make,querySelector:s=>s==='[data-event-dates]'?nav:s==='.event-left'?{prepend:a=>{back=a}}:{getBoundingClientRect:()=>({left:0,right:500})},querySelectorAll:()=>[{dataset:{serial:'483042'},getBoundingClientRect:()=>({left:0,right:500})}]}});
+assert.equal(back.href,'index.html?unit=701042&side=A');
+next.handlers.click();assert(location.href.includes('event=event2'));assert(location.href.includes('carriage=483042'));
+prev.handlers.click();assert(location.href.includes('event=event0'));assert.equal(nav.hidden,false);
+console.log('Date navigation passed: same side, previous/next date, carriage preserved');
