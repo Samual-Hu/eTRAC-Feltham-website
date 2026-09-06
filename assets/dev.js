@@ -12,7 +12,7 @@ window.EyyaDev = (() => {
           const warning = document.createElement('div');
           warning.className = 'outdated-server-warning';
           warning.dataset.outdatedServer = '';
-          warning.innerHTML = '<strong>OLD LOCAL SERVER</strong><span>Close this tab and reopen <b>Start Local Website.bat</b>. The current 8080 server cannot launch the annotation app.</span><a href="http://127.0.0.1:8170/">Open the new development server</a>';
+          warning.innerHTML = '<strong>OLD LOCAL SERVER</strong><span>Close this tab and reopen <b>Start Local Website.bat</b>. The current server cannot launch the annotation app.</span><a href="http://127.0.0.1:8270/">Open the new development server</a>';
           document.body.append(warning);
         }
       }
