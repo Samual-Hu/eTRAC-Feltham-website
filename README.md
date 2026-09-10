@@ -1,5 +1,12 @@
 # Eyya Train Surface Viewer — local preview
 
+## Password-protected public HTML
+
+GitHub Pages entrypoints now use StatiCrypt. Local HTML authoring copies live
+outside this repository in `../site-source/`; the local server serves those
+copies without a password. Do not edit the generated root HTML directly.
+See `tools/ACCESS.md` for rebuilding and the limits of this lightweight protection.
+
 This static site has two customer-facing layers:
 
 1. `index.html`: a compact date/unit library. Panorama captures open the review page; video-only covers play immediately without a redundant detail page.

@@ -1,37 +1,439 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Eyya Train Capture Library</title>
-    <meta name="description" content="Browse train surface captures by date or unit number.">
-    <link rel="stylesheet" href="assets/styles.css?v=20260823e">
-    <link rel="stylesheet" href="assets/library.css?v=20260905">
-    <link rel="stylesheet" href="assets/review-refinements.css?v=20260906c">
-  </head>
-  <body class="library-page">
-    <header class="topbar library-topbar">
-      <a class="brand" href="index.html" aria-label="Capture library home">
-        <img class="brand-mark" src="assets/eyya-brandmark.svg" alt="Eyya">
-        <span class="brand-title">Train Surface Viewer</span>
-      </a>
-      <div class="library-actions"><label class="primary-history">Surface life cycle<select data-history-select aria-label="Surface life cycle"></select></label></div>
-    </header>
-    <div class="drawer-backdrop" hidden data-dates-backdrop></div>
-    <aside class="date-drawer" aria-label="Filter captures by date" aria-hidden="true" data-dates-drawer><header><strong>Capture dates</strong><button type="button" aria-label="Close date filters" data-dates-close>×</button></header><nav class="date-tabs" data-date-tabs></nav></aside>
-    <main class="library-main">
-      <section data-dashboard></section>
-      <div class="fleet-toolbar"><div data-class-tabs></div><button class="inline-date" type="button" data-dates-open aria-label="Select capture date">▦ <span data-period-label>All dates</span> ▾</button><label>Period <select data-period-mode><option value="calendar">Calendar day</option><option value="overnight">Overnight · 19:00–07:00</option></select></label></div>
-      <div class="captures-bar"><h2 class="captures-heading">Captures</h2></div>
-      <section class="capture-grid" aria-live="polite" data-capture-grid></section>
-      <section class="empty-state" hidden data-empty-state><strong>No matching captures</strong></section>
-    </main>
-    <dialog class="video-dialog library-video-dialog" data-video-dialog>
-      <div class="dialog-bar"><strong data-video-title></strong><button type="button" data-video-close aria-label="Close video">×</button></div>
-      <video controls playsinline data-video></video>
-    </dialog>
-    <script src="assets/catalog.js?v=20260906c"></script>
-    <script src="assets/dev.js?v=20260823e"></script>
-    <script src="assets/fleet.js?v=20260906c"></script>
-  </body>
-</html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>eTACK — Restricted Access</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#edf3f6;color:#123e59;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{width:100%;max-width:410px;padding:38px 32px;background:#fff;border:1px solid #ccdde6;border-radius:16px;box-shadow:0 12px 40px #133d5910}
+.brand{font-size:29px;font-weight:700;letter-spacing:.02em;margin:0 0 5px}h1{font-size:20px;margin:0 0 26px;font-weight:600}label{display:block;margin-bottom:9px}input,button{width:100%;font:inherit;border-radius:8px}input{padding:11px;border:1px solid #9ab6c7;font-size:25px;letter-spacing:.65em;text-align:center;color:#123e59}input:focus{outline:3px solid #b6e3f4;border-color:#0084b6}input::-ms-reveal,input::-ms-clear{display:none}button{margin-top:18px;padding:12px;background:#007fae;color:#fff;border:0;font-weight:600;cursor:pointer}button:disabled{opacity:.65;cursor:wait}#error{font-size:14px;min-height:21px;margin:12px 0 0;color:#ae253c}.note{color:#627d8f;font-size:14px;margin:18px 0 0}
+</style>
+</head>
+<body>
+<main><p class="brand">eTACK</p><h1>Restricted Access</h1>
+<form id="access-form"><label for="access-code">Please enter access code</label>
+<input id="access-code" name="password" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" autocomplete="off" required autofocus aria-describedby="error">
+<button id="unlock" type="submit">Enter</button><p id="error" role="status" aria-live="polite"></p></form>
+<p class="note">Access for authorised viewers.</p><noscript>JavaScript is required to unlock this page.</noscript></main>
+<script id="etack-encrypted" type="application/json">{"version":"staticrypt-3.5.4","salt":"7030f6125cdddccab96c8caa52e30704","encrypted":"0a51338cbe7b9a1ee04d595fe49521d1a6f583cee95fb248f12aaab089920f5f5f815326dea9afb3c4c3a08dd5d616bb0c5cb6e388eb8789230c884067cbc7ac74882de57ca251ca8cc9ee44ddfc6d37b96dbbd09f4dd1daa73db727ad0aa0bffa72b9cf0aaf78c6bbd424e865c7ec999068c58bc26f15ff345a47b8c9d039a3dff64d702104a5d07011a3f954aa6904a39db31d5f0cb31a86a6291c4eb548adb5c5f419a4de1150e192cfcb18301cdb5641ea1b5c7af1af205526f40021ed480feb7465ddebd03a7c3588b39468d169b69e460f82df3ad9693015154c2b0f83a5e10038eda1159b9849b5ccdf267b9591b82c22bf9348b6d97d50f02ea9d112db163f00ce5ddfd10e51aefdb8d8d249e8c0d8d6d5dcc9c9b68a87664e5d7bd2a405fa7e7d4ed5213a96ced5f341dbf562ec4df92f05070a965549cfa28bf9cd1302c284f230d0fa91602b301148e4a5843ccc16f967e3412dc1695d798e00e8097b16bf9e8494a31b340e24a560d5716dba12d0f9ad7933b320bcede9ff646b6f8028dbd55a9f5a682583a861c0d15d64f7113998c97ae2a52876fe5d2736d6a0212ff1235aae507996887ff9599e36da786037bd60238b27b89722c7a76033affd291ee0cdfbe4fd6d9af22d9315749f2fb0ae833248aeaa8048f4612eb98f703213d125abe0e95fb3b08fe3ac0956d47a3b64f2ac41b7f8b7ef985854d7a2e4072a75d827232c50d584d26f82236e0ffbbe85c058e4ab342c6cd55a2d5c63a2b18b664e0a0fa7bdda5cdfd107922241650f556ce1edb5db379e47bc1ffde4e8145f9d6a55c25e38e132f5342f8aa5741267cd639e92457c0454d20eb4ec431aad708a71fcf4118fa6402e6cf4314ca592ffb8a3c56ad2c95e78850d8cc70540f7347f17a20bd8a4566834e40ea5267319924b40c594869d67d9e701f5fe024aa56bf8def8e1145523c188897341dd480e41f6133efec6287941e927fb32f9a3889657eaf47d96caf6c6a46b52d8a99a938a81fdb08938f25cda3792170954df437fe55fb8151b6ec60f71259ff529c4d72be75436961d6bc069cf1a014d43de75a91c5a658040113749a3bee47ed66982e8883d7738e44168ae59bfc103b923478647b5a547b1d1fcf2be4c808bf0e14584cbac1ab1fd4febc890cc670f2bc81bfea4802ee0fceead95c3757b046699bbe75fe3a51687412c7ae96de38855d22f33dcf91f83dfc8d2b528f5ddbac267d66ac7501603f29807b5c3feadb3bbe2f62880e0395636a75615f9cda64a99d6afa0b48b7f228ef81681e618b8d5c9d0fab5d75a0d48d04d6901ccd585fd575c6fbeb257d9adbff15b9d86ccddee533ba077533c18b2a731495c804a7ad4bd36336072ffbc3f3a65f6ff9fbc1b514384377a549a2696dc96c6e8913665bc02deed3e774af9dabb1fbd64506be233087b362158fe6c9892e97bfc13a7a12959ab6c2f131a77ebafe8fc455b68c220578df041f0525039985ce2de623bee114603468210408d7c9c80b9618b8abf108e1dd79a42f61079b3f06b118ec9f7927c691bf4132f0d43ee0e09a6b555a8ddb2f9835b4c512df3f87d0e97bf2027ef4846a89444c157c453a612234445aaf208a15315b2ce887d139f4d31aa88952fa154117684215376712c695f9b8f66012429957fd75b52fa4ec0303b236ffe61bf50ef800a339a7be78e3303cb1601e5e6797cb3067fbc92e84dde95e59c4b5eddb026260d1107736f17707d9cb28132ad7ba0d5462e7d694a4b6345e017b2a73505adf2116e49851b42a25c5aae5e5f89cc68a71b2082e23e2cd8e732eb369a61ceb8c7780d52d087736742c552ee199c7b8a6d9252a871384b2a0f2254a6ddc8a9fca921f928944c20d975452cc20737991f2c8d5857dfa5a8bf5ef3894fce057624dc452f874920054c06e4b0bbb15ca76417c2be398779a38578bd570472485030503e15521c453f379abdf0c1bcc502449d62c5d0f1e495df84234050618c9fd248a27700733b65f546f3dcbe7b273103b797d62d870f8e37a21995273b136162b82331523ddf6a2783447f7b057448764ef26a2710417320f86ca9e83df2d25ede8a859acaf368994315c2ba33afec3ace882fa8968e3eab885b06b19d1de74a66c33facf191bcb53f10c275aa9cb280e1553f9d2bdfa436c9e845ad153a6e336726f25e9d349c16ff1e311199d84dae077cdaff40a0473ac3effdd7ad183455797494d61d4e0088aa1de6bf720948c14ddb9b5c9111261acc1f017ef8d95fab1b82fd7ea915d065bec8925e58817824ab4f897f17a9ef8a1b4159d2ccb3b93bc18b2556d108464df0bc79228bbee42c23c7d42bebc41ad702dfa4099c72e93734873582cb460e0aaa9f63cccbb3951f8b051fb51f311c39ee2efbe92a73ae7843039d2ef5ee8e4a621d62ddc61355105f0ad8efe15c227771b84718765014855e0831978eb5d824100fd411695cfe8857884d6760de3f7f6ef27a56edd8f715136c5a872cdd0c34e8f6da923fab935240e3fbe22ab4ea48a90ba8816058607832094384e19549c33099ea4669dbf76f494438662b80e1f6e9f54562e5c799949a33a62e95bbc4051c3f620138d86db54bef0d008486631e3c2f89ca1c766f14c0a5ec6ddb7338194b8feed39edac9292d0f97eba140a8d604d61c926786c8299c694029b9ad2015f34fbc38b908384f98aaf6b52e4a7d40f422a182050f50c98251724caf600251049ff147d565e4f773581779be15d62907d20490d3501fe392f5c8f73b04b4a07656a77e780bfdd944239a7868d4c7c1bc1e86f4ca29fb30d9271479e2773a60f528abdf49087549e27256ebce837c41b36d0cbe717478a11786f71ae48f35d53a3bbaab076bf9f09cfc490120bbe78ab231df232705c675cf5da755cc154ebc2c9d01b6c59fe4b3ad1d7bcd0838a0bac6614da886fa207bc37229b7eb10abb580ca31dd05eff5567460f9abf63697c2a61f868197e7e3c05e458d7b1a91a99e7c317b2a5a3268e81d815c16c5ade9ee62da62ecf40f9f6fa064c6e3f60b1550f784ee028032d0170c42cbaba027e4921d7a6f9e95ad338c3bf12404e995ecb3b5c356cc01730d713cb09aaff3b67a19aceb4115c5d46a50d8377eadfc3327c8bdbe44376038e4fe4bea49a3c859ee98386e8b4e14959f669976b250a4b7235a6b9daa34926f98c827fed78d2151a9befbef78219b762e95d5779f0ad6d0b02a35bc8229c0d4102ef9bf8514e0409d993eaaa567a42b091b06120231fc73ee392d28d7698f316b7a621e70f4395b86153aa259cbd23cfb6e8ec14791ce939cb1ee4a66a5c6aafe5c1660a4bff6f558ee0463dd0ae1bb16c890026f119b5aa06ae2e7b6e2c2aa766124ecb3c9fe619f70e88c54dbaa6977ce1fa86bd1867230f48d3b8f9f3c456b93c455e9a13c52627d23ffe98420d2da7e4f60545bcf5f5d04b5411cda31255bf0848991953bb58f9880cbcb344a6ef69e06aa3d0d2d825a87da1fe01a5c394fec98888311eb64f5523ef64f83c9a96d048880337cb4550c2e28ea7c45ad7bc3cda89e8cf07277b6492436b91c70fa669458f0e8a549828ffe2f9eb251ebd4673e21f09be7e54794be83f2b5901f422a95d298f8a1357019ffd061697a435b"}</script>
+<script>const etackCrypto=(()=>{const exports={};
+const crypto = typeof window === "undefined" ? require("node:crypto").webcrypto : window.crypto;
+const { subtle } = crypto;
+
+const IV_BITS = 16 * 8;
+const HEX_BITS = 4;
+const ENCRYPTION_ALGO = "AES-CBC";
+
+/**
+ * Translates between utf8 encoded hexadecimal strings
+ * and Uint8Array bytes.
+ */
+const HexEncoder = {
+    /**
+     * hex string -> bytes
+     * @param {string} hexString
+     * @returns {Uint8Array}
+     */
+    parse: function (hexString) {
+        if (hexString.length % 2 !== 0) throw "Invalid hexString";
+        const arrayBuffer = new Uint8Array(hexString.length / 2);
+
+        for (let i = 0; i < hexString.length; i += 2) {
+            const byteValue = parseInt(hexString.substring(i, i + 2), 16);
+            if (isNaN(byteValue)) {
+                throw "Invalid hexString";
+            }
+            arrayBuffer[i / 2] = byteValue;
+        }
+        return arrayBuffer;
+    },
+
+    /**
+     * bytes -> hex string
+     * @param {Uint8Array} bytes
+     * @returns {string}
+     */
+    stringify: function (bytes) {
+        const hexBytes = [];
+
+        for (let i = 0; i < bytes.length; ++i) {
+            let byteString = bytes[i].toString(16);
+            if (byteString.length < 2) {
+                byteString = "0" + byteString;
+            }
+            hexBytes.push(byteString);
+        }
+        return hexBytes.join("");
+    },
+};
+
+/**
+ * Translates between utf8 strings and Uint8Array bytes.
+ */
+const UTF8Encoder = {
+    parse: function (str) {
+        return new TextEncoder().encode(str);
+    },
+
+    stringify: function (bytes) {
+        return new TextDecoder().decode(bytes);
+    },
+};
+
+/**
+ * Salt and encrypt a msg with a password.
+ */
+async function encrypt(msg, hashedPassword) {
+    // Must be 16 bytes, unpredictable, and preferably cryptographically random. However, it need not be secret.
+    // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt#parameters
+    const iv = crypto.getRandomValues(new Uint8Array(IV_BITS / 8));
+
+    const key = await subtle.importKey("raw", HexEncoder.parse(hashedPassword), ENCRYPTION_ALGO, false, ["encrypt"]);
+
+    const encrypted = await subtle.encrypt(
+        {
+            name: ENCRYPTION_ALGO,
+            iv: iv,
+        },
+        key,
+        UTF8Encoder.parse(msg)
+    );
+
+    // iv will be 32 hex characters, we prepend it to the ciphertext for use in decryption
+    return HexEncoder.stringify(iv) + HexEncoder.stringify(new Uint8Array(encrypted));
+}
+exports.encrypt = encrypt;
+
+/**
+ * Decrypt a salted msg using a password.
+ *
+ * @param {string} encryptedMsg
+ * @param {string} hashedPassword
+ * @returns {Promise<string>}
+ */
+async function decrypt(encryptedMsg, hashedPassword) {
+    const ivLength = IV_BITS / HEX_BITS;
+    const iv = HexEncoder.parse(encryptedMsg.substring(0, ivLength));
+    const encrypted = encryptedMsg.substring(ivLength);
+
+    const key = await subtle.importKey("raw", HexEncoder.parse(hashedPassword), ENCRYPTION_ALGO, false, ["decrypt"]);
+
+    const outBuffer = await subtle.decrypt(
+        {
+            name: ENCRYPTION_ALGO,
+            iv: iv,
+        },
+        key,
+        HexEncoder.parse(encrypted)
+    );
+
+    return UTF8Encoder.stringify(new Uint8Array(outBuffer));
+}
+exports.decrypt = decrypt;
+
+/**
+ * Salt and hash the password so it can be stored in localStorage without opening a password reuse vulnerability.
+ *
+ * @param {string} password
+ * @param {string} salt
+ * @returns {Promise<string>}
+ */
+async function hashPassword(password, salt) {
+    // we hash the password in multiple steps, each adding more iterations. This is because we used to allow less
+    // iterations, so for backward compatibility reasons, we need to support going from that to more iterations.
+    let hashedPassword = await hashLegacyRound(password, salt);
+
+    hashedPassword = await hashSecondRound(hashedPassword, salt);
+
+    return hashThirdRound(hashedPassword, salt);
+}
+exports.hashPassword = hashPassword;
+
+/**
+ * This hashes the password with 1k iterations. This is a low number, we need this function to support backwards
+ * compatibility.
+ *
+ * @param {string} password
+ * @param {string} salt
+ * @returns {Promise<string>}
+ */
+function hashLegacyRound(password, salt) {
+    return pbkdf2(password, salt, 1000, "SHA-1");
+}
+exports.hashLegacyRound = hashLegacyRound;
+
+/**
+ * Add a second round of iterations. This is because we used to use 1k, so for backwards compatibility with
+ * remember-me/autodecrypt links, we need to support going from that to more iterations.
+ *
+ * @param hashedPassword
+ * @param salt
+ * @returns {Promise<string>}
+ */
+function hashSecondRound(hashedPassword, salt) {
+    return pbkdf2(hashedPassword, salt, 14000, "SHA-256");
+}
+exports.hashSecondRound = hashSecondRound;
+
+/**
+ * Add a third round of iterations to bring total number to 600k. This is because we used to use 1k, then 15k, so for
+ * backwards compatibility with remember-me/autodecrypt links, we need to support going from that to more iterations.
+ *
+ * @param hashedPassword
+ * @param salt
+ * @returns {Promise<string>}
+ */
+function hashThirdRound(hashedPassword, salt) {
+    return pbkdf2(hashedPassword, salt, 585000, "SHA-256");
+}
+exports.hashThirdRound = hashThirdRound;
+
+/**
+ * Salt and hash the password so it can be stored in localStorage without opening a password reuse vulnerability.
+ *
+ * @param {string} password
+ * @param {string} salt
+ * @param {int} iterations
+ * @param {string} hashAlgorithm
+ * @returns {Promise<string>}
+ */
+async function pbkdf2(password, salt, iterations, hashAlgorithm) {
+    const key = await subtle.importKey("raw", UTF8Encoder.parse(password), "PBKDF2", false, ["deriveBits"]);
+
+    const keyBytes = await subtle.deriveBits(
+        {
+            name: "PBKDF2",
+            hash: hashAlgorithm,
+            iterations,
+            salt: UTF8Encoder.parse(salt),
+        },
+        key,
+        256
+    );
+
+    return HexEncoder.stringify(new Uint8Array(keyBytes));
+}
+
+function generateRandomSalt() {
+    const bytes = crypto.getRandomValues(new Uint8Array(128 / 8));
+
+    return HexEncoder.stringify(new Uint8Array(bytes));
+}
+exports.generateRandomSalt = generateRandomSalt;
+
+async function signMessage(hashedPassword, message) {
+    const key = await subtle.importKey(
+        "raw",
+        HexEncoder.parse(hashedPassword),
+        {
+            name: "HMAC",
+            hash: "SHA-256",
+        },
+        false,
+        ["sign"]
+    );
+    const signature = await subtle.sign("HMAC", key, UTF8Encoder.parse(message));
+
+    return HexEncoder.stringify(new Uint8Array(signature));
+}
+exports.signMessage = signMessage;
+
+function getRandomAlphanum() {
+    const possibleCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    let byteArray;
+    let parsedInt;
+
+    // Keep generating new random bytes until we get a value that falls
+    // within a range that can be evenly divided by possibleCharacters.length
+    do {
+        byteArray = crypto.getRandomValues(new Uint8Array(1));
+        // extract the lowest byte to get an int from 0 to 255 (probably unnecessary, since we're only generating 1 byte)
+        parsedInt = byteArray[0] & 0xff;
+    } while (parsedInt >= 256 - (256 % possibleCharacters.length));
+
+    // Take the modulo of the parsed integer to get a random number between 0 and totalLength - 1
+    const randomIndex = parsedInt % possibleCharacters.length;
+
+    return possibleCharacters[randomIndex];
+}
+
+/**
+ * Generate a random string of a given length.
+ *
+ * @param {int} length
+ * @returns {string}
+ */
+function generateRandomString(length) {
+    let randomString = "";
+
+    for (let i = 0; i < length; i++) {
+        randomString += getRandomAlphanum();
+    }
+
+    return randomString;
+}
+exports.generateRandomString = generateRandomString;
+
+return exports;})();
+const etackCodec=(()=>{const exports={};
+/**
+ * Initialize the codec with the provided cryptoEngine - this return functions to encode and decode messages.
+ *
+ * @param cryptoEngine - the engine to use for encryption / decryption
+ */
+function init(cryptoEngine) {
+    const exports = {};
+
+    /**
+     * Top-level function for encoding a message.
+     * Includes password hashing, encryption, and signing.
+     *
+     * @param {string} msg
+     * @param {string} password
+     * @param {string} salt
+     *
+     * @returns {string} The encoded text
+     */
+    async function encode(msg, password, salt) {
+        const hashedPassword = await cryptoEngine.hashPassword(password, salt);
+
+        const encrypted = await cryptoEngine.encrypt(msg, hashedPassword);
+
+        // we use the hashed password in the HMAC because this is effectively what will be used a password (so we can store
+        // it in localStorage safely, we don't use the clear text password)
+        const hmac = await cryptoEngine.signMessage(hashedPassword, encrypted);
+
+        return hmac + encrypted;
+    }
+    exports.encode = encode;
+
+    /**
+     * Encode using a password that has already been hashed. This is useful to encode multiple messages in a row, that way
+     * we don't need to hash the password multiple times.
+     *
+     * @param {string} msg
+     * @param {string} hashedPassword
+     *
+     * @returns {string} The encoded text
+     */
+    async function encodeWithHashedPassword(msg, hashedPassword) {
+        const encrypted = await cryptoEngine.encrypt(msg, hashedPassword);
+
+        // we use the hashed password in the HMAC because this is effectively what will be used a password (so we can store
+        // it in localStorage safely, we don't use the clear text password)
+        const hmac = await cryptoEngine.signMessage(hashedPassword, encrypted);
+
+        return hmac + encrypted;
+    }
+    exports.encodeWithHashedPassword = encodeWithHashedPassword;
+
+    /**
+     * Top-level function for decoding a message.
+     * Includes signature check and decryption.
+     *
+     * @param {string} signedMsg
+     * @param {string} hashedPassword
+     * @param {string} salt
+     * @param {int} backwardCompatibleAttempt
+     * @param {string} originalPassword
+     *
+     * @returns {Object} {success: true, decoded: string} | {success: false, message: string}
+     */
+    async function decode(signedMsg, hashedPassword, salt, backwardCompatibleAttempt = 0, originalPassword = "") {
+        const encryptedHMAC = signedMsg.substring(0, 64);
+        const encryptedMsg = signedMsg.substring(64);
+        const decryptedHMAC = await cryptoEngine.signMessage(hashedPassword, encryptedMsg);
+
+        if (decryptedHMAC !== encryptedHMAC) {
+            // we have been raising the number of iterations in the hashing algorithm multiple times, so to support the old
+            // remember-me/autodecrypt links we need to try bringing the old hashes up to speed.
+            originalPassword = originalPassword || hashedPassword;
+            if (backwardCompatibleAttempt === 0) {
+                const updatedHashedPassword = await cryptoEngine.hashThirdRound(originalPassword, salt);
+
+                return decode(signedMsg, updatedHashedPassword, salt, backwardCompatibleAttempt + 1, originalPassword);
+            }
+            if (backwardCompatibleAttempt === 1) {
+                let updatedHashedPassword = await cryptoEngine.hashSecondRound(originalPassword, salt);
+                updatedHashedPassword = await cryptoEngine.hashThirdRound(updatedHashedPassword, salt);
+
+                return decode(signedMsg, updatedHashedPassword, salt, backwardCompatibleAttempt + 1, originalPassword);
+            }
+
+            return { success: false, message: "Signature mismatch" };
+        }
+
+        return {
+            success: true,
+            decoded: await cryptoEngine.decrypt(encryptedMsg, hashedPassword),
+        };
+    }
+    exports.decode = decode;
+
+    return exports;
+}
+exports.init = init;
+
+return exports;})();</script>
+<script>// StatiCrypt decrypts the HTML; this UI only retains the derived key for this tab.
+(async function () {
+  const payload = JSON.parse(document.getElementById('etack-encrypted').textContent);
+  const form = document.getElementById('access-form');
+  const input = document.getElementById('access-code');
+  const button = document.getElementById('unlock');
+  const error = document.getElementById('error');
+  const storageKey = 'etack-access:' + payload.salt;
+  const codec = etackCodec.init(etackCrypto);
+  const readKey = () => { try { return sessionStorage.getItem(storageKey); } catch { return null; } };
+  const saveKey = key => { try { sessionStorage.setItem(storageKey, key); } catch {} };
+  const clearKey = () => { try { sessionStorage.removeItem(storageKey); } catch {} };
+  async function unlock(key) {
+    const result = await codec.decode(payload.encrypted, key, payload.salt);
+    if (!result.success) return false;
+    saveKey(key);
+    // Keep the current path, query and fragment so direct comparison links work.
+    document.open();
+    document.write(result.decoded);
+    document.close();
+    return true;
+  }
+  if (!window.crypto || !window.crypto.subtle) {
+    error.textContent = 'Please open this website using HTTPS.';
+    button.disabled = true;
+    return;
+  }
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!/^[0-9]{4}$/.test(input.value)) {
+      error.textContent = 'Enter a four-digit access code.';
+      return;
+    }
+    button.disabled = true;
+    button.textContent = 'Unlocking…';
+    error.textContent = '';
+    try {
+      const key = await etackCrypto.hashPassword(input.value, payload.salt);
+      input.value = '';
+      if (await unlock(key)) return;
+      clearKey();
+      error.textContent = 'Incorrect access code. Please try again.';
+    } catch {
+      error.textContent = 'Unable to unlock this page. Please reload and try again.';
+    }
+    button.disabled = false;
+    button.textContent = 'Enter';
+    input.focus();
+  });
+  const saved = readKey();
+  if (saved) {
+    button.disabled = true;
+    try { if (await unlock(saved)) return; } catch {}
+    clearKey();
+    button.disabled = false;
+  }
+})();
+</script>
+</body></html>

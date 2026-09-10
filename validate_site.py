@@ -13,7 +13,8 @@ for name in ("index.html", "event.html", "compare.html"):
     if not path.exists():
         errors.append(f"missing page: {name}")
         continue
-    text = path.read_text(encoding="utf-8")
+    local_source = root.parent / "site-source" / name
+    text = (local_source if local_source.is_file() else path).read_text(encoding="utf-8")
     for reference in re.findall(r'(?:src|href)="([^"?#]+)', text):
         if reference.startswith(("http:", "https:", "javascript:")):
             continue
