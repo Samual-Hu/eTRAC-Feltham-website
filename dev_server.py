@@ -156,6 +156,18 @@ def apply_edit(payload: dict) -> dict:
 
 
 class Handler(SimpleHTTPRequestHandler):
+    def translate_path(self, path):
+        resolved = Path(super().translate_path(path))
+        # Public HTML is encrypted. Both local modes use the private authoring
+        # copy; the normal customer-mode API restrictions remain unchanged.
+        if resolved == SITE:
+            resolved = SITE / "index.html"
+        if resolved.parent == SITE and resolved.suffix == ".html":
+            source = ROOT / "site-source" / resolved.name
+            if source.is_file():
+                return str(source)
+        return str(resolved)
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(SITE), **kwargs)
 

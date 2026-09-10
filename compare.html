@@ -1,13 +1,439 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Eyya Same-area Comparison</title><link rel="stylesheet" href="assets/styles.css?v=20260823e"><link rel="stylesheet" href="assets/compare.css?v=20260823e"></head>
-  <body class="compare-page">
-    <header class="compare-header"><button type="button" data-compare-back aria-label="Back to train review" title="Back to train review"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"></path></svg></button><strong data-compare-title>Loading comparison</strong><nav class="compare-nav" aria-label="Change comparison date"><button type="button" data-compare-prev aria-label="Previous comparison date">‹</button><span data-compare-position></span><button type="button" data-compare-next aria-label="Next comparison date">›</button></nav><span data-carriage></span></header>
-    <main class="compare-main" data-compare-main>
-      <section class="compare-pane"><header><span>Selected</span><strong data-source-date></strong></header><div class="compare-image"><img data-source-image alt="Selected stain area"><span class="focus-frame" data-source-focus aria-hidden="true"></span></div></section>
-      <div class="compare-divider" aria-hidden="true"></div>
-      <section class="compare-pane"><header><span>Comparison</span><strong data-target-date></strong></header><div class="compare-image"><img data-target-image alt="Same carriage area on comparison date"><span class="focus-frame" data-target-focus aria-hidden="true"></span></div></section>
-    </main>
-    <script src="assets/catalog.js?v=20260906"></script><script src="assets/dev.js?v=20260823e"></script><script src="assets/compare.js?v=20260906"></script>
-  </body>
-</html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>eTACK — Restricted Access</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#edf3f6;color:#123e59;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{width:100%;max-width:410px;padding:38px 32px;background:#fff;border:1px solid #ccdde6;border-radius:16px;box-shadow:0 12px 40px #133d5910}
+.brand{font-size:29px;font-weight:700;letter-spacing:.02em;margin:0 0 5px}h1{font-size:20px;margin:0 0 26px;font-weight:600}label{display:block;margin-bottom:9px}input,button{width:100%;font:inherit;border-radius:8px}input{padding:11px;border:1px solid #9ab6c7;font-size:25px;letter-spacing:.65em;text-align:center;color:#123e59}input:focus{outline:3px solid #b6e3f4;border-color:#0084b6}input::-ms-reveal,input::-ms-clear{display:none}button{margin-top:18px;padding:12px;background:#007fae;color:#fff;border:0;font-weight:600;cursor:pointer}button:disabled{opacity:.65;cursor:wait}#error{font-size:14px;min-height:21px;margin:12px 0 0;color:#ae253c}.note{color:#627d8f;font-size:14px;margin:18px 0 0}
+</style>
+</head>
+<body>
+<main><p class="brand">eTACK</p><h1>Restricted Access</h1>
+<form id="access-form"><label for="access-code">Please enter access code</label>
+<input id="access-code" name="password" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" autocomplete="off" required autofocus aria-describedby="error">
+<button id="unlock" type="submit">Enter</button><p id="error" role="status" aria-live="polite"></p></form>
+<p class="note">Access for authorised viewers.</p><noscript>JavaScript is required to unlock this page.</noscript></main>
+<script id="etack-encrypted" type="application/json">{"version":"staticrypt-3.5.4","salt":"7030f6125cdddccab96c8caa52e30704","encrypted":"39adf4de30563088a991cf470309761880f8d7ec5b6020af5e61624181dfce8f85034acf7a8b06620b1a924fd17551de081ff35bffc137ac71c93bc76fa7adef2978636f9a77f22757f02bffe33de4a8147c04e264f9e174e86797b3c8cac35cc7a56b4f8f811b86219b8009f91c9a8ea2c617f2a52b9715c2c506c21751a006cefb6237c70a1fdc47b4d112eae933cb97bc7815105b7930eeb1f621390c0523519827453938c31896f469a9a4c039152d4b9aef1f2d8883718c63f014ab892bd0f91caff9fe7db8bff4e77037601498aaf3e0d622a570f54b939b9fbe69e76a95d45cf29ef37754c40ba59c6d5ccd42a6c9e63246b83d46cb25a8ae07b9c373179806cde9929fa8fe55295c96753a5a80f07117628671cff6db3ba60bd56098a71078d8f17f640baf37f117d6b7b1e5d4e8d32af8fb28ef6f4e107a9f05a174f226531ac13a27fedc089edf5f08a1920b6626e62fe13826963780e4998a69c398ef0bb3e044edddec415560eeb5289a96c2796eec7152b48f97b5bec608cd6c0cc908dc32f7b2603dbb00cc62f1279c38b21f7a881bd19fe5ff619acc3c58986f41dd09c0bb6f32f566ddf45158ad1a4ef934d09ebe4c3c9592586e722b9a92b633889b7a3c9ee5f688733e83e97767f94ff89281fed35a42ac7703527ce4ff716523cd7e671c242ee00619abad150a98be5dceb5ab9af78995e1468eec718e79b9478961b04cfc9e11d31b9e623787526782ac48f57215fb487aed488a4daea524e280f07c28c7f5c58019c22807e31ddc8a9cacb23003852d8322fe9dad5f24a0fee397a2af01c7137062ccca76e46c37ffb69394623a1a82e99f9eceb2a774565007af9fec4389df6292a19fa648bc79f2f433fe19ba2b035814eb5792958322eff649f0fa4ff62a58d66bf100962524baef8894f47e61113c89e24406724fb1d6e2d98631b7b1e6e85e3197c437653b6ae2d631701ba176f1de394c93808124dbbf0dc9bcc9b5e0692d204db2b12948456282be73fdbb83cccbd7131164add7f73c8f92134a6d3d0a6224e6af99ddb8b38d6b284f44ca6c88ea763e3ecb452b040c1f3e348c57e2412848137194688db94ca7ec5bfa12dfddff69964d051be287fef10100a36e951507653db3f5f51efa811fddfc083541c080cfbb30ee9446041a9f4b27871b02d097c7525757778c6ddb50941108d35a17088fe58f8b2366e71583809180062381c6efcf848eaf1aad6ce74a5cf93997f859f3e5f1b03b40391295f21952b5a0097711007ef6fa9d0819db2261600b7025c180d60ec82b8757fe360e3b38558c759c0ee915a962b882a90753b8875d14484eaf9bf93fc1c117e205b52feab44c3a55f8b2258aa79fc862dfcc9db8150744a0474ba26bad19761eca39074722119322c4baa4f1779d69497e101f0f75b11a90d88628bbd2fb33950afbc6184b78c770ffb9aad1fafa261aa3b44ce9dff26ba1ee026e16678e1463eebf3c67295f2708d71aa743a7d97eea6cffb1a5050b275fcb0cf9daef31a4b257127e31938f6fb301a9b6359fab12cb436e0c70d6ba50d036505b63df261055622ddbc43a2c4fd2e33f14b2319c38f29b01f370b9cc5930b3ed13b705fb9484d9598649332b164046035c793157461b5d5694e8a3d235b4e980d38a78e022e3a8209c708d772e5bb1b09d65199f86a85453d33dda78a09c5dc4df45e788c7aec3911e6ac8791ad9d1e020bce412e927492148abfd3fa89e583159cfdd2a69e035b9c3a506e01ec098ae838c91355f3fce96991c64f7f0d9881da224141be669ed020ef1f709ffda217b6e446f26e90e5db225b64c7ce58dee43c1be78ed46e77ae10aca3db713d3406a64c627988bfabfde63ac30f33a9ac9e2570de89ed5457bd73274ac3419800b0d75c9c02b4eb15f96dedc5294f5bd93a5c357dccde3adbd7de83e1a59fe900996cf9d3e16f93603cf8a4d320a90811232f066abd54d3e09b431c9c6d70da62d09a2678bfabf6015cff5bb76b5638cc4753724b63d7c5812b109994752c39e891f17954a6932986c720b47c703b173adc852acaee0b68cf0e93f50dc1e799a42f81e2466bc0b64e68f961cc0bb302c92b84bfaa19a4fdeb40e4e30ba9c998d530544b334b8fef0615f69d993c64128841a6581da4f8a26f1a58ef7b4695e252c3384b1dbf57ac6c6613eee53fbe782549a1dbdc78546e14a74a6d9d75cdbcf5b8916780d2b3d0914967e2c2b945505727042e2793d1b59d6994dfca33bf2f0a4c717b0edcc856bc6c490b9e037bb1a21e4a3f51caa001e4d752f724c32ce8ca67ef3a26091e1bf4bbf1c09a90255fccc76363d46a4a462ba7fbc67a667ff55bb4f5749b260debd04dda7aa7746361c3268f890ce9818a78de4aacc8eb0d442a17ae5e99bd5e59453962b72c87c898e90798379a1baa9173f92a262adcad1e6d09ba3448e24fedaba615013dc3c28777b9275148e1a8721c5f6e45766392aba70e47803604c2ecbe549ce95473287353da2e263475c2769e83c0d0d942488190d6d18fa6a4a535f6a915dd1bc2f5bb4d981757b73e8d0a01ddf007903950906c48ae76c"}</script>
+<script>const etackCrypto=(()=>{const exports={};
+const crypto = typeof window === "undefined" ? require("node:crypto").webcrypto : window.crypto;
+const { subtle } = crypto;
+
+const IV_BITS = 16 * 8;
+const HEX_BITS = 4;
+const ENCRYPTION_ALGO = "AES-CBC";
+
+/**
+ * Translates between utf8 encoded hexadecimal strings
+ * and Uint8Array bytes.
+ */
+const HexEncoder = {
+    /**
+     * hex string -> bytes
+     * @param {string} hexString
+     * @returns {Uint8Array}
+     */
+    parse: function (hexString) {
+        if (hexString.length % 2 !== 0) throw "Invalid hexString";
+        const arrayBuffer = new Uint8Array(hexString.length / 2);
+
+        for (let i = 0; i < hexString.length; i += 2) {
+            const byteValue = parseInt(hexString.substring(i, i + 2), 16);
+            if (isNaN(byteValue)) {
+                throw "Invalid hexString";
+            }
+            arrayBuffer[i / 2] = byteValue;
+        }
+        return arrayBuffer;
+    },
+
+    /**
+     * bytes -> hex string
+     * @param {Uint8Array} bytes
+     * @returns {string}
+     */
+    stringify: function (bytes) {
+        const hexBytes = [];
+
+        for (let i = 0; i < bytes.length; ++i) {
+            let byteString = bytes[i].toString(16);
+            if (byteString.length < 2) {
+                byteString = "0" + byteString;
+            }
+            hexBytes.push(byteString);
+        }
+        return hexBytes.join("");
+    },
+};
+
+/**
+ * Translates between utf8 strings and Uint8Array bytes.
+ */
+const UTF8Encoder = {
+    parse: function (str) {
+        return new TextEncoder().encode(str);
+    },
+
+    stringify: function (bytes) {
+        return new TextDecoder().decode(bytes);
+    },
+};
+
+/**
+ * Salt and encrypt a msg with a password.
+ */
+async function encrypt(msg, hashedPassword) {
+    // Must be 16 bytes, unpredictable, and preferably cryptographically random. However, it need not be secret.
+    // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/encrypt#parameters
+    const iv = crypto.getRandomValues(new Uint8Array(IV_BITS / 8));
+
+    const key = await subtle.importKey("raw", HexEncoder.parse(hashedPassword), ENCRYPTION_ALGO, false, ["encrypt"]);
+
+    const encrypted = await subtle.encrypt(
+        {
+            name: ENCRYPTION_ALGO,
+            iv: iv,
+        },
+        key,
+        UTF8Encoder.parse(msg)
+    );
+
+    // iv will be 32 hex characters, we prepend it to the ciphertext for use in decryption
+    return HexEncoder.stringify(iv) + HexEncoder.stringify(new Uint8Array(encrypted));
+}
+exports.encrypt = encrypt;
+
+/**
+ * Decrypt a salted msg using a password.
+ *
+ * @param {string} encryptedMsg
+ * @param {string} hashedPassword
+ * @returns {Promise<string>}
+ */
+async function decrypt(encryptedMsg, hashedPassword) {
+    const ivLength = IV_BITS / HEX_BITS;
+    const iv = HexEncoder.parse(encryptedMsg.substring(0, ivLength));
+    const encrypted = encryptedMsg.substring(ivLength);
+
+    const key = await subtle.importKey("raw", HexEncoder.parse(hashedPassword), ENCRYPTION_ALGO, false, ["decrypt"]);
+
+    const outBuffer = await subtle.decrypt(
+        {
+            name: ENCRYPTION_ALGO,
+            iv: iv,
+        },
+        key,
+        HexEncoder.parse(encrypted)
+    );
+
+    return UTF8Encoder.stringify(new Uint8Array(outBuffer));
+}
+exports.decrypt = decrypt;
+
+/**
+ * Salt and hash the password so it can be stored in localStorage without opening a password reuse vulnerability.
+ *
+ * @param {string} password
+ * @param {string} salt
+ * @returns {Promise<string>}
+ */
+async function hashPassword(password, salt) {
+    // we hash the password in multiple steps, each adding more iterations. This is because we used to allow less
+    // iterations, so for backward compatibility reasons, we need to support going from that to more iterations.
+    let hashedPassword = await hashLegacyRound(password, salt);
+
+    hashedPassword = await hashSecondRound(hashedPassword, salt);
+
+    return hashThirdRound(hashedPassword, salt);
+}
+exports.hashPassword = hashPassword;
+
+/**
+ * This hashes the password with 1k iterations. This is a low number, we need this function to support backwards
+ * compatibility.
+ *
+ * @param {string} password
+ * @param {string} salt
+ * @returns {Promise<string>}
+ */
+function hashLegacyRound(password, salt) {
+    return pbkdf2(password, salt, 1000, "SHA-1");
+}
+exports.hashLegacyRound = hashLegacyRound;
+
+/**
+ * Add a second round of iterations. This is because we used to use 1k, so for backwards compatibility with
+ * remember-me/autodecrypt links, we need to support going from that to more iterations.
+ *
+ * @param hashedPassword
+ * @param salt
+ * @returns {Promise<string>}
+ */
+function hashSecondRound(hashedPassword, salt) {
+    return pbkdf2(hashedPassword, salt, 14000, "SHA-256");
+}
+exports.hashSecondRound = hashSecondRound;
+
+/**
+ * Add a third round of iterations to bring total number to 600k. This is because we used to use 1k, then 15k, so for
+ * backwards compatibility with remember-me/autodecrypt links, we need to support going from that to more iterations.
+ *
+ * @param hashedPassword
+ * @param salt
+ * @returns {Promise<string>}
+ */
+function hashThirdRound(hashedPassword, salt) {
+    return pbkdf2(hashedPassword, salt, 585000, "SHA-256");
+}
+exports.hashThirdRound = hashThirdRound;
+
+/**
+ * Salt and hash the password so it can be stored in localStorage without opening a password reuse vulnerability.
+ *
+ * @param {string} password
+ * @param {string} salt
+ * @param {int} iterations
+ * @param {string} hashAlgorithm
+ * @returns {Promise<string>}
+ */
+async function pbkdf2(password, salt, iterations, hashAlgorithm) {
+    const key = await subtle.importKey("raw", UTF8Encoder.parse(password), "PBKDF2", false, ["deriveBits"]);
+
+    const keyBytes = await subtle.deriveBits(
+        {
+            name: "PBKDF2",
+            hash: hashAlgorithm,
+            iterations,
+            salt: UTF8Encoder.parse(salt),
+        },
+        key,
+        256
+    );
+
+    return HexEncoder.stringify(new Uint8Array(keyBytes));
+}
+
+function generateRandomSalt() {
+    const bytes = crypto.getRandomValues(new Uint8Array(128 / 8));
+
+    return HexEncoder.stringify(new Uint8Array(bytes));
+}
+exports.generateRandomSalt = generateRandomSalt;
+
+async function signMessage(hashedPassword, message) {
+    const key = await subtle.importKey(
+        "raw",
+        HexEncoder.parse(hashedPassword),
+        {
+            name: "HMAC",
+            hash: "SHA-256",
+        },
+        false,
+        ["sign"]
+    );
+    const signature = await subtle.sign("HMAC", key, UTF8Encoder.parse(message));
+
+    return HexEncoder.stringify(new Uint8Array(signature));
+}
+exports.signMessage = signMessage;
+
+function getRandomAlphanum() {
+    const possibleCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    let byteArray;
+    let parsedInt;
+
+    // Keep generating new random bytes until we get a value that falls
+    // within a range that can be evenly divided by possibleCharacters.length
+    do {
+        byteArray = crypto.getRandomValues(new Uint8Array(1));
+        // extract the lowest byte to get an int from 0 to 255 (probably unnecessary, since we're only generating 1 byte)
+        parsedInt = byteArray[0] & 0xff;
+    } while (parsedInt >= 256 - (256 % possibleCharacters.length));
+
+    // Take the modulo of the parsed integer to get a random number between 0 and totalLength - 1
+    const randomIndex = parsedInt % possibleCharacters.length;
+
+    return possibleCharacters[randomIndex];
+}
+
+/**
+ * Generate a random string of a given length.
+ *
+ * @param {int} length
+ * @returns {string}
+ */
+function generateRandomString(length) {
+    let randomString = "";
+
+    for (let i = 0; i < length; i++) {
+        randomString += getRandomAlphanum();
+    }
+
+    return randomString;
+}
+exports.generateRandomString = generateRandomString;
+
+return exports;})();
+const etackCodec=(()=>{const exports={};
+/**
+ * Initialize the codec with the provided cryptoEngine - this return functions to encode and decode messages.
+ *
+ * @param cryptoEngine - the engine to use for encryption / decryption
+ */
+function init(cryptoEngine) {
+    const exports = {};
+
+    /**
+     * Top-level function for encoding a message.
+     * Includes password hashing, encryption, and signing.
+     *
+     * @param {string} msg
+     * @param {string} password
+     * @param {string} salt
+     *
+     * @returns {string} The encoded text
+     */
+    async function encode(msg, password, salt) {
+        const hashedPassword = await cryptoEngine.hashPassword(password, salt);
+
+        const encrypted = await cryptoEngine.encrypt(msg, hashedPassword);
+
+        // we use the hashed password in the HMAC because this is effectively what will be used a password (so we can store
+        // it in localStorage safely, we don't use the clear text password)
+        const hmac = await cryptoEngine.signMessage(hashedPassword, encrypted);
+
+        return hmac + encrypted;
+    }
+    exports.encode = encode;
+
+    /**
+     * Encode using a password that has already been hashed. This is useful to encode multiple messages in a row, that way
+     * we don't need to hash the password multiple times.
+     *
+     * @param {string} msg
+     * @param {string} hashedPassword
+     *
+     * @returns {string} The encoded text
+     */
+    async function encodeWithHashedPassword(msg, hashedPassword) {
+        const encrypted = await cryptoEngine.encrypt(msg, hashedPassword);
+
+        // we use the hashed password in the HMAC because this is effectively what will be used a password (so we can store
+        // it in localStorage safely, we don't use the clear text password)
+        const hmac = await cryptoEngine.signMessage(hashedPassword, encrypted);
+
+        return hmac + encrypted;
+    }
+    exports.encodeWithHashedPassword = encodeWithHashedPassword;
+
+    /**
+     * Top-level function for decoding a message.
+     * Includes signature check and decryption.
+     *
+     * @param {string} signedMsg
+     * @param {string} hashedPassword
+     * @param {string} salt
+     * @param {int} backwardCompatibleAttempt
+     * @param {string} originalPassword
+     *
+     * @returns {Object} {success: true, decoded: string} | {success: false, message: string}
+     */
+    async function decode(signedMsg, hashedPassword, salt, backwardCompatibleAttempt = 0, originalPassword = "") {
+        const encryptedHMAC = signedMsg.substring(0, 64);
+        const encryptedMsg = signedMsg.substring(64);
+        const decryptedHMAC = await cryptoEngine.signMessage(hashedPassword, encryptedMsg);
+
+        if (decryptedHMAC !== encryptedHMAC) {
+            // we have been raising the number of iterations in the hashing algorithm multiple times, so to support the old
+            // remember-me/autodecrypt links we need to try bringing the old hashes up to speed.
+            originalPassword = originalPassword || hashedPassword;
+            if (backwardCompatibleAttempt === 0) {
+                const updatedHashedPassword = await cryptoEngine.hashThirdRound(originalPassword, salt);
+
+                return decode(signedMsg, updatedHashedPassword, salt, backwardCompatibleAttempt + 1, originalPassword);
+            }
+            if (backwardCompatibleAttempt === 1) {
+                let updatedHashedPassword = await cryptoEngine.hashSecondRound(originalPassword, salt);
+                updatedHashedPassword = await cryptoEngine.hashThirdRound(updatedHashedPassword, salt);
+
+                return decode(signedMsg, updatedHashedPassword, salt, backwardCompatibleAttempt + 1, originalPassword);
+            }
+
+            return { success: false, message: "Signature mismatch" };
+        }
+
+        return {
+            success: true,
+            decoded: await cryptoEngine.decrypt(encryptedMsg, hashedPassword),
+        };
+    }
+    exports.decode = decode;
+
+    return exports;
+}
+exports.init = init;
+
+return exports;})();</script>
+<script>// StatiCrypt decrypts the HTML; this UI only retains the derived key for this tab.
+(async function () {
+  const payload = JSON.parse(document.getElementById('etack-encrypted').textContent);
+  const form = document.getElementById('access-form');
+  const input = document.getElementById('access-code');
+  const button = document.getElementById('unlock');
+  const error = document.getElementById('error');
+  const storageKey = 'etack-access:' + payload.salt;
+  const codec = etackCodec.init(etackCrypto);
+  const readKey = () => { try { return sessionStorage.getItem(storageKey); } catch { return null; } };
+  const saveKey = key => { try { sessionStorage.setItem(storageKey, key); } catch {} };
+  const clearKey = () => { try { sessionStorage.removeItem(storageKey); } catch {} };
+  async function unlock(key) {
+    const result = await codec.decode(payload.encrypted, key, payload.salt);
+    if (!result.success) return false;
+    saveKey(key);
+    // Keep the current path, query and fragment so direct comparison links work.
+    document.open();
+    document.write(result.decoded);
+    document.close();
+    return true;
+  }
+  if (!window.crypto || !window.crypto.subtle) {
+    error.textContent = 'Please open this website using HTTPS.';
+    button.disabled = true;
+    return;
+  }
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    if (!/^[0-9]{4}$/.test(input.value)) {
+      error.textContent = 'Enter a four-digit access code.';
+      return;
+    }
+    button.disabled = true;
+    button.textContent = 'Unlocking…';
+    error.textContent = '';
+    try {
+      const key = await etackCrypto.hashPassword(input.value, payload.salt);
+      input.value = '';
+      if (await unlock(key)) return;
+      clearKey();
+      error.textContent = 'Incorrect access code. Please try again.';
+    } catch {
+      error.textContent = 'Unable to unlock this page. Please reload and try again.';
+    }
+    button.disabled = false;
+    button.textContent = 'Enter';
+    input.focus();
+  });
+  const saved = readKey();
+  if (saved) {
+    button.disabled = true;
+    try { if (await unlock(saved)) return; } catch {}
+    clearKey();
+    button.disabled = false;
+  }
+})();
+</script>
+</body></html>
