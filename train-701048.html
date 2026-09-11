@@ -4,20 +4,34 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>eTACK — Restricted Access</title>
+<title>eTRAC — Restricted Access</title>
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#edf3f6;color:#123e59;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
-main{width:100%;max-width:410px;padding:38px 32px;background:#fff;border:1px solid #ccdde6;border-radius:16px;box-shadow:0 12px 40px #133d5910}
-.brand{font-size:29px;font-weight:700;letter-spacing:.02em;margin:0 0 5px}h1{font-size:20px;margin:0 0 26px;font-weight:600}label{display:block;margin-bottom:9px}input,button{width:100%;font:inherit;border-radius:8px}input{padding:11px;border:1px solid #9ab6c7;font-size:25px;letter-spacing:.65em;text-align:center;color:#123e59}input:focus{outline:3px solid #b6e3f4;border-color:#0084b6}input::-ms-reveal,input::-ms-clear{display:none}button{margin-top:18px;padding:12px;background:#007fae;color:#fff;border:0;font-weight:600;cursor:pointer}button:disabled{opacity:.65;cursor:wait}#error{font-size:14px;min-height:21px;margin:12px 0 0;color:#ae253c}.note{color:#627d8f;font-size:14px;margin:18px 0 0}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 15% 15%,#def1fa 0,transparent 55%),#eef3f6;color:#123e59;font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{width:100%;max-width:440px;padding:38px 36px 26px;background:#fff;border:1px solid #d2e1e9;border-top:4px solid #21a9df;border-radius:18px;box-shadow:0 18px 60px #173b5812}
+.brand-header{display:flex;align-items:center;gap:20px;padding-bottom:26px;margin-bottom:26px;border-bottom:1px solid #e3edf2}
+.brand-mark{width:58px;height:58px;object-fit:contain;flex:none}
+.brand{font-size:34px;font-weight:700;letter-spacing:.01em;line-height:1.15;margin:0 0 6px}
+h1{font-size:16px;margin:0;font-weight:500;color:#617c8d}
+label{display:block;margin-bottom:11px;font-size:15px;font-weight:500}
+input,button{width:100%;font:inherit;border-radius:10px}
+input{height:62px;padding:12px 12px 12px 28px;border:1px solid #b6cbd8;background:#f8fbfd;font-size:28px;letter-spacing:16px;text-align:center;color:#123e59;transition:border-color .15s,box-shadow .15s}
+input:focus{outline:3px solid #b6e3f4;border-color:#0084b6;background:#fff}
+input::-ms-reveal,input::-ms-clear{display:none}
+button{margin-top:20px;padding:14px;background:#007fae;color:#fff;border:0;font-weight:600;cursor:pointer;box-shadow:0 4px 12px #007fae20;transition:background .15s}
+button:hover:not(:disabled){background:#006b95}button:focus-visible{outline:3px solid #84ceef;outline-offset:3px}button:disabled{opacity:.65;cursor:wait}
+#error{font-size:14px;min-height:21px;margin:12px 0 0;color:#ae253c}
+.note{color:#627d8f;font-size:14px;text-align:center;margin:12px 0 0}
+@media(max-width:380px){body{padding:16px}main{padding:28px 24px 22px}.brand-header{gap:16px}.brand{font-size:30px}}
 </style>
 </head>
 <body>
-<main><p class="brand">eTACK</p><h1>Restricted Access</h1>
+<main><header class="brand-header"><img class="brand-mark" src="assets/eyya-brandmark.svg" width="58" height="58" alt="Eyya"><div><p class="brand">eTRAC</p><h1>Restricted Access</h1></div></header>
 <form id="access-form"><label for="access-code">Please enter access code</label>
 <input id="access-code" name="password" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" autocomplete="off" required autofocus aria-describedby="error">
 <button id="unlock" type="submit">Enter</button><p id="error" role="status" aria-live="polite"></p></form>
 <p class="note">Access for authorised viewers.</p><noscript>JavaScript is required to unlock this page.</noscript></main>
-<script id="etack-encrypted" type="application/json">{"version":"staticrypt-3.5.4","salt":"7030f6125cdddccab96c8caa52e30704","encrypted":"f760d6f302999a138b24c9f4bf7bf71243862ec16faf036e59262d2a82189379fb1e8b5f4584c1ade823c5883c59ac66eafa29b46c574e5d1e128ca7a3d829d86a72b68f72dcf1b3f21d856716465beff3405cdc29d998301f5177929a14824757c5bb477925ecea452a0ed4e1055a75efa3d93b16cefabfa8d8d674acfe54b4cf8406080ac83932501e5e6bf79c67eadaa3c1fcfd949542de06ccf0e550c9448c5bf62e430d304b363bb8197119cf6ab7c7c9a71a4b74979291f308496420529150c5782dd20d060fd910457be9f3c82444a9e120eed51f95767ea077b0a74356b437fa406d0eaa08298a459dfc4abea3395746f5fce3ef1db9b67d870cdd16ac61ec6bb3277c7301904e48f4076aa25d2b1958e369656cb82113681a1646acaf990e80f8bf9e6446fae444410d9c00afe6a62b9681f2f36a4b742690297a0ea9f29fde8d3135a3d3530ea9f1bb4d65cb43ac631afa0f34a081a3ee46c1142e6cd371e897c5f879e91168427e73fb0ddaacc2a0d4c9f0a8413900d9da0bdbefefff7195099b4bed555e417085a5a60267e58b740571671570b67294e88321fd"}</script>
+<script id="etack-encrypted" type="application/json">{"version":"staticrypt-3.5.4","salt":"2752c85a2828b0fb2149eafd02c1b57e","encrypted":"15a5969185a158baec2946467611b49d2044cdab056094d485db303fe11d484733f7e554bb4a6cd9a3da69ba566ea6937d9372b9a565ed5d456f4301f164bebfc34062288dd819819bd52f99f67d6552e980ddca6187447e943cc785da8948f2c65d7c97c4a08deb1e7f3907ea7f578c2dd024b1f929ddbd82464b77f1045d3549bf84ae8bce69552b104bb434d34215f66ca9db86ffb56ea9441588a85bf2af4e069124cf5e9be53e6414a77c1f437011b21fdc164d57270db24d6ad73f0199237c501f0644ccb23955457374ef7b7e3a904ecb33558fbc330b87a7c66379cf2ae03a9cd447468c1f49df491afc94cf3f47d1ea6254157eaffd78ce86a3e4c48bfc78e4bf9c999559bf624cf3f0c8326eb6c1870e7ae706f1602908f48ffca0b8f1414078803dd853472f8f90532a9e61c97be9e78dbe2af244f67c4bef586d6d0514bf65a79cef7b6f9ef2ddafe662a0c04da9176bc4103f668e1bcb8552bdf646b9ea39fda127c5b56eadfaec25301523d64db76d14656a4ffc1bb9713020a7c89d27fd2c244f4fc5cbc238cd9ce4fd4e076ef84c7b5f1899cd527656d2b6"}</script>
 <script>const etackCrypto=(()=>{const exports={};
 const crypto = typeof window === "undefined" ? require("node:crypto").webcrypto : window.crypto;
 const { subtle } = crypto;
