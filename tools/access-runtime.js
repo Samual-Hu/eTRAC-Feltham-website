@@ -14,6 +14,16 @@
     const result = await codec.decode(payload.encrypted, key, payload.salt);
     if (!result.success) return false;
     saveKey(key);
+    // A remembered key can decrypt while the HTML parser is still running.
+    // document.open() is then ignored and document.write() inserts the website
+    // into the login page instead of replacing it. Wait for parser completion
+    // and leave its current task before opening a fresh document.
+    await new Promise(resolve => {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', resolve, {once:true});
+      } else resolve();
+    });
+    await new Promise(resolve => setTimeout(resolve, 0));
     // Keep the current path, query and fragment so direct comparison links work.
     document.open();
     document.write(result.decoded);

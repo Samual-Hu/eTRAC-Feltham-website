@@ -6,7 +6,7 @@ const { webcrypto } = require('node:crypto');
 const site = path.resolve(__dirname, '..');
 const code = process.env.STATICRYPT_PASSWORD;
 assert(/^[0-9]{4}$/.test(code || ''), 'Set the test access code in the environment.');
-async function openPage(name, storage) {
+async function openPage(name, storage, loading = false) {
   const html = fs.readFileSync(path.join(site, name), 'utf8');
   const elements = {
     'etack-encrypted': {textContent: html.match(/id="etack-encrypted" type="application\/json">([^<]+)</)[1]},
@@ -14,9 +14,17 @@ async function openPage(name, storage) {
     'access-code': {value:'',focus(){}}, 'unlock': {}, 'error': {}
   };
   const writes = [];
-  const ctx = vm.createContext({window:{crypto:webcrypto}, TextEncoder, TextDecoder,
+  let parserFinished = !loading;
+  const doc = {getElementById:id=>elements[id],readyState:loading?'loading':'complete',
+    addEventListener(type, callback) {
+      assert.equal(type,'DOMContentLoaded');
+      setTimeout(()=>{parserFinished=true;doc.readyState='interactive';callback();},5);
+    },
+    open(){assert(parserFinished,'Must not replace HTML before the parser finishes');},
+    write:s=>writes.push(s),close(){}};
+  const ctx = vm.createContext({window:{crypto:webcrypto}, TextEncoder, TextDecoder,setTimeout,
     sessionStorage:{getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v),removeItem:k=>storage.delete(k)},
-    document:{getElementById:id=>elements[id],open(){},write:s=>writes.push(s),close(){}}});
+    document:doc});
   for (const script of html.matchAll(/<script>([\s\S]*?)<\/script>/g)) await vm.runInContext(script[1], ctx);
   return {elements,writes,html};
 }
@@ -34,6 +42,8 @@ async function openPage(name, storage) {
   assert.equal(storage.size, 1);
   assert(![...storage.values()].includes(code), 'Never store the plaintext access code');
   for (const name of ['event.html','compare.html','train-701048.html']) {
+    const duringParse = await openPage(name, storage, true);
+    assert.equal(duringParse.writes.length, 1, 'Remembered login must wait for parsing');
     const unlocked = await openPage(name, storage);
     assert.equal(unlocked.writes[0], fs.readFileSync(path.resolve(site,'../site-source',name),'utf8'));
     assert.equal((await openPage(name,new Map())).writes.length, 0, 'Direct fresh visit must be locked');

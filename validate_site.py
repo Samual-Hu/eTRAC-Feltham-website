@@ -25,6 +25,9 @@ if not catalog_path.exists():
     errors.append("missing assets/catalog.json")
 else:
     catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+    ids = [event["id"] for event in catalog.get("events", [])]
+    if len(ids) != len(set(ids)):
+        errors.append("duplicate event IDs: separate repeated visits by capture time")
     for event in catalog.get("events", []):
         for field in ("cover", "video"):
             value = event.get(field)

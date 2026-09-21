@@ -31,7 +31,7 @@ button:hover:not(:disabled){background:#006b95}button:focus-visible{outline:3px 
 <input id="access-code" name="password" type="password" inputmode="numeric" pattern="[0-9]{4}" minlength="4" maxlength="4" autocomplete="off" required autofocus aria-describedby="error">
 <button id="unlock" type="submit">Enter</button><p id="error" role="status" aria-live="polite"></p></form>
 <p class="note">Access for authorised viewers.</p><noscript>JavaScript is required to unlock this page.</noscript></main>
-<script id="etack-encrypted" type="application/json">{"version":"staticrypt-3.5.4","salt":"2752c85a2828b0fb2149eafd02c1b57e","encrypted":"15a5969185a158baec2946467611b49d2044cdab056094d485db303fe11d484733f7e554bb4a6cd9a3da69ba566ea6937d9372b9a565ed5d456f4301f164bebfc34062288dd819819bd52f99f67d6552e980ddca6187447e943cc785da8948f2c65d7c97c4a08deb1e7f3907ea7f578c2dd024b1f929ddbd82464b77f1045d3549bf84ae8bce69552b104bb434d34215f66ca9db86ffb56ea9441588a85bf2af4e069124cf5e9be53e6414a77c1f437011b21fdc164d57270db24d6ad73f0199237c501f0644ccb23955457374ef7b7e3a904ecb33558fbc330b87a7c66379cf2ae03a9cd447468c1f49df491afc94cf3f47d1ea6254157eaffd78ce86a3e4c48bfc78e4bf9c999559bf624cf3f0c8326eb6c1870e7ae706f1602908f48ffca0b8f1414078803dd853472f8f90532a9e61c97be9e78dbe2af244f67c4bef586d6d0514bf65a79cef7b6f9ef2ddafe662a0c04da9176bc4103f668e1bcb8552bdf646b9ea39fda127c5b56eadfaec25301523d64db76d14656a4ffc1bb9713020a7c89d27fd2c244f4fc5cbc238cd9ce4fd4e076ef84c7b5f1899cd527656d2b6"}</script>
+<script id="etack-encrypted" type="application/json">{"version":"staticrypt-3.5.4","salt":"bc04a382fa7a5a54533e20bb6586dcb3","encrypted":"f7c2955fff3cfecf919705b588e4eb406d5bddca26df1407987edeb25a377c2fafd8af8c45db709afb34fbee25f3ed85ee78cfb029c8eabf8fb2311f67e3d464c5a9868f7b6fe1d6d6dc92cf65483d46b1f2ea86623f99ee705418d03bf67e5cff46390a9e43816dc62c9010c1f600fb2281e204feba22dc81bdc3d1ce91ba96e4806855c494d4fd0512f4b70936d5eb8103b10e25df63b3708f8a8040dbb46dc636455c4ae435aad0b21963168636a93973e50032bb2d1c90807afb0414140bfc8d90cc606431ee673853def22d2b33002e802c3c91d3493b64d95269e6a8f304dd5df5979fe3befc264530f877fa9c5ba718face43256beb2fe6cfb271ab778c58f4b24b93bbbcc828b35e1b2bd5efef5d8713382f7adc248ce6cfa18b229d56f957b3c325f8415c4117609d49d37d672b83032d61f88ebbc58aae5c413cb3d5d4023e143d17cdf042e7756d697d9e071bf1facb4c7ac106850abc27d489f1549924b1727f88557aa4aa5216e82e9627277d72e785ca58e9c06a3181bb147e31caee75b321bea7be598b95929a33b20442b09c51edd89586a906462abfb652"}</script>
 <script>const etackCrypto=(()=>{const exports={};
 const crypto = typeof window === "undefined" ? require("node:crypto").webcrypto : window.crypto;
 const { subtle } = crypto;
@@ -408,6 +408,16 @@ return exports;})();</script>
     const result = await codec.decode(payload.encrypted, key, payload.salt);
     if (!result.success) return false;
     saveKey(key);
+    // A remembered key can decrypt while the HTML parser is still running.
+    // document.open() is then ignored and document.write() inserts the website
+    // into the login page instead of replacing it. Wait for parser completion
+    // and leave its current task before opening a fresh document.
+    await new Promise(resolve => {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', resolve, {once:true});
+      } else resolve();
+    });
+    await new Promise(resolve => setTimeout(resolve, 0));
     // Keep the current path, query and fragment so direct comparison links work.
     document.open();
     document.write(result.decoded);

@@ -4,10 +4,12 @@ const nodes=new Map();const node=s=>{if(!nodes.has(s))nodes.set(s,{value:s==='[d
 const ctx=vm.createContext({URL,URLSearchParams,Intl,Date,console,location:'http://localhost/index.html',history:{pushState(){}},window:{EYYA_CATALOG:catalog,addEventListener(){},scrollTo(){}},document:{querySelector:node,addEventListener(){}}});
 vm.runInContext(fs.readFileSync(__dirname+'/assets/fleet.js','utf8'),ctx);
 assert.equal(new Set(catalog.events.map(e=>e.id)).size,catalog.events.length);
-assert.equal(catalog.events.filter(e=>e.sourceFolder.endsWith('0904')).length,10);
+assert.equal(catalog.events.filter(e=>e.sourceFolder.endsWith('0904')).length,8);
+assert.equal(catalog.events.filter(e=>e.sourceFolder.endsWith('0907')&&e.carriages.length===10).length,2);
+assert.equal(catalog.events.filter(e=>/(0919|0920)$/.test(e.sourceFolder)).length,23);
 vm.runInContext("activeDate='2026-08-19'; $('[data-period-mode]').value='overnight'; render();",ctx);
 const stats=vm.runInContext("({captures:sessions(filtered()).length,units:new Set(filtered().map(e=>e.unit)).size,carriages:[...new Set(filtered().map(e=>e.unit))].reduce((n,u)=>n+carriageCount(u),0),wash:sessions(filtered()).filter(s=>s.items.some(e=>e.washed)).length})",ctx);
-assert.equal(stats.captures,10);assert.equal(stats.units,7);assert.equal(stats.carriages,64);assert.equal(stats.wash,7);
+assert.equal(stats.captures,24);assert.equal(stats.units,15);assert.equal(stats.carriages,130);assert.equal(stats.wash,11);
 // Explicit boundaries: evening included, early morning excluded at 07:00.
 vm.runInContext(`catalog.events.push(...['18:59','19:00'].map(time=>({unit:'999999',date:'2026-08-19',time})),...['06:59','07:00'].map(time=>({unit:'999999',date:'2026-08-20',time})));`,ctx);
 assert.equal(vm.runInContext("filtered().filter(e=>e.unit==='999999').map(e=>e.time).join(',')",ctx),'19:00,06:59');
@@ -23,6 +25,12 @@ assert(html.includes('data-video-event="701042-2026-08-19-A"'));
 assert(html.includes('issue-severe issue-metric'));
 assert(html.includes('highlight=severe'));
 assert(!html.includes('<aside'));
+assert(html.includes('Non-compliant · Graffiti'));
+const graffitiChart=vm.runInContext("chart('482042',catalog.events.filter(e=>e.unit==='701042'&&e.side==='A'&&e.mode==='panorama'))",ctx);
+assert.equal((graffitiChart.match(/fill=\"#8054c9\"/g)||[]).length,3);
+assert.equal((graffitiChart.match(/Graffiti present/g)||[]).length,3);
+assert.equal(vm.runInContext("chartColour({assessed:true,cleanliness:'Non-Compliant',defects:[]})",ctx),'#e34e53');
+assert.equal(vm.runInContext("chartColour({assessed:false,defects:[{type:'graffiti'}]})",ctx),'#fff');
 vm.runInContext("route('701022')",ctx);
 let sideHtml=node('[data-dashboard]').innerHTML;
 assert(sideHtml.includes('history · Side A'));
