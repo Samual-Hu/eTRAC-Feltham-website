@@ -28,7 +28,7 @@ from stain_demo.web_review import (  # noqa: E402
 TOKEN = secrets.token_urlsafe(24)
 CLIENT_MODE = "--client" in sys.argv[1:]
 NO_BROWSER = "--no-browser" in sys.argv[1:]
-API_VERSION = 2
+API_VERSION = 3
 HISTORY_PATH = ROOT / "annotations" / "web_review_history.jsonl"
 
 
@@ -40,6 +40,12 @@ def _site_image(value: object) -> Path:
     # The website copy is generated output. Launch the annotation App with the
     # original material so a later site refresh can never invalidate its input.
     if len(relative.parts) >= 4 and relative.parts[:2] == ("assets", "media"):
+        catalog = json.loads((SITE / "assets" / "catalog.json").read_text(encoding="utf-8"))
+        event = next((e for e in catalog["events"] if e["id"] == relative.parts[2]), None)
+        if event:
+            original = ROOT / "materials" / event["sourceFolder"] / relative.name
+            if original.is_file():
+                return original.resolve()
         matches = [path.resolve() for path in (ROOT / "materials").rglob(relative.name) if path.is_file()]
         if len(matches) == 1:
             return matches[0]
@@ -76,10 +82,13 @@ def _valid_box(value) -> bool:
 def apply_edit(payload: dict) -> dict:
     action = payload.get("action")
     serial, date = str(payload.get("serial", "")), str(payload.get("date", ""))
+    side = payload.get("side")
+    if side not in {"A", "B"}:
+        raise ValueError("A/B side is required. Refresh the website and restart the local server.")
     if len(serial) != 6 or len(date) != 10:
         raise ValueError("A six-digit carriage number and ISO date are required")
     document = load_overrides()
-    state = document["states"].setdefault(state_key(serial, date), {"serial": serial, "date": date, "annotations": [], "deleted_annotation_ids": []})
+    state = document["states"].setdefault(state_key(serial, date, side), {"serial": serial, "date": date, "side": side, "annotations": [], "deleted_annotation_ids": []})
     if action == "comparison":
         source_id = str(payload.get("sourceId", ""))
         source_box = payload.get("sourceBBox")
@@ -97,7 +106,7 @@ def apply_edit(payload: dict) -> dict:
             source_items[source_index] = source_item
         if payload.get("sourceGrade") in VALID_GRADES:
             state["grade"] = payload["sourceGrade"]
-        target_state = document["states"].setdefault(state_key(serial, target_date), {"serial": serial, "date": target_date, "annotations": [], "deleted_annotation_ids": []})
+        target_state = document["states"].setdefault(state_key(serial, target_date, side), {"serial": serial, "date": target_date, "side": side, "annotations": [], "deleted_annotation_ids": []})
         target_box = payload.get("targetBBox")
         if target_id and _valid_box(target_box):
             target_item = {"annotation_id": target_id, "type": payload.get("targetType", "severe"), "bbox": [round(number) for number in target_box], "source": "human_web_review"}
@@ -111,7 +120,7 @@ def apply_edit(payload: dict) -> dict:
                 target_items[target_index] = target_item
         if payload.get("targetGrade") in VALID_GRADES:
             target_state["grade"] = payload["targetGrade"]
-        set_link(document, serial, date, source_id, target_date, target_id)
+        set_link(document, serial, date, source_id, target_date, target_id, side)
         target_state["updated_at"] = datetime.now(timezone.utc).isoformat()
     elif action == "grade":
         if payload.get("grade") not in VALID_GRADES:
@@ -142,7 +151,7 @@ def apply_edit(payload: dict) -> dict:
         target_id = payload.get("targetId")
         if len(target_date) != 10 or not source_id:
             raise ValueError("Source annotation and target date are required")
-        set_link(document, serial, date, source_id, target_date, target_id or None)
+        set_link(document, serial, date, source_id, target_date, target_id or None, side)
     else:
         raise ValueError("Unsupported edit action")
     state["updated_at"] = datetime.now(timezone.utc).isoformat()
@@ -151,7 +160,8 @@ def apply_edit(payload: dict) -> dict:
         history.write(json.dumps({"saved_at": datetime.now(timezone.utc).isoformat(), "payload": payload}, ensure_ascii=False) + "\n")
     save_overrides(document)
     catalog = export_site_data()
-    matching = next((item for item in catalog["comparisons"] if item.get("serial") == serial and item.get("sourceDate") == date and item.get("stainId") == str(payload.get("sourceId", "")) and item.get("targetDate") == str(payload.get("targetDate", ""))), None)
+    source_ids = {e["id"] for e in catalog["events"] if e.get("side") == side and e.get("date") == date}
+    matching = next((item for item in catalog["comparisons"] if item.get("sourceEventId") in source_ids and item.get("serial") == serial and item.get("sourceDate") == date and item.get("stainId") == str(payload.get("sourceId", "")) and item.get("targetDate") == str(payload.get("targetDate", ""))), None)
     return {"ok": True, "events": len(catalog["events"]), "comparisons": len(catalog["comparisons"]), "comparisonId": matching.get("id") if matching else None}
 
 
