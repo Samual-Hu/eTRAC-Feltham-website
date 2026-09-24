@@ -41,7 +41,7 @@
 .library-page .compact-issues:not(:has(h2)) .fleet-toolbar{border-left:0;padding-left:0}
 .issue-metric{text-decoration:none;transition:background .15s}
 .issue-metric:hover,.issue-metric:focus-visible{background:#eaf4fa;outline:1px solid currentColor}
-.metric-open-cue{position:absolute;right:12px;top:12px;width:25px;height:25px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;background:#fff;transition:transform .15s,background .15s}.metric-open-cue svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.issue-metric:hover .metric-open-cue,.issue-metric:focus-visible .metric-open-cue{transform:translateX(2px);background:#eaf4fa}
+.metric-open-cue{position:absolute;right:12px;bottom:12px;width:25px;height:25px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;background:#fff;transition:transform .15s,background .15s}.metric-open-cue svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.issue-metric:hover .metric-open-cue,.issue-metric:focus-visible .metric-open-cue{transform:translateX(2px);background:#eaf4fa}
 .chart-wash[role="button"]{cursor:pointer}
 .chart-wash .wash-guide{pointer-events:none}
 .library-page .compact-issues{gap:14px;flex-wrap:wrap}
