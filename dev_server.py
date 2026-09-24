@@ -29,7 +29,7 @@ from stain_demo.web_review import (  # noqa: E402
 TOKEN = secrets.token_urlsafe(24)
 CLIENT_MODE = "--client" in sys.argv[1:]
 NO_BROWSER = "--no-browser" in sys.argv[1:]
-API_VERSION = 3
+API_VERSION = 4
 HISTORY_PATH = ROOT / "annotations" / "web_review_history.jsonl"
 
 
@@ -60,15 +60,19 @@ def _site_image(value: object) -> Path:
 
 
 def launch_annotation_app(payload: dict) -> dict:
-    earlier = _site_image(payload.get("earlierImage"))
-    later = _site_image(payload.get("laterImage"))
+    if payload.get("image"):
+        arguments = ["--single", str(_site_image(payload["image"]))]
+    else:
+        earlier = _site_image(payload.get("earlierImage"))
+        later = _site_image(payload.get("laterImage"))
+        arguments = ["--earlier", str(earlier), "--later", str(later)]
     pythonw = ROOT / ".venv" / "Scripts" / "pythonw.exe"
     python = pythonw if pythonw.exists() else ROOT / ".venv" / "Scripts" / "python.exe"
     if not python.exists():
         raise ValueError("The local annotation runtime is missing")
     flags = 0 if python == pythonw else getattr(subprocess, "CREATE_NO_WINDOW", 0)
     process = subprocess.Popen(
-        [str(python), str(ROOT / "annotation_app.py"), "--earlier", str(earlier), "--later", str(later)],
+        [str(python), str(ROOT / "annotation_app.py"), *arguments],
         cwd=str(ROOT),
         creationflags=flags,
         close_fds=True,
@@ -86,7 +90,7 @@ def apply_edit(payload: dict) -> dict:
     side = payload.get("side")
     if side not in {"A", "B"}:
         raise ValueError("A/B side is required. Refresh the website and restart the local server.")
-    if len(serial) != 6 or len(date) != 10:
+    if len(serial) not in (5, 6) or not serial.isdigit() or len(date) != 10:
         raise ValueError("A six-digit carriage number and ISO date are required")
     document = load_overrides()
     state = document["states"].setdefault(state_key(serial, date, side), {"serial": serial, "date": date, "side": side, "annotations": [], "deleted_annotation_ids": []})

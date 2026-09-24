@@ -1,5 +1,5 @@
 window.EyyaDev = (() => {
-  const requiredApiVersion = 3;
+  const requiredApiVersion = 4;
   let session;
   async function connect() {
     if (session !== undefined) return session;

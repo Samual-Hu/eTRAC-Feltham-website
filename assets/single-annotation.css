@@ -1,0 +1,13 @@
+.event-summary .dev-single-annotate {
+  margin: 4px 0 0 8px;
+  padding: 5px 9px;
+  border: 1px solid #57a7c7;
+  border-radius: 6px;
+  background: #e8f6fc;
+  color: #075b7d;
+  font: 700 12px Arial, sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.event-summary .dev-single-annotate:hover { background: #d5f0fa; }
+.event-summary .dev-single-annotate:disabled { opacity: .55; cursor: wait; }

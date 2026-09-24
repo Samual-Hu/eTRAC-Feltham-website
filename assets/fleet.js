@@ -12,17 +12,22 @@ const colours = {'compliant':'#1a9d69','marginal':'#efa51b','non-compliant':'#e3
 const graffitiNonCompliant = c => c.assessed && grade(c)==='non-compliant' && (c.defects||[]).some(d=>d.type==='graffiti');
 const chartColour = c => !c.assessed ? '#fff' : graffitiNonCompliant(c) ? '#8054c9' : colours[grade(c)]||'#98a6b1';
 const chartCondition = c => !c.assessed ? 'Not assessed' : c.cleanliness + (graffitiNonCompliant(c) ? ' · Graffiti present' : '');
-// User-designated demonstration cases; estimates, not metered savings or an automatic clean verdict.
-const savingCases=[
- {unit:'701046',date:'2026-08-04',time:'19:53',reason:'User-identified avoidable wash: pre-wash surface review'},
- {unit:'701046',date:'2026-08-06',time:'19:19',reason:'User-identified avoidable wash: pre-wash surface review'},
- {unit:'450047+450119',date:'2026-08-19',time:'21:41',reason:'User-identified repeat wash: second wash the same evening'}
-];
-const savingCase=e=>e.washed&&savingCases.find(w=>w.unit===e.unit&&w.date===e.date&&w.time===e.time);
+// A pre-wash verdict needs complete assessments on both sides of the same pass.
+// A second wash of the same formation that evening is counted separately.
+function savingCase(e){
+ if(!e.washed)return null;
+ const same=catalog.events.filter(other=>other.unit===e.unit&&other.date===e.date&&other.time===e.time);
+ const earlierWash=catalog.events.some(other=>other.unit===e.unit&&other.date===e.date&&other.washed&&other.time<e.time);
+ if(earlierWash)return {reason:'Repeat wash of the same train on this evening'};
+ const panoramas=same.filter(other=>other.mode==='panorama');
+ if(!['A','B'].every(side=>panoramas.some(p=>p.side===side)))return null;
+ if(panoramas.some(p=>p.carriages.length!==carriageCount(e.unit)||p.carriages.some(c=>!c.assessed||grade(c)==='non-compliant')))return null;
+ return {reason:'Both pre-wash sides assessed; no non-compliant carriage'};
+}
 const featureFilters={both:false,pano:false,wash:false};
 function matchesFeatures(items){return (!featureFilters.both||['A','B'].every(s=>items.some(e=>e.side===s)))&&(!featureFilters.pano||items.some(e=>e.mode==='panorama'))&&(!featureFilters.wash||items.some(e=>e.washed));}
 function savings(events){const cases=sessions(events).filter(s=>s.items.some(savingCase));return {count:cases.length,water:cases.reduce((n,s)=>n+carriageCount(s.primary.unit)*225,0),cost:cases.length*182};}
-function savingsMetrics(events){const v=savings(events);const note=esc(v.count+' user-identified avoidable washes · Estimate: 225 L per carriage; £182 per train wash. Not measured savings.');return '<article class="fleet-metric savings-metric" title="'+note+'"><span class="metric-icon" aria-hidden="true">◈</span><strong>'+v.water.toLocaleString('en-GB')+' L</strong><b>Potential water saving</b><small>'+v.count+' avoidable washes · estimated</small></article><article class="fleet-metric savings-metric" title="'+note+'"><span class="metric-icon" aria-hidden="true">£</span><strong>£'+v.cost.toLocaleString('en-GB')+'</strong><b>Potential cost saving</b><small>£182 per train wash · estimated</small></article>';}
+function savingsMetrics(events){const v=savings(events);const note=esc(v.count+' potentially avoidable washes · Estimate: 225 L per carriage; £182 per train wash. Not measured savings.');return '<article class="fleet-metric savings-metric" title="'+note+'"><span class="metric-icon" aria-hidden="true">◈</span><strong>'+v.water.toLocaleString('en-GB')+' L</strong><b>Potential water saving</b><small>'+v.count+' washes · 225 L per carriage (estimate)</small></article><article class="fleet-metric savings-metric" title="'+note+'"><span class="metric-icon" aria-hidden="true">£</span><strong>£'+v.cost.toLocaleString('en-GB')+'</strong><b>Potential cost saving</b><small>£182 per train wash · estimated</small></article>';}
 let historySide=new URLSearchParams(location.search).get('side')||'';
 let activeDate='*', activeClass='*', unitView=new URLSearchParams(location.search).get('unit')||'';
 function sessions(events){const m=new Map();events.forEach(e=>{const k=[e.unit,e.date,e.time].join('|');if(!m.has(k))m.set(k,[]);m.get(k).push(e);});return [...m.values()].map(items=>({items,primary:items.find(e=>e.mode==='panorama')||items[0],cover:(items.find(e=>e.coverProvided)||items[0]).cover})).sort((a,b)=>(b.primary.date+b.primary.time).localeCompare(a.primary.date+a.primary.time));}
@@ -38,7 +43,7 @@ function latestIssue(events,type){
 }
 function issuePanel(rows,events){return `<div class="issue-totals">${issues(rows).map(({type,n})=>{const href=latestIssue(events,type);const label=type[0].toUpperCase()+type.slice(1);return href?`<a class="issue-${type}" href="${esc(href)}" aria-label="${label}: ${n}. Open latest matching carriage"><strong>${n}</strong><span>${label}</span><span class="issue-arrow" aria-hidden="true">↗</span></a>`:`<div class="issue-${type} is-empty"><strong>${n}</strong><span>${label}</span></div>`;}).join('')}</div>`;}
 
-function issueMetric(n,type,events){const href=latestIssue(events,type);const label=type[0].toUpperCase()+type.slice(1);return href?`<a class="fleet-metric issue-${type} issue-metric" href="${esc(href)}">${metricIcon(label)}<strong>${n}</strong><b>${label} ↗</b></a>`:`<article class="fleet-metric issue-${type}">${metricIcon(label)}<strong>${n}</strong><b>${label}</b></article>`;}
+function issueMetric(n,type,events){const href=latestIssue(events,type);const label=type[0].toUpperCase()+type.slice(1);return href?`<a class="fleet-metric issue-${type} issue-metric" href="${esc(href)}" aria-label="Open latest ${label.toLowerCase()} annotation">${metricIcon(label)}<span class="metric-open-cue" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13m-6-6 6 6-6 6"/></svg></span><strong>${n}</strong><b>${label}</b></a>`:`<article class="fleet-metric issue-${type}">${metricIcon(label)}<strong>${n}</strong><b>${label}</b></article>`;}
 function overview(events){const grouped=sessions(events), units=[...new Set(events.map(e=>e.unit))];const latest=new Map();events.filter(e=>e.mode==='panorama').sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).forEach(e=>e.carriages.forEach(c=>{if(c.assessed)latest.set(e.unit+'|'+e.side+'|'+c.serial,c);}));const rows=[...latest.values()];const allRows=events.filter(e=>e.mode==='panorama').flatMap(e=>e.carriages);const pct=g=>rows.length?Math.round(rows.filter(c=>grade(c)===g).length/rows.length*100)+'%':'—';
 return `<div class="fleet-heading"><div><h1>Fleet overview</h1>${activeDate==='*'?'':`<span>${dateLabel(activeDate)}</span>`}</div></div><div class="fleet-metrics overview-metrics">${metric(grouped.length,'Train captures',`${units.length} distinct train units`)}${metric(grouped.reduce((n,s)=>n+carriageCount(s.primary.unit),0),'Carriage passages',`${units.reduce((n,u)=>n+carriageCount(u),0)} across distinct units`)}${metric(pct('compliant'),'Compliant',`${rows.length} latest assessed surfaces`,colours.compliant)}${metric(pct('marginal'),'Marginal','Of assessed surfaces',colours.marginal)}${metric(pct('non-compliant'),'Non-compliant','Of assessed surfaces',colours['non-compliant'])}${issues(allRows).map(({type,n})=>issueMetric(n,type,events)).join('')}${savingsMetrics(events)}</div>`;}
 
