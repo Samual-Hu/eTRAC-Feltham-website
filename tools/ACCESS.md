@@ -16,5 +16,6 @@ the browser tab. Closing the tab normally clears it; browsers may restore tab
 sessions. This is convenience, not a security boundary.
 
 This is deliberately lightweight protection: a four-digit code is brute-forceable.
-Media, scripts, catalogs, public repository files and previous Git history remain
-public. No claim of server-side access control or confidential media storage is made.
+Media is publicly served from the R2 development URL. Scripts, catalogs,
+public repository files and previous Git history remain public. No claim of
+server-side access control or confidential media storage is made.

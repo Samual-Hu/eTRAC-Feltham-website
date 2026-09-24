@@ -1,4 +1,10 @@
 assets/panoramas/
+Cloudflare_API.txt
+assets/media/
+assets/compare/
+assets/carriages/
+assets/carriages-q4809/
 server.*.log
 __pycache__/
 assets/.site-export.lock
+.r2-upload-state.json

@@ -15,6 +15,7 @@ SITE = ROOT / "site"
 sys.path.insert(0, str(ROOT))
 
 from stain_demo.site_export import export_site_data  # noqa: E402
+from stain_demo.media_storage import local_media_path, sync_public_media  # noqa: E402
 from stain_demo.web_review import (  # noqa: E402
     VALID_GRADES,
     VALID_TYPES,
@@ -33,9 +34,9 @@ HISTORY_PATH = ROOT / "annotations" / "web_review_history.jsonl"
 
 
 def _site_image(value: object) -> Path:
-    relative = Path(str(value or ""))
-    candidate = (SITE / relative).resolve()
-    if SITE.resolve() not in candidate.parents or candidate.suffix.lower() not in {".jpg", ".jpeg", ".png", ".bmp", ".webp"} or not candidate.is_file():
+    candidate = local_media_path(str(value or ""), SITE)
+    relative = candidate.relative_to(SITE.resolve())
+    if candidate.suffix.lower() not in {".jpg", ".jpeg", ".png", ".bmp", ".webp"} or not candidate.is_file():
         raise ValueError("A valid website panorama image is required")
     # The website copy is generated output. Launch the annotation App with the
     # original material so a later site refresh can never invalidate its input.
@@ -160,6 +161,7 @@ def apply_edit(payload: dict) -> dict:
         history.write(json.dumps({"saved_at": datetime.now(timezone.utc).isoformat(), "payload": payload}, ensure_ascii=False) + "\n")
     save_overrides(document)
     catalog = export_site_data()
+    sync_public_media()
     source_ids = {e["id"] for e in catalog["events"] if e.get("side") == side and e.get("date") == date}
     matching = next((item for item in catalog["comparisons"] if item.get("sourceEventId") in source_ids and item.get("serial") == serial and item.get("sourceDate") == date and item.get("stainId") == str(payload.get("sourceId", "")) and item.get("targetDate") == str(payload.get("targetDate", ""))), None)
     return {"ok": True, "events": len(catalog["events"]), "comparisons": len(catalog["comparisons"]), "comparisonId": matching.get("id") if matching else None}
@@ -225,6 +227,7 @@ if __name__ == "__main__":
     print("Refreshing website data from materials...", flush=True)
     try:
         refreshed = export_site_data()
+        sync_public_media()
     except Exception as exc:
         raise SystemExit(f"Website refresh failed; the previous catalog was kept intact: {exc}") from exc
     print(f"Website data ready: {len(refreshed['events'])} captures, {len(refreshed['comparisons'])} comparisons", flush=True)
