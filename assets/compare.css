@@ -3,3 +3,10 @@
 .full-review .compare-image{display:block;overflow-x:auto;overflow-y:hidden;scroll-behavior:auto}.full-review .panorama-strip{position:relative;display:block;flex:none;overflow:hidden}.full-review .panorama-strip img{display:block;width:100%;height:100%;max-width:none;max-height:none;margin:0;object-fit:fill}.full-review .focus-frame{z-index:4}
 .review-position{display:grid;grid-template-columns:auto auto minmax(110px,190px) 62px;align-items:center;gap:5px;min-width:340px}.review-position input{width:100%;accent-color:#21b6a8}.review-position output{color:#fff;font:800 11px Arial;text-align:center}.review-position button{height:29px!important;padding:0 7px!important}.review-position button.is-active{border-color:#ffb000!important;background:#ffb000!important;color:#10202b!important}
 .reviewed-full-box{position:absolute;z-index:3;border:1px dashed #20f0d1;background:#20f0d10c;pointer-events:none}.reviewed-severe{border-color:#ff355d}.reviewed-minor{border-color:#4b9cff}.reviewed-graffiti{border-color:#b66cff}
+.compare-pane{min-height:0}.aligned-review .compare-image img{position:absolute;max-width:none;max-height:none;object-fit:fill}
+.carriage-picker{position:relative;justify-self:center;z-index:60;font-size:15px}
+.carriage-picker summary{cursor:pointer;list-style:none;padding:8px 14px;border:1px solid #42667a;border-radius:7px;font-weight:700}
+.carriage-picker summary::-webkit-details-marker{display:none}
+.carriage-picker nav{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);width:280px;max-width:85vw;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:12px;border:1px solid #42667a;border-radius:10px;background:#102a3d;box-shadow:0 12px 30px #0008}
+.carriage-choice{padding:10px;border:1px solid #42667a;border-radius:6px;text-align:center;font-weight:700;text-decoration:none;color:#aabdc8}
+.carriage-choice.compliant{color:#46d7a2}.carriage-choice.marginal{color:#ffc14c}.carriage-choice.non-compliant{color:#ff6c78}.carriage-choice[aria-current]{outline:2px solid currentColor;background:#ffffff12}.carriage-choice:hover{background:#ffffff15}.carriage-choice[aria-disabled]{opacity:.4}

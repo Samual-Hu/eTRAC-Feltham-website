@@ -1,4 +1,7 @@
-.library-page .carriage-charts{grid-template-columns:repeat(5,minmax(0,1fr));gap:22px 18px}
+.library-page .carriage-charts{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px 18px}
+.library-page .carriage-charts.four-car-rows{grid-template-columns:minmax(0,1fr);gap:18px}
+.formation-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 18px;min-width:0}
+.formation-label{grid-column:1/-1;margin:0 0 2px;color:#315a72;font-size:15px;font-weight:700}
 .lifecycle-layout{grid-template-columns:minmax(0,1fr)}
 .history-chart-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
 .history-chart-heading h2{margin:0}

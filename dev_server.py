@@ -29,7 +29,7 @@ from stain_demo.web_review import (  # noqa: E402
 TOKEN = secrets.token_urlsafe(24)
 CLIENT_MODE = "--client" in sys.argv[1:]
 NO_BROWSER = "--no-browser" in sys.argv[1:]
-API_VERSION = 4
+API_VERSION = 5
 HISTORY_PATH = ROOT / "annotations" / "web_review_history.jsonl"
 
 
@@ -92,8 +92,20 @@ def apply_edit(payload: dict) -> dict:
         raise ValueError("A/B side is required. Refresh the website and restart the local server.")
     if len(serial) not in (5, 6) or not serial.isdigit() or len(date) != 10:
         raise ValueError("A six-digit carriage number and ISO date are required")
+    event_id = str(payload.get("eventId") or "")
+    target_event_id = str(payload.get("targetEventId") or "")
+    if event_id or target_event_id:
+        events = json.loads((SITE / "assets" / "catalog.json").read_text(encoding="utf-8"))["events"]
+        def valid_visit(visit_id, visit_date):
+            return any(event["id"] == visit_id and event["date"] == visit_date
+                       and event.get("side") == side and any(car["serial"] == serial for car in event["carriages"])
+                       for event in events)
+        if event_id and not valid_visit(event_id, date):
+            raise ValueError("Capture changed; refresh the page before editing")
+        if target_event_id and not valid_visit(target_event_id, str(payload.get("targetDate") or "")):
+            raise ValueError("Comparison capture changed; refresh the page before editing")
     document = load_overrides()
-    state = document["states"].setdefault(state_key(serial, date, side), {"serial": serial, "date": date, "side": side, "annotations": [], "deleted_annotation_ids": []})
+    state = document["states"].setdefault(state_key(serial, date, side, event_id), {"serial": serial, "date": date, "side": side, "annotations": [], "deleted_annotation_ids": []})
     if action == "comparison":
         source_id = str(payload.get("sourceId", ""))
         source_box = payload.get("sourceBBox")
@@ -111,7 +123,7 @@ def apply_edit(payload: dict) -> dict:
             source_items[source_index] = source_item
         if payload.get("sourceGrade") in VALID_GRADES:
             state["grade"] = payload["sourceGrade"]
-        target_state = document["states"].setdefault(state_key(serial, target_date, side), {"serial": serial, "date": target_date, "side": side, "annotations": [], "deleted_annotation_ids": []})
+        target_state = document["states"].setdefault(state_key(serial, target_date, side, target_event_id), {"serial": serial, "date": target_date, "side": side, "annotations": [], "deleted_annotation_ids": []})
         target_box = payload.get("targetBBox")
         if target_id and _valid_box(target_box):
             target_item = {"annotation_id": target_id, "type": payload.get("targetType", "severe"), "bbox": [round(number) for number in target_box], "source": "human_web_review"}
@@ -166,7 +178,7 @@ def apply_edit(payload: dict) -> dict:
     save_overrides(document)
     catalog = export_site_data()
     sync_public_media()
-    source_ids = {e["id"] for e in catalog["events"] if e.get("side") == side and e.get("date") == date}
+    source_ids = {event_id} if event_id else {e["id"] for e in catalog["events"] if e.get("side") == side and e.get("date") == date}
     matching = next((item for item in catalog["comparisons"] if item.get("sourceEventId") in source_ids and item.get("serial") == serial and item.get("sourceDate") == date and item.get("stainId") == str(payload.get("sourceId", "")) and item.get("targetDate") == str(payload.get("targetDate", ""))), None)
     return {"ok": True, "events": len(catalog["events"]), "comparisons": len(catalog["comparisons"]), "comparisonId": matching.get("id") if matching else None}
 
