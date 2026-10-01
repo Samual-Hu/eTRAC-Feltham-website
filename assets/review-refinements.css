@@ -105,3 +105,18 @@
 .capture-copy strong{white-space:nowrap;font-size:clamp(12px,1.05vw,18px)}
 .cleanliness-unassessed{color:#7a8c98}
 .avoidable-badge{position:absolute;left:8px;top:39px;padding:4px 8px;border:1px solid #87c6bb;border-radius:6px;background:#e5f6f3f5;color:#126a60;font-size:11px;font-weight:700;line-height:1.2}
+.captures-bar[hidden],.capture-grid[hidden]{display:none}
+.issue-minor{color:var(--minor,#155eef)}
+.issue-list-heading h1.issue-graffiti{color:#8557c8}.issue-list-heading h1.issue-severe{color:#e34e53}.issue-list-heading h1.issue-minor{color:var(--minor,#155eef)}
+.issue-panorama-list{display:grid;gap:8px;padding-bottom:20px}
+.issue-panorama-card{overflow:hidden;border:1px solid #cbdce7;border-radius:8px;background:#fff}
+.issue-panorama-image{position:relative;display:block;line-height:0;background:#102635;text-decoration:none;color:white}
+.issue-panorama-image img{display:block;width:100%;height:auto}
+.issue-panorama-meta{position:absolute;top:8px;left:8px;z-index:1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;max-width:calc(100% - 16px);padding:5px 8px;border-radius:5px;background:#061826d9;color:white;font:12px/1.2 Arial;pointer-events:none}
+.issue-panorama-meta strong{font-size:13px}.issue-panorama-meta>span{color:#e5edf4}
+.issue-region{position:absolute;min-width:4px;min-height:4px;border:2px solid currentColor;pointer-events:none}
+.issue-panorama-image:hover .issue-region{box-shadow:0 0 8px currentColor}
+.issue-panorama-image:focus-visible{outline:3px solid #0789c4;outline-offset:-3px}
+.issue-list-empty{padding:28px;color:#62798a;text-align:center}
+.local-refresh-status{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:100;max-width:80vw;padding:9px 16px;border:1px solid #91bdd5;border-radius:8px;background:#fff;color:#153954;font:13px/1.4 Arial;box-shadow:0 3px 12px #123b5820}
+@media(max-width:760px){.issue-panorama-meta{top:5px;left:5px;padding:4px 6px;gap:3px 8px;font-size:10px;max-width:calc(100% - 10px)}.issue-panorama-meta strong{font-size:11px}}

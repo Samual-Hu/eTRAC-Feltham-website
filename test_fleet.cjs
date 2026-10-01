@@ -79,7 +79,7 @@ assert.equal(vm.runInContext("latestIssue([], 'severe')",ctx),'');
 vm.runInContext("route('');activeDate='*';render()",ctx);
 const overview=node('[data-dashboard]').innerHTML;
 assert(overview.includes('Potential water saving'));assert(!overview.includes('Train classes'));assert(!overview.includes('<h2>Train history'));
-assert(overview.includes('highlight=graffiti'));assert(node('[data-history-select]').innerHTML.includes('701042'));
+assert(overview.includes('index.html?issue=graffiti'));assert(overview.includes('index.html?issue=severe'));assert(node('[data-history-select]').innerHTML.includes('701042'));
 let onLoad, jumped;
 vm.runInNewContext(fs.readFileSync(__dirname+'/assets/event.js','utf8').split('const capture =')[0],{window:{addEventListener:(name,fn)=>{onLoad=fn;}},URLSearchParams,location:{search:'?carriage=481042&highlight=graffiti'},jump:(...args)=>{jumped=args;}});
 onLoad();assert.deepEqual(jumped,['481042','graffiti']);

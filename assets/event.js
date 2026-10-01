@@ -3,7 +3,7 @@ const eventId = new URLSearchParams(location.search).get('event');
 window.addEventListener('load', () => {
   const serial = new URLSearchParams(location.search).get('carriage');
   const type = new URLSearchParams(location.search).get('highlight');
-  if (serial && /^\d{6}$/.test(serial)) jump(serial, ['severe','minor','graffiti'].includes(type) ? type : '');
+  if (serial && /^\d{5,6}$/.test(serial)) jump(serial, ['severe','minor','graffiti'].includes(type) ? type : '');
 });
 const capture = catalog.events.find((item) => item.id === eventId);
 const track = document.querySelector('[data-track]');
