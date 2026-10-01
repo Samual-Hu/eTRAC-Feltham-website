@@ -1,13 +1,16 @@
 from __future__ import annotations
 
 import json
+import re
 import secrets
 import subprocess
 import sys
+import threading
 import webbrowser
 from datetime import datetime, timezone
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -15,7 +18,8 @@ SITE = ROOT / "site"
 sys.path.insert(0, str(ROOT))
 
 from stain_demo.site_export import export_site_data  # noqa: E402
-from stain_demo.media_storage import local_media_path, sync_public_media  # noqa: E402
+from stain_demo.ground_truth import image_identity  # noqa: E402
+from stain_demo.media_storage import local_media_path, public_base  # noqa: E402
 from stain_demo.web_review import (  # noqa: E402
     VALID_GRADES,
     VALID_TYPES,
@@ -29,14 +33,28 @@ from stain_demo.web_review import (  # noqa: E402
 TOKEN = secrets.token_urlsafe(24)
 CLIENT_MODE = "--client" in sys.argv[1:]
 NO_BROWSER = "--no-browser" in sys.argv[1:]
-API_VERSION = 5
+API_VERSION = 7
 HISTORY_PATH = ROOT / "annotations" / "web_review_history.jsonl"
+REFRESH_STATUS = {"state": "idle"}
+
+
+def refresh_website() -> None:
+    REFRESH_STATUS.update(state="running")
+    print("Refreshing local captures in the background...", flush=True)
+    try:
+        result = export_site_data()
+    except Exception as exc:
+        REFRESH_STATUS.update(state="failed", error=str(exc))
+        print(f"Capture refresh failed; the previous catalog is still available: {exc}", flush=True)
+        return
+    REFRESH_STATUS.update(state="ready", revision=result["revision"])
+    print(f"Website data ready: {len(result['events'])} captures, {len(result['comparisons'])} comparisons", flush=True)
 
 
 def _site_image(value: object) -> Path:
     candidate = local_media_path(str(value or ""), SITE)
     relative = candidate.relative_to(SITE.resolve())
-    if candidate.suffix.lower() not in {".jpg", ".jpeg", ".png", ".bmp", ".webp"} or not candidate.is_file():
+    if candidate.suffix.lower() not in {".jpg", ".jpeg", ".png", ".bmp", ".webp"}:
         raise ValueError("A valid website panorama image is required")
     # The website copy is generated output. Launch the annotation App with the
     # original material so a later site refresh can never invalidate its input.
@@ -44,18 +62,27 @@ def _site_image(value: object) -> Path:
         catalog = json.loads((SITE / "assets" / "catalog.json").read_text(encoding="utf-8"))
         event = next((e for e in catalog["events"] if e["id"] == relative.parts[2]), None)
         if event:
-            original = ROOT / "materials" / event["sourceFolder"] / relative.name
+            source = (ROOT / "materials" / event["sourceFolder"]).resolve()
+            if (ROOT / "materials").resolve() not in source.parents:
+                raise ValueError("Invalid original material folder")
+            original = source / relative.name
             if original.is_file():
                 return original.resolve()
-        matches = [path.resolve() for path in (ROOT / "materials").rglob(relative.name) if path.is_file()]
-        if len(matches) == 1:
-            return matches[0]
-        event_id = relative.parts[2]
-        event_bits = event_id.split("-")
-        compact_date = "".join(event_bits[1:4])[2:] if len(event_bits) >= 4 else ""
-        narrowed = [path for path in matches if event_bits[0] in path.parent.name and compact_date in path.parent.name]
-        if len(narrowed) == 1:
-            return narrowed[0]
+            # A browser may still reference the old undated asset after originals
+            # have been renamed. Resolve only inside this capture's source folder,
+            # never from another side, date or same-day visit.
+            identity = image_identity(candidate)
+            match = re.fullmatch(r"(?:\d+_)?(?P<serial>\d{5,6})", relative.stem)
+            serial = identity[0] if identity else match.group("serial") if match else ""
+            matches = [path.resolve() for path in source.iterdir()
+                       if path.is_file() and path.suffix.lower() in {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
+                       and image_identity(path) == (serial, event["date"])] if source.is_dir() else []
+            if len(matches) == 1:
+                return matches[0]
+            raise ValueError(f"Cannot uniquely locate original panorama for carriage {serial}, {event['date']}, Side {event.get('side', '')}. Refresh the page and check the materials folder.")
+        raise ValueError("Capture is no longer in the catalog. Refresh the page before launching annotation.")
+    if not candidate.is_file() or not image_identity(candidate):
+        raise ValueError("An identifiable original panorama is required. Refresh the page and check the materials folder.")
     return candidate
 
 
@@ -177,7 +204,6 @@ def apply_edit(payload: dict) -> dict:
         history.write(json.dumps({"saved_at": datetime.now(timezone.utc).isoformat(), "payload": payload}, ensure_ascii=False) + "\n")
     save_overrides(document)
     catalog = export_site_data()
-    sync_public_media()
     source_ids = {event_id} if event_id else {e["id"] for e in catalog["events"] if e.get("side") == side and e.get("date") == date}
     matching = next((item for item in catalog["comparisons"] if item.get("sourceEventId") in source_ids and item.get("serial") == serial and item.get("sourceDate") == date and item.get("stainId") == str(payload.get("sourceId", "")) and item.get("targetDate") == str(payload.get("targetDate", ""))), None)
     return {"ok": True, "events": len(catalog["events"]), "comparisons": len(catalog["comparisons"]), "comparisonId": matching.get("id") if matching else None}
@@ -214,8 +240,27 @@ class Handler(SimpleHTTPRequestHandler):
         super().end_headers()
 
     def do_GET(self):
-        if self.path == "/api/dev/status":
-            self._json(200, {"enabled": not CLIENT_MODE, "mode": "customer" if CLIENT_MODE else "development", "apiVersion": API_VERSION, "token": TOKEN if not CLIENT_MODE else None})
+        path = urlsplit(self.path).path
+        if path == "/api/dev/status":
+            self._json(200, {"enabled": not CLIENT_MODE, "mode": "customer" if CLIENT_MODE else "development", "apiVersion": API_VERSION, "token": TOKEN if not CLIENT_MODE else None, "refresh": dict(REFRESH_STATUS)})
+            return
+        if path in {"/assets/catalog.js", "/assets/catalog.json"}:
+            catalog_path = SITE / path.lstrip("/")
+            if catalog_path.is_file():
+                text = catalog_path.read_text(encoding="utf-8")
+            else:
+                text = json.dumps({"events": [], "comparisons": [], "revision": ""})
+                if path.endswith(".js"):
+                    text = f"window.EYYA_CATALOG = {text};"
+            base = public_base(SITE)
+            if base:
+                text = text.replace(base + "/assets/", "/assets/")
+            data = text.encode("utf-8")
+            self.send_response(200)
+            self.send_header("Content-Type", "application/javascript; charset=utf-8" if path.endswith(".js") else "application/json; charset=utf-8")
+            self.send_header("Content-Length", str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
             return
         super().do_GET()
 
@@ -240,13 +285,6 @@ class Handler(SimpleHTTPRequestHandler):
 
 
 if __name__ == "__main__":
-    print("Refreshing website data from materials...", flush=True)
-    try:
-        refreshed = export_site_data()
-        sync_public_media()
-    except Exception as exc:
-        raise SystemExit(f"Website refresh failed; the previous catalog was kept intact: {exc}") from exc
-    print(f"Website data ready: {len(refreshed['events'])} captures, {len(refreshed['comparisons'])} comparisons", flush=True)
     port_args = [value for value in sys.argv[1:] if value.isdigit()]
     requested_port = int(port_args[0]) if port_args else 8080
     server = None
@@ -259,7 +297,9 @@ if __name__ == "__main__":
     if server is None:
         raise SystemExit("No free local preview port was found")
     url = f"http://127.0.0.1:{port}/"
-    print(f"{'Customer preview (read-only)' if CLIENT_MODE else 'Development editing enabled'} at {url}")
+    print(f"{'Customer preview (read-only)' if CLIENT_MODE else 'Development editing enabled'} at {url}", flush=True)
+    REFRESH_STATUS.update(state="running")
+    threading.Thread(target=refresh_website, name="capture-refresh", daemon=True).start()
     if not NO_BROWSER:
         webbrowser.open(url)
     try:

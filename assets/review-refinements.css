@@ -114,8 +114,9 @@
 .issue-panorama-image img{display:block;width:100%;height:auto}
 .issue-panorama-meta{position:absolute;top:8px;left:8px;z-index:1;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;max-width:calc(100% - 16px);padding:5px 8px;border-radius:5px;background:#061826d9;color:white;font:12px/1.2 Arial;pointer-events:none}
 .issue-panorama-meta strong{font-size:13px}.issue-panorama-meta>span{color:#e5edf4}
-.issue-region{position:absolute;min-width:4px;min-height:4px;border:2px solid currentColor;pointer-events:none}
-.issue-panorama-image:hover .issue-region{box-shadow:0 0 8px currentColor}
+:root{--annotation-border-width:1.5px}
+.defect-box{border-width:var(--annotation-border-width)}
+.issue-region{position:absolute;border:0;outline:var(--annotation-border-width) solid currentColor;background:transparent;pointer-events:none}
 .issue-panorama-image:focus-visible{outline:3px solid #0789c4;outline-offset:-3px}
 .issue-list-empty{padding:28px;color:#62798a;text-align:center}
 .local-refresh-status{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:100;max-width:80vw;padding:9px 16px;border:1px solid #91bdd5;border-radius:8px;background:#fff;color:#153954;font:13px/1.4 Arial;box-shadow:0 3px 12px #123b5820}

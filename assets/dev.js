@@ -1,6 +1,28 @@
 window.EyyaDev = (() => {
-  const requiredApiVersion = 5;
+  const requiredApiVersion = 7;
   let session;
+  function watchRefresh(initial) {
+    if(initial?.state !== 'running'||document.querySelector('.local-refresh-status'))return;
+    const notice=document.createElement('div');
+    notice.className='local-refresh-status';notice.setAttribute('role','status');
+    notice.textContent='Updating captures…';document.body.append(notice);
+    async function poll(){
+      try{
+        const response=await fetch('/api/dev/status',{cache:'no-store'});
+        if(!response.ok){notice.remove();return;}
+        const status=(await response.json()).refresh;
+        if(status?.state==='running'){setTimeout(poll,2000);return;}
+        if(status?.state==='ready'){
+          notice.remove();
+          if(status.revision!==window.EYYA_CATALOG?.revision)location.reload();
+        }else{
+          notice.textContent='Capture refresh failed. Existing records are still available.';
+          console.warn(status?.error||'Local capture refresh failed');
+        }
+      }catch(_error){notice.remove();}
+    }
+    setTimeout(poll,2000);
+  }
   async function connect() {
     if (session !== undefined) return session;
     try {
@@ -23,6 +45,7 @@ window.EyyaDev = (() => {
         badge.textContent = 'CUSTOMER VIEW · READ ONLY';
         document.body.append(badge);
       }
+      watchRefresh(session?.refresh);
     } catch (_error) {
       session = null;
     }

@@ -18,7 +18,7 @@ The exporter accepts material folders such as `701042_260714_1918_A_Pano` and vi
 
 ## Local testing
 
-Double-click `Start Local Website.bat`. The browser opens `http://localhost:8080/` and all videos work through the local web server. Close the command window to stop it.
+Double-click `Start Local Website.bat` for editing (`http://127.0.0.1:8270/`), or `Start Customer Preview.bat` for a read-only preview (`http://127.0.0.1:8280/`). A nearby free port is used if necessary. The browser opens immediately with the current catalog while material updates are exported in the background. Images and videos are served from local copies; startup and local annotation do not wait for R2 or require internet access. The page reloads after new captures are ready. Close the command window to stop the server.
 
 ## Refreshing data from the annotation App
 
@@ -31,3 +31,7 @@ After saving Ground Truth, click `导出网站` in the desktop annotation App. T
 The exporter reads `materials`, uses human-reviewed `temporal_ground_truth.json` states where available, copies local media, creates comparison tiles and refreshes `assets/catalog.json` / `assets/catalog.js`.
 
 No GitHub push or deployment is performed.
+
+Before publishing updated media or annotations, run `tools/r2_media.py sync` explicitly. Cloud uploads are separate from the local review workflow.
+
+The fleet overview's Severe, Minor and Graffiti metrics open a list of all matching carriage panoramas, retaining the selected date and wash filters. Each dated observation is listed separately. Open a panorama from this list to inspect its annotations or launch the local annotation App.

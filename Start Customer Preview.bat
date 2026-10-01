@@ -1,4 +1,14 @@
 @echo off
+setlocal
 chcp 65001 >nul
 cd /d "%~dp0"
-"..\.venv\Scripts\python.exe" dev_server.py --client 8280
+if not exist "..\.venv\Scripts\python.exe" (
+  echo The local Python runtime is missing. Run the project setup first.
+  pause
+  exit /b 1
+)
+"..\.venv\Scripts\python.exe" -u dev_server.py --client 8280
+if errorlevel 1 (
+  echo Customer preview startup failed. The error is shown above.
+  pause
+)

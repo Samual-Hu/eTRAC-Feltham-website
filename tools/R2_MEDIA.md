@@ -11,6 +11,6 @@ After adding or regenerating media, run from the project root:
 .\.venv\Scripts\python.exe site\tools\r2_media.py probe
 ```
 
-The local export and annotation paths also trigger `sync` automatically. `verify` performs a slower, full SHA-256 comparison against every R2 object. `sync` uses an ignored local state file to avoid uploading unchanged objects. Before publishing a newly generated catalog, ensure that every referenced object is uploaded and the public probe passes.
+Local export and annotation are offline workflows; they do not upload or publish automatically. `verify` performs a slower, full SHA-256 comparison against every R2 object. `sync` uses an ignored local state file to avoid uploading unchanged objects. Before publishing a newly generated catalog, ensure that every referenced object is uploaded and the public probe passes. If R2 returns 403, update the local credential file with valid object read/write access to `etrac-media`; do not publish a catalog pointing at missing media.
 
 The `r2.dev` address is publicly readable and intended by Cloudflare for development traffic. It does not inherit the HTML password gate. For a production presentation with sustained traffic, use an R2 custom domain and update `media-config.json`, then regenerate the catalog. A normal Git deletion removes media from the current branch and the Pages build, but older Git commits still contain historical copies; erasing those would require a separate coordinated history rewrite and force-push.

@@ -26,4 +26,11 @@ assert(css.includes('.issue-list-heading h1.issue-minor{color:var(--minor,#155ee
 assert(css.includes('.issue-panorama-list{display:grid;gap:8px;'));
 assert(css.includes('.issue-panorama-meta{position:absolute;'));
 assert(!css.includes('.issue-region i{'));
-console.log('All three issue galleries passed: in-image metadata, compact gaps, unnumbered boxes, panorama links and shared Minor blue.');
+assert(css.includes(':root{--annotation-border-width:1.5px}'));
+assert(css.includes('.defect-box{border-width:var(--annotation-border-width)}'));
+assert(css.includes('outline:var(--annotation-border-width) solid currentColor'));
+const boxStyle=css.match(/\.issue-region\{([^}]+)\}/)[1];
+assert(!boxStyle.includes('min-width'));assert(!boxStyle.includes('min-height'));
+assert(boxStyle.includes('border:0'));assert(boxStyle.includes('background:transparent'));
+assert(!css.includes('.issue-panorama-image:hover .issue-region'));
+console.log('All three issue galleries passed: compact in-image metadata, unnumbered boxes, panorama links, shared Minor blue and thin outlines without minimum sizes or glow.');
