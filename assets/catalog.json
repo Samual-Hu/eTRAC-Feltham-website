@@ -1,7 +1,306 @@
 {
   "generatedFrom": "materials + human reviewed temporal_ground_truth.json",
-  "revision": "1790347048806671900",
+  "revision": "1790891896009065200",
   "events": [
+    {
+      "id": "450012+450091-2026-08-17-A",
+      "unit": "450012+450091",
+      "date": "2026-08-17",
+      "time": "19:50",
+      "side": "A",
+      "washed": true,
+      "sourceFolder": "450012+450091_260817_1950_Pano_wash_0930/A",
+      "mode": "panorama",
+      "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/0_63212_260817.jpg",
+      "coverProvided": false,
+      "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/26-08-17_19-49-18.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "63212",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/0_63212_260817.jpg",
+          "width": 12358,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "64212",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/1_64212_260817.jpg",
+          "width": 12191,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6007,
+                595,
+                6168,
+                620
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "serial": "68112",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/2_68112_260817.jpg",
+          "width": 12023,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "63612",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/3_63612_260817.jpg",
+          "width": 12045,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "63291",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/4_63291_260817.jpg",
+          "width": 12292,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                3275,
+                1073,
+                3324,
+                1120
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            },
+            {
+              "id": "S002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                7231,
+                884,
+                7291,
+                899
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            },
+            {
+              "id": "S003",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                7758,
+                878,
+                7815,
+                897
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "serial": "64291",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/5_64291_260817.jpg",
+          "width": 12166,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "68191",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/6_68191_260817.jpg",
+          "width": 12261,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                4912,
+                826,
+                4969,
+                840
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "serial": "63691",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-A/7_63691_260817.jpg",
+          "width": 12214,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "450012+450091-2026-08-17-B",
+      "unit": "450012+450091",
+      "date": "2026-08-17",
+      "time": "19:50",
+      "side": "B",
+      "washed": true,
+      "sourceFolder": "450012+450091_260817_1950_Pano_wash_0930/B",
+      "mode": "panorama",
+      "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/26-08-17_19-50-08.jpg",
+      "coverProvided": true,
+      "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/26-08-17_19-50-08.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "63691",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/0_63691_260817.jpg",
+          "width": 13239,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "68191",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/1_68191_260817.jpg",
+          "width": 12781,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                7510,
+                542,
+                7528,
+                631
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            },
+            {
+              "id": "S002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9993,
+                779,
+                10044,
+                868
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "serial": "64291",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/2_64291_260817.jpg",
+          "width": 12880,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "63291",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/3_63291_260817.jpg",
+          "width": 12392,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "63612",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/4_63612_260817.jpg",
+          "width": 13009,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                7824,
+                788,
+                8263,
+                825
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "serial": "68112",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/5_68112_260817.jpg",
+          "width": 12960,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "64212",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/6_64212_260817.jpg",
+          "width": 12987,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "63212",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450012+450091-2026-08-17-B/7_63212_260817.jpg",
+          "width": 12657,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
     {
       "id": "450091-2026-08-20-U",
       "unit": "450012+450091",
@@ -1135,6 +1434,320 @@
       "coverProvided": true,
       "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450017-2026-08-19-U/26-08-19_05-28-06_450017.mp4",
       "carriages": []
+    },
+    {
+      "id": "450028+450033-2026-07-29-A",
+      "unit": "450028+450033",
+      "date": "2026-07-29",
+      "time": "20:38",
+      "side": "A",
+      "washed": true,
+      "sourceFolder": "450028+450033_260729_2038_Pano_wash_0930/A",
+      "mode": "panorama",
+      "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/26-07-29_20-38-09.jpg",
+      "coverProvided": true,
+      "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/26-07-29_20-38-09.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "63628",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/0_63628_260729.jpg",
+          "width": 13155,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "68128",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/1_68128_260729.jpg",
+          "width": 13015,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "64228",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/2_64228_260729.jpg",
+          "width": 12928,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "63228",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/3_63228_260729.jpg",
+          "width": 12686,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9125,
+                655,
+                9145,
+                764
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "serial": "63633",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/4_63633_260729.jpg",
+          "width": 13032,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                3589,
+                120,
+                3637,
+                248
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "serial": "68133",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/5_68133_260729.jpg",
+          "width": 12961,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                3269,
+                99,
+                3339,
+                147
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "serial": "64233",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/6_64233_260729.jpg",
+          "width": 12995,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "63233",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-A/7_63233_260729.jpg",
+          "width": 12814,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
+      "id": "450028+450033-2026-07-29-B",
+      "unit": "450028+450033",
+      "date": "2026-07-29",
+      "time": "20:38",
+      "side": "B",
+      "washed": true,
+      "sourceFolder": "450028+450033_260729_2038_Pano_wash_0930/B",
+      "mode": "panorama",
+      "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/0_63233_260729.jpg",
+      "coverProvided": false,
+      "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/26-07-29_20-37-40.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "63233",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/0_63233_260729.jpg",
+          "width": 12205,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "64233",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/1_64233_260729.jpg",
+          "width": 12171,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                4029,
+                815,
+                4140,
+                842
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            },
+            {
+              "id": "S002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                1935,
+                832,
+                2003,
+                848
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "serial": "68133",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/2_68133_260729.jpg",
+          "width": 12002,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9329,
+                805,
+                9384,
+                831
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "serial": "63633",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/3_63633_260729.jpg",
+          "width": 12118,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                933,
+                707,
+                1016,
+                742
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            },
+            {
+              "id": "S002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                4643,
+                736,
+                4698,
+                758
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "serial": "63228",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/4_63228_260729.jpg",
+          "width": 12040,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "64228",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/5_64228_260729.jpg",
+          "width": 12160,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "68128",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/6_68128_260729.jpg",
+          "width": 12195,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6953,
+                889,
+                6994,
+                905
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "serial": "63628",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450028+450033-2026-07-29-B/7_63628_260729.jpg",
+          "width": 12194,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
     },
     {
       "id": "450109-2026-08-19-U",
@@ -2408,6 +3021,266 @@
                   "comparisonId": "450047+450119-2026-08-20-B-1948-63247-20260820-002-to-450047+450119-2026-08-19-B"
                 }
               ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "450056+450117-2026-08-10-A",
+      "unit": "450056+450117",
+      "date": "2026-08-10",
+      "time": "20:33",
+      "side": "A",
+      "washed": true,
+      "sourceFolder": "450056+450117_260810_2033_Pano_wash_0930/A",
+      "mode": "panorama",
+      "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/0_63256_260810.jpg",
+      "coverProvided": false,
+      "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/26-08-10_20-32-38.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "63256",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/0_63256_260810.jpg",
+          "width": 12128,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                11561,
+                818,
+                11622,
+                835
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 1,
+          "serial": "64256",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/1_64256_260810.jpg",
+          "width": 12175,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "68156",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/2_68156_260810.jpg",
+          "width": 12227,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6587,
+                886,
+                6661,
+                903
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "serial": "63656",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/3_63656_260810.jpg",
+          "width": 12178,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "63927",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/4_63927_260810.jpg",
+          "width": 12111,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "66907",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/5_66907_260810.jpg",
+          "width": 12093,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "66927",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/6_66927_260810.jpg",
+          "width": 12136,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "63907",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-A/7_63907_260810.jpg",
+          "width": 12116,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                8289,
+                554,
+                8341,
+                573
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "450056+450117-2026-08-10-B",
+      "unit": "450056+450117",
+      "date": "2026-08-10",
+      "time": "20:33",
+      "side": "B",
+      "washed": true,
+      "sourceFolder": "450056+450117_260810_2033_Pano_wash_0930/B",
+      "mode": "panorama",
+      "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/26-08-10_20-33-16.jpg",
+      "coverProvided": true,
+      "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/26-08-10_20-33-16.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "63907",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/0_63907_260810.jpg",
+          "width": 13249,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                7518,
+                996,
+                7595,
+                1051
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            }
+          ]
+        },
+        {
+          "order": 1,
+          "serial": "66927",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/1_66927_260810.jpg",
+          "width": 13033,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "66907",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/2_66907_260810.jpg",
+          "width": 12973,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "63927",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/3_63927_260810.jpg",
+          "width": 12703,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "63656",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/4_63656_260810.jpg",
+          "width": 12997,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "68156",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/5_68156_260810.jpg",
+          "width": 13013,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "64256",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/6_64256_260810.jpg",
+          "width": 13116,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "63256",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450056+450117-2026-08-10-B/7_63256_260810.jpg",
+          "width": 12660,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "S001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                774,
+                822,
+                896,
+                875
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
             }
           ]
         }
@@ -5001,6 +5874,570 @@
       "carriages": []
     },
     {
+      "id": "701026-2026-08-17-A",
+      "unit": "701026",
+      "date": "2026-08-17",
+      "time": "20:02",
+      "side": "A",
+      "washed": true,
+      "sourceFolder": "701026_260817_2002_Pano_wash_0930/A",
+      "mode": "panorama",
+      "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/26-08-17_20-02-54.jpg",
+      "coverProvided": true,
+      "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/26-08-17_20-02-54.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "480026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/0_480026_260817.jpg",
+          "width": 13573,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                3729,
+                684,
+                3790,
+                719
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-480026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            },
+            {
+              "id": "20260817-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10895,
+                390,
+                10949,
+                552
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-480026-20260817-002-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 1,
+          "serial": "481026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/1_481026_260817.jpg",
+          "width": 12789,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                660,
+                674,
+                864,
+                818
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-481026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 2,
+          "serial": "482026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/2_482026_260817.jpg",
+          "width": 12845,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10199,
+                374,
+                10251,
+                562
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-482026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "serial": "483026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/3_483026_260817.jpg",
+          "width": 12797,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10119,
+                409,
+                10183,
+                569
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-483026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "serial": "484026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/4_484026_260817.jpg",
+          "width": 13179,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                3896,
+                949,
+                3975,
+                1078
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-484026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            },
+            {
+              "id": "20260817-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                11283,
+                954,
+                11330,
+                992
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-484026-20260817-002-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "serial": "485026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/5_485026_260817.jpg",
+          "width": 13262,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                4272,
+                383,
+                4353,
+                550
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-485026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            },
+            {
+              "id": "20260817-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                4353,
+                179,
+                4415,
+                261
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-485026-20260817-002-to-701026-2026-08-20-A"
+                }
+              ]
+            },
+            {
+              "id": "20260817-003",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10554,
+                390,
+                10618,
+                545
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-485026-20260817-003-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 6,
+          "serial": "486026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/6_486026_260817.jpg",
+          "width": 12789,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                7008,
+                848,
+                7234,
+                1113
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-486026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "serial": "487026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/7_487026_260817.jpg",
+          "width": 12895,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10173,
+                428,
+                10248,
+                568
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-487026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "serial": "488026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/8_488026_260817.jpg",
+          "width": 12837,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                3893,
+                877,
+                4281,
+                1180
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-488026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            },
+            {
+              "id": "20260817-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10131,
+                357,
+                10213,
+                564
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-488026-20260817-002-to-701026-2026-08-20-A"
+                }
+              ]
+            },
+            {
+              "id": "20260817-003",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10246,
+                239,
+                10328,
+                259
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-488026-20260817-003-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "order": 9,
+          "serial": "489026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-A/9_489026_260817.jpg",
+          "width": 12934,
+          "height": 1210,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "20260817-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9010,
+                348,
+                9121,
+                576
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-489026-20260817-001-to-701026-2026-08-20-A"
+                }
+              ]
+            },
+            {
+              "id": "20260817-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9468,
+                345,
+                9652,
+                547
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-489026-20260817-002-to-701026-2026-08-20-A"
+                }
+              ]
+            },
+            {
+              "id": "20260817-003",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9967,
+                393,
+                10110,
+                548
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "701026-2026-08-17-A-489026-20260817-003-to-701026-2026-08-20-A"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "701026-2026-08-17-B",
+      "unit": "701026",
+      "date": "2026-08-17",
+      "time": "20:02",
+      "side": "B",
+      "washed": true,
+      "sourceFolder": "701026_260817_2002_Pano_wash_0930/B",
+      "mode": "panorama",
+      "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/0_489026_260817.jpg",
+      "coverProvided": false,
+      "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/26-08-17_20-02-05.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "489026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/0_489026_260817.jpg",
+          "width": 12218,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "488026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/1_488026_260817.jpg",
+          "width": 11965,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "487026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/2_487026_260817.jpg",
+          "width": 12126,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "486026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/3_486026_260817.jpg",
+          "width": 12024,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "485026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/4_485026_260817.jpg",
+          "width": 12407,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "484026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/5_484026_260817.jpg",
+          "width": 12392,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "483026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/6_483026_260817.jpg",
+          "width": 11990,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "482026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/7_482026_260817.jpg",
+          "width": 11968,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 8,
+          "serial": "481026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/8_481026_260817.jpg",
+          "width": 12051,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 9,
+          "serial": "480026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-17-B/9_480026_260817.jpg",
+          "width": 12533,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        }
+      ]
+    },
+    {
       "id": "701026-2026-08-20-A-0011",
       "unit": "701026",
       "date": "2026-08-20",
@@ -5021,7 +6458,7 @@
       "time": "06:08",
       "side": "A",
       "washed": false,
-      "sourceFolder": "701026_260820_0608_A_Pano_0919",
+      "sourceFolder": "701026_260820_0608_Pano_0930/A",
       "mode": "panorama",
       "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/26-08-20_06-08-52_701026_A.jpg",
       "coverProvided": true,
@@ -5033,9 +6470,46 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/0_480026_260820.jpg",
           "width": 13833,
           "height": 1200,
-          "assessed": false,
+          "assessed": true,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                3891,
+                686,
+                3947,
+                714
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-480026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            },
+            {
+              "id": "20260820-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                11167,
+                390,
+                11210,
+                548
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-480026-20260820-002-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 1,
@@ -5043,9 +6517,28 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/1_481026_260820.jpg",
           "width": 12890,
           "height": 1200,
-          "assessed": false,
+          "assessed": true,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                658,
+                775,
+                731,
+                818
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-481026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 2,
@@ -5053,9 +6546,28 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/2_482026_260820.jpg",
           "width": 12863,
           "height": 1200,
-          "assessed": false,
+          "assessed": true,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10211,
+                385,
+                10258,
+                561
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-482026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 3,
@@ -5063,9 +6575,28 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/3_483026_260820.jpg",
           "width": 12988,
           "height": 1200,
-          "assessed": false,
+          "assessed": true,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10282,
+                407,
+                10345,
+                555
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-483026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 4,
@@ -5073,9 +6604,46 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/4_484026_260820.jpg",
           "width": 13320,
           "height": 1200,
-          "assessed": false,
-          "cleanliness": "Compliant",
-          "defects": []
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                3969,
+                952,
+                4051,
+                1079
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-484026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            },
+            {
+              "id": "20260820-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                11468,
+                956,
+                11517,
+                998
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-484026-20260820-002-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 5,
@@ -5083,9 +6651,64 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/5_485026_260820.jpg",
           "width": 13224,
           "height": 1200,
-          "assessed": false,
+          "assessed": true,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                4363,
+                395,
+                4422,
+                548
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-485026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            },
+            {
+              "id": "20260820-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                4438,
+                174,
+                4497,
+                256
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-485026-20260820-002-to-701026-2026-08-17-A"
+                }
+              ]
+            },
+            {
+              "id": "20260820-003",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10676,
+                392,
+                10725,
+                521
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-485026-20260820-003-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 6,
@@ -5093,9 +6716,28 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/6_486026_260820.jpg",
           "width": 12836,
           "height": 1200,
-          "assessed": false,
-          "cleanliness": "Compliant",
-          "defects": []
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                6985,
+                851,
+                7213,
+                1020
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-486026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 7,
@@ -5103,9 +6745,28 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/7_487026_260820.jpg",
           "width": 13028,
           "height": 1200,
-          "assessed": false,
+          "assessed": true,
           "cleanliness": "Compliant",
-          "defects": []
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10317,
+                427,
+                10382,
+                568
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-487026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 8,
@@ -5113,9 +6774,64 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/8_488026_260820.jpg",
           "width": 13071,
           "height": 1200,
-          "assessed": false,
-          "cleanliness": "Compliant",
-          "defects": []
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                3945,
+                877,
+                4346,
+                1184
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-488026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            },
+            {
+              "id": "20260820-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10352,
+                355,
+                10436,
+                562
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-488026-20260820-002-to-701026-2026-08-17-A"
+                }
+              ]
+            },
+            {
+              "id": "20260820-003",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10458,
+                237,
+                10537,
+                258
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-488026-20260820-003-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
         },
         {
           "order": 9,
@@ -5123,7 +6839,177 @@
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-A/9_489026_260820.jpg",
           "width": 13171,
           "height": 1200,
-          "assessed": false,
+          "assessed": true,
+          "cleanliness": "Marginal",
+          "defects": [
+            {
+              "id": "20260820-001",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9203,
+                350,
+                9292,
+                564
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-489026-20260820-001-to-701026-2026-08-17-A"
+                }
+              ]
+            },
+            {
+              "id": "20260820-002",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                9661,
+                341,
+                9854,
+                547
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-489026-20260820-002-to-701026-2026-08-17-A"
+                }
+              ]
+            },
+            {
+              "id": "20260820-003",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                10174,
+                393,
+                10322,
+                547
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-17",
+                  "comparisonId": "701026-2026-08-20-A-489026-20260820-003-to-701026-2026-08-17-A"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "701026-2026-08-20-B",
+      "unit": "701026",
+      "date": "2026-08-20",
+      "time": "06:08",
+      "side": "B",
+      "washed": false,
+      "sourceFolder": "701026_260820_0608_Pano_0930/B",
+      "mode": "panorama",
+      "cover": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/0_489026_260820.jpg",
+      "coverProvided": false,
+      "video": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/26-08-20_06-08-03.mp4",
+      "carriages": [
+        {
+          "order": 0,
+          "serial": "489026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/0_489026_260820.jpg",
+          "width": 12498,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 1,
+          "serial": "488026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/1_488026_260820.jpg",
+          "width": 11952,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 2,
+          "serial": "487026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/2_487026_260820.jpg",
+          "width": 11869,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 3,
+          "serial": "486026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/3_486026_260820.jpg",
+          "width": 11715,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 4,
+          "serial": "485026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/4_485026_260820.jpg",
+          "width": 12239,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 5,
+          "serial": "484026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/5_484026_260820.jpg",
+          "width": 12312,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 6,
+          "serial": "483026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/6_483026_260820.jpg",
+          "width": 11676,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 7,
+          "serial": "482026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/7_482026_260820.jpg",
+          "width": 11870,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 8,
+          "serial": "481026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/8_481026_260820.jpg",
+          "width": 11910,
+          "height": 1120,
+          "assessed": true,
+          "cleanliness": "Compliant",
+          "defects": []
+        },
+        {
+          "order": 9,
+          "serial": "480026",
+          "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/701026-2026-08-20-B/9_480026_260820.jpg",
+          "width": 12038,
+          "height": 1120,
+          "assessed": true,
           "cleanliness": "Compliant",
           "defects": []
         }
@@ -5772,7 +7658,7 @@
           "defects": [
             {
               "id": "D001",
-              "type": "severe",
+              "type": "minor",
               "label": "Human-reviewed region",
               "box": [
                 4881,
@@ -6858,7 +8744,7 @@
           "defects": [
             {
               "id": "20260814-001",
-              "type": "severe",
+              "type": "minor",
               "label": "Human-reviewed region",
               "box": [
                 5059,
@@ -9088,32 +10974,6 @@
                   "comparisonId": "701046-2026-08-04-B-487046-20260806-001-to-701046-2026-08-07-B"
                 }
               ]
-            },
-            {
-              "id": "20260806-002",
-              "type": "minor",
-              "label": "Human-reviewed region",
-              "box": [
-                4469,
-                984,
-                5040,
-                1120
-              ],
-              "source": "human_pairwise_ground_truth",
-              "compareOptions": [
-                {
-                  "date": "2026-07-11",
-                  "comparisonId": "701046-2026-08-04-B-487046-20260806-002-to-701046-2026-07-11-B"
-                },
-                {
-                  "date": "2026-08-06",
-                  "comparisonId": "701046-2026-08-04-B-487046-20260806-002-to-701046-2026-08-06-B"
-                },
-                {
-                  "date": "2026-08-07",
-                  "comparisonId": "701046-2026-08-04-B-487046-20260806-002-to-701046-2026-08-07-B"
-                }
-              ]
             }
           ]
         },
@@ -10578,29 +12438,29 @@
           "cleanliness": "Non-Compliant",
           "defects": [
             {
-              "id": "legacy-484048-01",
-              "type": "severe",
-              "label": "Human-reviewed legacy region",
+              "id": "legacy-484048-02",
+              "type": "minor",
+              "label": "Human-reviewed region",
               "box": [
-                0,
-                223,
-                636,
-                996
+                11539,
+                659,
+                11664,
+                750
               ],
-              "source": "legacy_human_review_migrated",
+              "source": "human_pairwise_ground_truth",
               "compareOptions": []
             },
             {
-              "id": "legacy-484048-02",
+              "id": "S001",
               "type": "severe",
-              "label": "Human-reviewed legacy region",
+              "label": "Human-reviewed region",
               "box": [
-                11525,
-                32,
-                11894,
-                813
+                2,
+                252,
+                640,
+                988
               ],
-              "source": "legacy_human_review_migrated",
+              "source": "human_pairwise_ground_truth",
               "compareOptions": []
             }
           ]
@@ -10615,29 +12475,29 @@
           "cleanliness": "Marginal",
           "defects": [
             {
-              "id": "legacy-485048-01",
-              "type": "severe",
-              "label": "Human-reviewed legacy region",
-              "box": [
-                4174,
-                237,
-                4231,
-                421
-              ],
-              "source": "legacy_human_review_migrated",
-              "compareOptions": []
-            },
-            {
               "id": "legacy-485048-02",
-              "type": "severe",
-              "label": "Human-reviewed legacy region",
+              "type": "minor",
+              "label": "Human-reviewed region",
               "box": [
                 11365,
                 243,
                 11438,
                 303
               ],
-              "source": "legacy_human_review_migrated",
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": []
+            },
+            {
+              "id": "legacy-485048-01",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                4174,
+                237,
+                4231,
+                421
+              ],
+              "source": "human_pairwise_ground_truth",
               "compareOptions": []
             }
           ]
@@ -10746,15 +12606,15 @@
           "defects": [
             {
               "id": "legacy-488048-01",
-              "type": "severe",
-              "label": "Human-reviewed legacy region",
+              "type": "minor",
+              "label": "Human-reviewed region",
               "box": [
                 936,
                 90,
                 1455,
                 453
               ],
-              "source": "legacy_human_review_migrated",
+              "source": "human_pairwise_ground_truth",
               "compareOptions": []
             }
           ]
@@ -19153,6 +21013,1662 @@
       "targetReviewed": true,
       "targetAnnotationId": "20260811-006",
       "stainId": "20260811-006"
+    },
+    {
+      "id": "701026-2026-08-17-A-480026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "480026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-480026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-480026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        3729,
+        684,
+        3790,
+        719
+      ],
+      "targetBox": [
+        3891,
+        686,
+        3947,
+        714
+      ],
+      "sourceFocus": [
+        209,
+        162,
+        270,
+        197
+      ],
+      "targetFocus": [
+        212,
+        166,
+        268,
+        194
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-480026-20260817-002-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "480026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-480026-20260817-002-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-480026-20260817-002-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        10895,
+        390,
+        10949,
+        552
+      ],
+      "targetBox": [
+        11167,
+        390,
+        11210,
+        548
+      ],
+      "sourceFocus": [
+        213,
+        178,
+        267,
+        340
+      ],
+      "targetFocus": [
+        219,
+        174,
+        262,
+        332
+      ],
+      "sourceTileSize": [
+        480,
+        518
+      ],
+      "targetTileSize": [
+        480,
+        506
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-002",
+      "stainId": "20260817-002"
+    },
+    {
+      "id": "701026-2026-08-17-A-481026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "481026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-481026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-481026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        660,
+        674,
+        864,
+        818
+      ],
+      "targetBox": [
+        658,
+        775,
+        731,
+        818
+      ],
+      "sourceFocus": [
+        224,
+        158,
+        428,
+        302
+      ],
+      "targetFocus": [
+        204,
+        159,
+        277,
+        202
+      ],
+      "sourceTileSize": [
+        652,
+        460
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-482026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "482026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-482026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-482026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        10199,
+        374,
+        10251,
+        562
+      ],
+      "targetBox": [
+        10211,
+        385,
+        10258,
+        561
+      ],
+      "sourceFocus": [
+        214,
+        207,
+        266,
+        395
+      ],
+      "targetFocus": [
+        217,
+        194,
+        264,
+        370
+      ],
+      "sourceTileSize": [
+        480,
+        602
+      ],
+      "targetTileSize": [
+        480,
+        564
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-483026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "483026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-483026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-483026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        10119,
+        409,
+        10183,
+        569
+      ],
+      "targetBox": [
+        10282,
+        407,
+        10345,
+        555
+      ],
+      "sourceFocus": [
+        208,
+        176,
+        272,
+        336
+      ],
+      "targetFocus": [
+        208,
+        163,
+        271,
+        311
+      ],
+      "sourceTileSize": [
+        480,
+        512
+      ],
+      "targetTileSize": [
+        480,
+        474
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-484026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "484026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-484026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-484026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        3896,
+        949,
+        3975,
+        1078
+      ],
+      "targetBox": [
+        3969,
+        952,
+        4051,
+        1079
+      ],
+      "sourceFocus": [
+        200,
+        152,
+        279,
+        281
+      ],
+      "targetFocus": [
+        199,
+        158,
+        281,
+        285
+      ],
+      "sourceTileSize": [
+        480,
+        413
+      ],
+      "targetTileSize": [
+        480,
+        406
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-484026-20260817-002-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "484026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-484026-20260817-002-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-484026-20260817-002-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        11283,
+        954,
+        11330,
+        992
+      ],
+      "targetBox": [
+        11468,
+        956,
+        11517,
+        998
+      ],
+      "sourceFocus": [
+        217,
+        161,
+        264,
+        199
+      ],
+      "targetFocus": [
+        216,
+        159,
+        265,
+        201
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-002",
+      "stainId": "20260817-002"
+    },
+    {
+      "id": "701026-2026-08-17-A-485026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "485026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-485026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-485026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        4272,
+        383,
+        4353,
+        550
+      ],
+      "targetBox": [
+        4363,
+        395,
+        4422,
+        548
+      ],
+      "sourceFocus": [
+        200,
+        184,
+        281,
+        351
+      ],
+      "targetFocus": [
+        211,
+        168,
+        270,
+        321
+      ],
+      "sourceTileSize": [
+        480,
+        535
+      ],
+      "targetTileSize": [
+        480,
+        489
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-485026-20260817-002-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "485026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-485026-20260817-002-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-485026-20260817-002-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        4353,
+        179,
+        4415,
+        261
+      ],
+      "targetBox": [
+        4438,
+        174,
+        4497,
+        256
+      ],
+      "sourceFocus": [
+        209,
+        139,
+        271,
+        221
+      ],
+      "targetFocus": [
+        210,
+        139,
+        269,
+        221
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-002",
+      "stainId": "20260817-002"
+    },
+    {
+      "id": "701026-2026-08-17-A-485026-20260817-003-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "485026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-485026-20260817-003-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-485026-20260817-003-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        10554,
+        390,
+        10618,
+        545
+      ],
+      "targetBox": [
+        10676,
+        392,
+        10725,
+        521
+      ],
+      "sourceFocus": [
+        208,
+        170,
+        272,
+        325
+      ],
+      "targetFocus": [
+        216,
+        142,
+        265,
+        271
+      ],
+      "sourceTileSize": [
+        480,
+        496
+      ],
+      "targetTileSize": [
+        480,
+        413
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-003",
+      "stainId": "20260817-003"
+    },
+    {
+      "id": "701026-2026-08-17-A-486026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "486026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-486026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-486026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        7008,
+        848,
+        7234,
+        1113
+      ],
+      "targetBox": [
+        6985,
+        851,
+        7213,
+        1020
+      ],
+      "sourceFocus": [
+        249,
+        486,
+        475,
+        751
+      ],
+      "targetFocus": [
+        251,
+        192,
+        479,
+        361
+      ],
+      "sourceTileSize": [
+        724,
+        848
+      ],
+      "targetTileSize": [
+        730,
+        541
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-487026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "487026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-487026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-487026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        10173,
+        428,
+        10248,
+        568
+      ],
+      "targetBox": [
+        10317,
+        427,
+        10382,
+        568
+      ],
+      "sourceFocus": [
+        203,
+        154,
+        278,
+        294
+      ],
+      "targetFocus": [
+        207,
+        155,
+        272,
+        296
+      ],
+      "sourceTileSize": [
+        480,
+        448
+      ],
+      "targetTileSize": [
+        480,
+        451
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-488026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "488026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-488026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-488026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        3893,
+        877,
+        4281,
+        1180
+      ],
+      "targetBox": [
+        3945,
+        877,
+        4346,
+        1184
+      ],
+      "sourceFocus": [
+        427,
+        637,
+        815,
+        940
+      ],
+      "targetFocus": [
+        441,
+        659,
+        842,
+        966
+      ],
+      "sourceTileSize": [
+        1242,
+        970
+      ],
+      "targetTileSize": [
+        1283,
+        982
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-488026-20260817-002-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "488026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-488026-20260817-002-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-488026-20260817-002-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        10131,
+        357,
+        10213,
+        564
+      ],
+      "targetBox": [
+        10352,
+        355,
+        10436,
+        562
+      ],
+      "sourceFocus": [
+        199,
+        228,
+        281,
+        435
+      ],
+      "targetFocus": [
+        198,
+        228,
+        282,
+        435
+      ],
+      "sourceTileSize": [
+        480,
+        663
+      ],
+      "targetTileSize": [
+        480,
+        663
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-002",
+      "stainId": "20260817-002"
+    },
+    {
+      "id": "701026-2026-08-17-A-488026-20260817-003-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "488026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-488026-20260817-003-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-488026-20260817-003-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        10246,
+        239,
+        10328,
+        259
+      ],
+      "targetBox": [
+        10458,
+        237,
+        10537,
+        258
+      ],
+      "sourceFocus": [
+        199,
+        170,
+        281,
+        190
+      ],
+      "targetFocus": [
+        200,
+        169,
+        279,
+        190
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-003",
+      "stainId": "20260817-003"
+    },
+    {
+      "id": "701026-2026-08-17-A-489026-20260817-001-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "489026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-489026-20260817-001-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-489026-20260817-001-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        9010,
+        348,
+        9121,
+        576
+      ],
+      "targetBox": [
+        9203,
+        350,
+        9292,
+        564
+      ],
+      "sourceFocus": [
+        184,
+        251,
+        295,
+        479
+      ],
+      "targetFocus": [
+        195,
+        235,
+        284,
+        449
+      ],
+      "sourceTileSize": [
+        480,
+        730
+      ],
+      "targetTileSize": [
+        480,
+        684
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-001",
+      "stainId": "20260817-001"
+    },
+    {
+      "id": "701026-2026-08-17-A-489026-20260817-002-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "489026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-489026-20260817-002-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-489026-20260817-002-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        9468,
+        345,
+        9652,
+        547
+      ],
+      "targetBox": [
+        9661,
+        341,
+        9854,
+        547
+      ],
+      "sourceFocus": [
+        202,
+        222,
+        386,
+        424
+      ],
+      "targetFocus": [
+        212,
+        227,
+        405,
+        433
+      ],
+      "sourceTileSize": [
+        588,
+        646
+      ],
+      "targetTileSize": [
+        617,
+        660
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-002",
+      "stainId": "20260817-002"
+    },
+    {
+      "id": "701026-2026-08-17-A-489026-20260817-003-to-701026-2026-08-20-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-17-A",
+      "targetEventId": "701026-2026-08-20-A",
+      "serial": "489026",
+      "sourceDate": "2026-08-17",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-489026-20260817-003-to-701026-2026-08-20-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-17-A-489026-20260817-003-to-701026-2026-08-20-A-target.jpg",
+      "sourceBox": [
+        9967,
+        393,
+        10110,
+        548
+      ],
+      "targetBox": [
+        10174,
+        393,
+        10322,
+        547
+      ],
+      "sourceFocus": [
+        169,
+        171,
+        312,
+        326
+      ],
+      "targetFocus": [
+        166,
+        169,
+        314,
+        323
+      ],
+      "sourceTileSize": [
+        480,
+        496
+      ],
+      "targetTileSize": [
+        480,
+        492
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260820-003",
+      "stainId": "20260817-003"
+    },
+    {
+      "id": "701026-2026-08-20-A-480026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "480026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-480026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-480026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        3891,
+        686,
+        3947,
+        714
+      ],
+      "targetBox": [
+        3729,
+        684,
+        3790,
+        719
+      ],
+      "sourceFocus": [
+        212,
+        166,
+        268,
+        194
+      ],
+      "targetFocus": [
+        209,
+        162,
+        270,
+        197
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-480026-20260820-002-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "480026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-480026-20260820-002-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-480026-20260820-002-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        11167,
+        390,
+        11210,
+        548
+      ],
+      "targetBox": [
+        10895,
+        390,
+        10949,
+        552
+      ],
+      "sourceFocus": [
+        219,
+        174,
+        262,
+        332
+      ],
+      "targetFocus": [
+        213,
+        178,
+        267,
+        340
+      ],
+      "sourceTileSize": [
+        480,
+        506
+      ],
+      "targetTileSize": [
+        480,
+        518
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-002",
+      "stainId": "20260820-002"
+    },
+    {
+      "id": "701026-2026-08-20-A-481026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "481026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-481026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-481026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        658,
+        775,
+        731,
+        818
+      ],
+      "targetBox": [
+        660,
+        674,
+        864,
+        818
+      ],
+      "sourceFocus": [
+        204,
+        159,
+        277,
+        202
+      ],
+      "targetFocus": [
+        224,
+        158,
+        428,
+        302
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        652,
+        460
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-482026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "482026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-482026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-482026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        10211,
+        385,
+        10258,
+        561
+      ],
+      "targetBox": [
+        10199,
+        374,
+        10251,
+        562
+      ],
+      "sourceFocus": [
+        217,
+        194,
+        264,
+        370
+      ],
+      "targetFocus": [
+        214,
+        207,
+        266,
+        395
+      ],
+      "sourceTileSize": [
+        480,
+        564
+      ],
+      "targetTileSize": [
+        480,
+        602
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-483026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "483026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-483026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-483026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        10282,
+        407,
+        10345,
+        555
+      ],
+      "targetBox": [
+        10119,
+        409,
+        10183,
+        569
+      ],
+      "sourceFocus": [
+        208,
+        163,
+        271,
+        311
+      ],
+      "targetFocus": [
+        208,
+        176,
+        272,
+        336
+      ],
+      "sourceTileSize": [
+        480,
+        474
+      ],
+      "targetTileSize": [
+        480,
+        512
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-484026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "484026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-484026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-484026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        3969,
+        952,
+        4051,
+        1079
+      ],
+      "targetBox": [
+        3896,
+        949,
+        3975,
+        1078
+      ],
+      "sourceFocus": [
+        199,
+        158,
+        281,
+        285
+      ],
+      "targetFocus": [
+        200,
+        152,
+        279,
+        281
+      ],
+      "sourceTileSize": [
+        480,
+        406
+      ],
+      "targetTileSize": [
+        480,
+        413
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-484026-20260820-002-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "484026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-484026-20260820-002-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-484026-20260820-002-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        11468,
+        956,
+        11517,
+        998
+      ],
+      "targetBox": [
+        11283,
+        954,
+        11330,
+        992
+      ],
+      "sourceFocus": [
+        216,
+        159,
+        265,
+        201
+      ],
+      "targetFocus": [
+        217,
+        161,
+        264,
+        199
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-002",
+      "stainId": "20260820-002"
+    },
+    {
+      "id": "701026-2026-08-20-A-485026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "485026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-485026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-485026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        4363,
+        395,
+        4422,
+        548
+      ],
+      "targetBox": [
+        4272,
+        383,
+        4353,
+        550
+      ],
+      "sourceFocus": [
+        211,
+        168,
+        270,
+        321
+      ],
+      "targetFocus": [
+        200,
+        184,
+        281,
+        351
+      ],
+      "sourceTileSize": [
+        480,
+        489
+      ],
+      "targetTileSize": [
+        480,
+        535
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-485026-20260820-002-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "485026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-485026-20260820-002-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-485026-20260820-002-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        4438,
+        174,
+        4497,
+        256
+      ],
+      "targetBox": [
+        4353,
+        179,
+        4415,
+        261
+      ],
+      "sourceFocus": [
+        210,
+        139,
+        269,
+        221
+      ],
+      "targetFocus": [
+        209,
+        139,
+        271,
+        221
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-002",
+      "stainId": "20260820-002"
+    },
+    {
+      "id": "701026-2026-08-20-A-485026-20260820-003-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "485026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-485026-20260820-003-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-485026-20260820-003-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        10676,
+        392,
+        10725,
+        521
+      ],
+      "targetBox": [
+        10554,
+        390,
+        10618,
+        545
+      ],
+      "sourceFocus": [
+        216,
+        142,
+        265,
+        271
+      ],
+      "targetFocus": [
+        208,
+        170,
+        272,
+        325
+      ],
+      "sourceTileSize": [
+        480,
+        413
+      ],
+      "targetTileSize": [
+        480,
+        496
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-003",
+      "stainId": "20260820-003"
+    },
+    {
+      "id": "701026-2026-08-20-A-486026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "486026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-486026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-486026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        6985,
+        851,
+        7213,
+        1020
+      ],
+      "targetBox": [
+        7008,
+        848,
+        7234,
+        1113
+      ],
+      "sourceFocus": [
+        251,
+        192,
+        479,
+        361
+      ],
+      "targetFocus": [
+        249,
+        486,
+        475,
+        751
+      ],
+      "sourceTileSize": [
+        730,
+        541
+      ],
+      "targetTileSize": [
+        724,
+        848
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-487026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "487026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-487026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-487026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        10317,
+        427,
+        10382,
+        568
+      ],
+      "targetBox": [
+        10173,
+        428,
+        10248,
+        568
+      ],
+      "sourceFocus": [
+        207,
+        155,
+        272,
+        296
+      ],
+      "targetFocus": [
+        203,
+        154,
+        278,
+        294
+      ],
+      "sourceTileSize": [
+        480,
+        451
+      ],
+      "targetTileSize": [
+        480,
+        448
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-488026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "488026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-488026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-488026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        3945,
+        877,
+        4346,
+        1184
+      ],
+      "targetBox": [
+        3893,
+        877,
+        4281,
+        1180
+      ],
+      "sourceFocus": [
+        441,
+        659,
+        842,
+        966
+      ],
+      "targetFocus": [
+        427,
+        637,
+        815,
+        940
+      ],
+      "sourceTileSize": [
+        1283,
+        982
+      ],
+      "targetTileSize": [
+        1242,
+        970
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-488026-20260820-002-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "488026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-488026-20260820-002-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-488026-20260820-002-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        10352,
+        355,
+        10436,
+        562
+      ],
+      "targetBox": [
+        10131,
+        357,
+        10213,
+        564
+      ],
+      "sourceFocus": [
+        198,
+        228,
+        282,
+        435
+      ],
+      "targetFocus": [
+        199,
+        228,
+        281,
+        435
+      ],
+      "sourceTileSize": [
+        480,
+        663
+      ],
+      "targetTileSize": [
+        480,
+        663
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-002",
+      "stainId": "20260820-002"
+    },
+    {
+      "id": "701026-2026-08-20-A-488026-20260820-003-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "488026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-488026-20260820-003-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-488026-20260820-003-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        10458,
+        237,
+        10537,
+        258
+      ],
+      "targetBox": [
+        10246,
+        239,
+        10328,
+        259
+      ],
+      "sourceFocus": [
+        200,
+        169,
+        279,
+        190
+      ],
+      "targetFocus": [
+        199,
+        170,
+        281,
+        190
+      ],
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-003",
+      "stainId": "20260820-003"
+    },
+    {
+      "id": "701026-2026-08-20-A-489026-20260820-001-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "489026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-489026-20260820-001-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-489026-20260820-001-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        9203,
+        350,
+        9292,
+        564
+      ],
+      "targetBox": [
+        9010,
+        348,
+        9121,
+        576
+      ],
+      "sourceFocus": [
+        195,
+        235,
+        284,
+        449
+      ],
+      "targetFocus": [
+        184,
+        251,
+        295,
+        479
+      ],
+      "sourceTileSize": [
+        480,
+        684
+      ],
+      "targetTileSize": [
+        480,
+        730
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-001",
+      "stainId": "20260820-001"
+    },
+    {
+      "id": "701026-2026-08-20-A-489026-20260820-002-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "489026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-489026-20260820-002-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-489026-20260820-002-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        9661,
+        341,
+        9854,
+        547
+      ],
+      "targetBox": [
+        9468,
+        345,
+        9652,
+        547
+      ],
+      "sourceFocus": [
+        212,
+        227,
+        405,
+        433
+      ],
+      "targetFocus": [
+        202,
+        222,
+        386,
+        424
+      ],
+      "sourceTileSize": [
+        617,
+        660
+      ],
+      "targetTileSize": [
+        588,
+        646
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-002",
+      "stainId": "20260820-002"
+    },
+    {
+      "id": "701026-2026-08-20-A-489026-20260820-003-to-701026-2026-08-17-A",
+      "unit": "701026",
+      "sourceEventId": "701026-2026-08-20-A",
+      "targetEventId": "701026-2026-08-17-A",
+      "serial": "489026",
+      "sourceDate": "2026-08-20",
+      "targetDate": "2026-08-17",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-489026-20260820-003-to-701026-2026-08-17-A-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701026-2026-08-20-A-489026-20260820-003-to-701026-2026-08-17-A-target.jpg",
+      "sourceBox": [
+        10174,
+        393,
+        10322,
+        547
+      ],
+      "targetBox": [
+        9967,
+        393,
+        10110,
+        548
+      ],
+      "sourceFocus": [
+        166,
+        169,
+        314,
+        323
+      ],
+      "targetFocus": [
+        169,
+        171,
+        312,
+        326
+      ],
+      "sourceTileSize": [
+        480,
+        492
+      ],
+      "targetTileSize": [
+        480,
+        496
+      ],
+      "targetReviewed": true,
+      "targetAnnotationId": "20260817-003",
+      "stainId": "20260820-003"
     },
     {
       "id": "701042-2026-07-14-A-480042-D001-to-701042-2026-08-01-A",
@@ -32484,134 +36000,6 @@
       "stainId": "20260806-001"
     },
     {
-      "id": "701046-2026-08-04-B-487046-20260806-002-to-701046-2026-07-11-B",
-      "unit": "701046",
-      "sourceEventId": "701046-2026-08-04-B",
-      "targetEventId": "701046-2026-07-11-B",
-      "serial": "487046",
-      "sourceDate": "2026-08-04",
-      "targetDate": "2026-07-11",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701046-2026-08-04-B-487046-20260806-002-to-701046-2026-07-11-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701046-2026-08-04-B-487046-20260806-002-to-701046-2026-07-11-B-target.jpg",
-      "sourceBox": [
-        4469,
-        984,
-        5040,
-        1120
-      ],
-      "targetBox": [
-        4748,
-        1063,
-        5355,
-        1210
-      ],
-      "sourceFocus": [
-        628,
-        299,
-        1199,
-        435
-      ],
-      "targetFocus": null,
-      "sourceTileSize": [
-        1827,
-        435
-      ],
-      "targetTileSize": [
-        1943,
-        470
-      ],
-      "targetReviewed": false,
-      "targetAnnotationId": null,
-      "stainId": "20260806-002"
-    },
-    {
-      "id": "701046-2026-08-04-B-487046-20260806-002-to-701046-2026-08-06-B",
-      "unit": "701046",
-      "sourceEventId": "701046-2026-08-04-B",
-      "targetEventId": "701046-2026-08-06-B",
-      "serial": "487046",
-      "sourceDate": "2026-08-04",
-      "targetDate": "2026-08-06",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701046-2026-08-04-B-487046-20260806-002-to-701046-2026-08-06-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701046-2026-08-04-B-487046-20260806-002-to-701046-2026-08-06-B-target.jpg",
-      "sourceBox": [
-        4469,
-        984,
-        5040,
-        1120
-      ],
-      "targetBox": [
-        4608,
-        1010,
-        5368,
-        1189
-      ],
-      "sourceFocus": [
-        628,
-        299,
-        1199,
-        435
-      ],
-      "targetFocus": [
-        836,
-        373,
-        1596,
-        552
-      ],
-      "sourceTileSize": [
-        1827,
-        435
-      ],
-      "targetTileSize": [
-        2432,
-        573
-      ],
-      "targetReviewed": true,
-      "targetAnnotationId": "20260806-003",
-      "stainId": "20260806-002"
-    },
-    {
-      "id": "701046-2026-08-04-B-487046-20260806-002-to-701046-2026-08-07-B",
-      "unit": "701046",
-      "sourceEventId": "701046-2026-08-04-B",
-      "targetEventId": "701046-2026-08-07-B",
-      "serial": "487046",
-      "sourceDate": "2026-08-04",
-      "targetDate": "2026-08-07",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701046-2026-08-04-B-487046-20260806-002-to-701046-2026-08-07-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/701046-2026-08-04-B-487046-20260806-002-to-701046-2026-08-07-B-target.jpg",
-      "sourceBox": [
-        4469,
-        984,
-        5040,
-        1120
-      ],
-      "targetBox": [
-        4647,
-        1063,
-        5241,
-        1210
-      ],
-      "sourceFocus": [
-        628,
-        299,
-        1199,
-        435
-      ],
-      "targetFocus": null,
-      "sourceTileSize": [
-        1827,
-        435
-      ],
-      "targetTileSize": [
-        1900,
-        470
-      ],
-      "targetReviewed": false,
-      "targetAnnotationId": null,
-      "stainId": "20260806-002"
-    },
-    {
       "id": "701046-2026-08-04-B-485046-20260806-001-to-701046-2026-07-11-B",
       "unit": "701046",
       "sourceEventId": "701046-2026-08-04-B",
@@ -34961,10 +38349,10 @@
         1189
       ],
       "targetBox": [
-        4469,
-        984,
-        5040,
-        1120
+        4375,
+        935,
+        5096,
+        1101
       ],
       "sourceFocus": [
         836,
@@ -34972,22 +38360,17 @@
         1596,
         552
       ],
-      "targetFocus": [
-        628,
-        299,
-        1199,
-        435
-      ],
+      "targetFocus": null,
       "sourceTileSize": [
         2432,
         573
       ],
       "targetTileSize": [
-        1827,
-        435
+        2307,
+        531
       ],
-      "targetReviewed": true,
-      "targetAnnotationId": "20260806-002",
+      "targetReviewed": false,
+      "targetAnnotationId": null,
       "stainId": "20260806-003"
     },
     {
