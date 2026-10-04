@@ -3,10 +3,11 @@ const eventId = new URLSearchParams(location.search).get('event');
 window.addEventListener('load', () => {
   const serial = new URLSearchParams(location.search).get('carriage');
   const type = new URLSearchParams(location.search).get('highlight');
-  if (serial && /^\d{5,6}$/.test(serial)) jump(serial, ['severe','minor','graffiti'].includes(type) ? type : '');
+  if (serial && /^\d{5,6}$/.test(serial)) jump(serial, ['severe','minor','graffiti'].includes(type) ? type : '', 'auto');
 });
 const capture = catalog.events.find((item) => item.id === eventId);
 const track = document.querySelector('[data-track]');
+const viewport = document.querySelector('[data-viewport]');
 const table = document.querySelector('[data-table]');
 const panoramaContent = document.querySelector('[data-panorama-content]');
 const videoOnly = document.querySelector('[data-video-only]');
@@ -65,13 +66,27 @@ function constrainBranches(){
 }
 function bindMagnifier(stage,img){stage.addEventListener('pointermove',(event)=>{if(event.pointerType==='touch')return;const rect=img.getBoundingClientRect();const naturalWidth=img.naturalWidth||rect.width;const naturalHeight=img.naturalHeight||rect.height;const sourceX=(event.clientX-rect.left)/rect.width*naturalWidth;const sourceY=(event.clientY-rect.top)/rect.height*naturalHeight;magnifier.classList.add('is-visible');const lensWidth=magnifier.offsetWidth||520;const lensHeight=magnifier.offsetHeight||330;let left=event.clientX+22;let top=event.clientY+22;if(left+lensWidth>window.innerWidth-12)left=event.clientX-lensWidth-22;if(top+lensHeight>window.innerHeight-12)top=event.clientY-lensHeight-22;magnifier.style.left=`${Math.max(12,left)}px`;magnifier.style.top=`${Math.max(12,top)}px`;magnifier.style.backgroundImage=`url("${img.currentSrc||img.src}")`;magnifier.style.backgroundSize=`${naturalWidth}px ${naturalHeight}px`;magnifier.style.backgroundPosition=`${lensWidth/2-sourceX}px ${lensHeight/2-sourceY}px`;});stage.addEventListener('pointerleave',()=>magnifier.classList.remove('is-visible'));}
 function renderPanoramas(){
-  track.innerHTML=capture.carriages.map((carriage)=>`<article class="event-carriage" data-serial="${carriage.serial}"><div class="event-image"><img src="${carriage.image}" alt="Carriage ${carriage.serial} exterior panorama">${carriage.defects.map((defect,index)=>`<span role="button" tabindex="0" class="defect-box defect-${defect.type}" data-defect-id="${defect.id}" data-defect-type="${defect.type}" style="${boxStyle(defect,carriage)}" aria-label="Reviewed ${defect.type} region">${comparisonBranches(defect,carriage,index)}</span>`).join('')}</div></article>`).join('');
+  track.innerHTML=capture.carriages.map((carriage)=>`<article class="event-carriage" data-serial="${carriage.serial}"><div class="event-image"><img src="${carriage.image}?v=${catalog.revision||''}" alt="Carriage ${carriage.serial} exterior panorama">${carriage.defects.map((defect,index)=>`<span role="button" tabindex="0" class="defect-box defect-${defect.type}" data-defect-id="${defect.id}" data-defect-type="${defect.type}" style="${boxStyle(defect,carriage)}" aria-label="Reviewed ${defect.type} region">${comparisonBranches(defect,carriage,index)}</span>`).join('')}</div></article>`).join('');
   table.innerHTML=capture.carriages.map((carriage)=>`<tr data-row="${carriage.serial}"><td>${carriage.order}</td><td><button class="serial-button" type="button" data-jump="${carriage.serial}">${carriage.serial}</button></td><td><span class="cleanliness-status cleanliness-${carriage.assessed?gradeClass(carriage.cleanliness):'unassessed'}">${carriage.assessed?carriage.cleanliness:'Not assessed'}</span></td><td>${countButton(carriage,'severe')}</td><td>${countButton(carriage,'minor')}</td><td>${countButton(carriage,'graffiti')}</td></tr>`).join('');
-  document.querySelectorAll('.event-image').forEach((stage)=>{const image=stage.querySelector('img');bindMagnifier(stage,image);image.addEventListener('load',constrainBranches,{once:true});});
+  document.querySelectorAll('.event-image').forEach((stage)=>{const image=stage.querySelector('img');bindMagnifier(stage,image);image.addEventListener('load',()=>{fitPanoramaViewport();constrainBranches();},{once:true});});
+  new ResizeObserver(fitPanoramaViewport).observe(track);
+  viewport.addEventListener('scroll',fitPanoramaViewport,{passive:true});
+  fitPanoramaViewport();
   requestAnimationFrame(constrainBranches);
 }
 window.addEventListener('resize',constrainBranches);
-function jump(serial,flashType=''){const panel=document.querySelector(`[data-serial="${serial}"]`);if(!panel)return;panel.scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});document.querySelectorAll('[data-row]').forEach((row)=>row.classList.toggle('is-active',row.dataset.row===serial));panel.querySelectorAll('.defect-box').forEach((box)=>{box.classList.remove('is-flashing','show-branches');if(flashType&&box.dataset.defectType===flashType)setTimeout(()=>box.classList.add('is-flashing'),120);});}
+function fitPanoramaViewport(){
+  if(!viewport||!track.children.length)return;
+  const panels=[...track.children],index=Math.min(panels.length-1,Math.max(0,Math.round(viewport.scrollLeft/viewport.clientWidth)));
+  const image=panels[index].querySelector('img'),height=image.getBoundingClientRect().height;
+  if(!height)return;
+  // Other carriages can have different aspect ratios. Fit the visible one,
+  // rather than leaving the entire strip as tall as its tallest neighbour.
+  const chrome=viewport.offsetHeight-viewport.clientHeight;
+  viewport.style.height=Math.ceil(height+chrome)+'px';
+}
+window.addEventListener('resize',fitPanoramaViewport);
+function jump(serial,flashType='',behavior='smooth'){const panel=document.querySelector(`[data-serial="${serial}"]`);if(!panel)return;panel.scrollIntoView({behavior,block:'nearest',inline:'start'});fitPanoramaViewport();document.querySelectorAll('[data-row]').forEach((row)=>row.classList.toggle('is-active',row.dataset.row===serial));panel.querySelectorAll('.defect-box').forEach((box)=>{box.classList.remove('is-flashing','show-branches');if(flashType&&box.dataset.defectType===flashType)setTimeout(()=>box.classList.add('is-flashing'),120);});}
 
 function seedAnnotations(carriage){return carriage.defects.map((item)=>({id:item.id,type:item.type,box:item.box}));}
 function gradeValue(value){return value.toLowerCase().replaceAll(' ','-');}

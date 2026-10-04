@@ -1,6 +1,6 @@
 {
   "generatedFrom": "materials + human reviewed temporal_ground_truth.json",
-  "revision": "1790891896009065200",
+  "revision": "1791141455148702900",
   "events": [
     {
       "id": "450012+450091-2026-08-17-A",
@@ -787,44 +787,44 @@
           "order": 5,
           "serial": "68115",
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450015+450057-2026-08-19-B/5_68115_260819.jpg",
-          "width": 11549,
+          "width": 12707,
           "height": 1210,
           "assessed": true,
           "cleanliness": "Marginal",
           "defects": [
             {
-              "id": "20260820-001",
+              "id": "20260819-002",
               "type": "minor",
               "label": "Human-reviewed region",
               "box": [
-                5166,
+                5580,
                 883,
-                5247,
-                909
+                5660,
+                907
               ],
               "source": "human_pairwise_ground_truth",
               "compareOptions": [
                 {
                   "date": "2026-08-20",
-                  "comparisonId": "450015+450057-2026-08-19-B-68115-20260820-001-to-450015+450057-2026-08-20-B"
+                  "comparisonId": "450015+450057-2026-08-19-B-68115-20260819-002-to-450015+450057-2026-08-20-B"
                 }
               ]
             },
             {
-              "id": "20260820-002",
+              "id": "20260819-003",
               "type": "minor",
               "label": "Human-reviewed region",
               "box": [
-                10187,
+                11235,
                 825,
-                10253,
+                11308,
                 850
               ],
               "source": "human_pairwise_ground_truth",
               "compareOptions": [
                 {
                   "date": "2026-08-20",
-                  "comparisonId": "450015+450057-2026-08-19-B-68115-20260820-002-to-450015+450057-2026-08-20-B"
+                  "comparisonId": "450015+450057-2026-08-19-B-68115-20260819-003-to-450015+450057-2026-08-20-B"
                 }
               ]
             }
@@ -834,98 +834,98 @@
           "order": 6,
           "serial": "64215",
           "image": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/media/450015+450057-2026-08-19-B/6_64215_260819.jpg",
-          "width": 11375,
+          "width": 13041,
           "height": 1210,
           "assessed": true,
           "cleanliness": "Marginal",
           "defects": [
             {
-              "id": "20260820-001",
+              "id": "20260819-003",
               "type": "minor",
               "label": "Human-reviewed region",
               "box": [
-                4828,
-                864,
-                4850,
-                947
+                4917,
+                827,
+                4946,
+                951
               ],
               "source": "human_pairwise_ground_truth",
               "compareOptions": [
                 {
                   "date": "2026-08-20",
-                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260820-001-to-450015+450057-2026-08-20-B"
+                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260819-003-to-450015+450057-2026-08-20-B"
                 }
               ]
             },
             {
-              "id": "20260820-002",
+              "id": "20260819-004",
               "type": "minor",
               "label": "Human-reviewed region",
               "box": [
-                5059,
-                810,
-                5099,
+                5587,
+                858,
+                5615,
+                944
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260819-004-to-450015+450057-2026-08-20-B"
+                }
+              ]
+            },
+            {
+              "id": "20260819-005",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                5818,
+                801,
+                5860,
+                951
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260819-005-to-450015+450057-2026-08-20-B"
+                }
+              ]
+            },
+            {
+              "id": "20260819-006",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                5994,
+                862,
+                6041,
+                942
+              ],
+              "source": "human_pairwise_ground_truth",
+              "compareOptions": [
+                {
+                  "date": "2026-08-20",
+                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260819-006-to-450015+450057-2026-08-20-B"
+                }
+              ]
+            },
+            {
+              "id": "20260819-007",
+              "type": "minor",
+              "label": "Human-reviewed region",
+              "box": [
+                11673,
+                823,
+                11701,
                 952
               ],
               "source": "human_pairwise_ground_truth",
               "compareOptions": [
                 {
                   "date": "2026-08-20",
-                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260820-002-to-450015+450057-2026-08-20-B"
-                }
-              ]
-            },
-            {
-              "id": "20260820-003",
-              "type": "minor",
-              "label": "Human-reviewed region",
-              "box": [
-                5240,
-                864,
-                5282,
-                940
-              ],
-              "source": "human_pairwise_ground_truth",
-              "compareOptions": [
-                {
-                  "date": "2026-08-20",
-                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260820-003-to-450015+450057-2026-08-20-B"
-                }
-              ]
-            },
-            {
-              "id": "20260820-004",
-              "type": "minor",
-              "label": "Human-reviewed region",
-              "box": [
-                8857,
-                839,
-                8879,
-                961
-              ],
-              "source": "human_pairwise_ground_truth",
-              "compareOptions": [
-                {
-                  "date": "2026-08-20",
-                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260820-004-to-450015+450057-2026-08-20-B"
-                }
-              ]
-            },
-            {
-              "id": "20260820-005",
-              "type": "minor",
-              "label": "Human-reviewed region",
-              "box": [
-                10114,
-                797,
-                10138,
-                952
-              ],
-              "source": "human_pairwise_ground_truth",
-              "compareOptions": [
-                {
-                  "date": "2026-08-20",
-                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260820-005-to-450015+450057-2026-08-20-B"
+                  "comparisonId": "450015+450057-2026-08-19-B-64215-20260819-007-to-450015+450057-2026-08-20-B"
                 }
               ]
             }
@@ -13400,72 +13400,31 @@
       "stainId": "20260820-003"
     },
     {
-      "id": "450015+450057-2026-08-19-B-68115-20260820-001-to-450015+450057-2026-08-20-B",
+      "id": "450015+450057-2026-08-19-B-68115-20260819-002-to-450015+450057-2026-08-20-B",
       "unit": "450015+450057",
       "sourceEventId": "450015+450057-2026-08-19-B",
       "targetEventId": "450015+450057-2026-08-20-B",
       "serial": "68115",
       "sourceDate": "2026-08-19",
       "targetDate": "2026-08-20",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-68115-20260820-001-to-450015+450057-2026-08-20-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-68115-20260820-001-to-450015+450057-2026-08-20-B-target.jpg",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-68115-20260819-002-to-450015+450057-2026-08-20-B-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-68115-20260819-002-to-450015+450057-2026-08-20-B-target.jpg",
       "sourceBox": [
-        5166,
+        5580,
         883,
-        5247,
-        909
+        5660,
+        907
       ],
       "targetBox": [
-        5270,
-        875,
-        5357,
-        901
+        5276,
+        883,
+        5354,
+        907
       ],
       "sourceFocus": [
         200,
-        167,
-        281,
-        193
-      ],
-      "targetFocus": null,
-      "sourceTileSize": [
-        480,
-        360
-      ],
-      "targetTileSize": [
-        480,
-        360
-      ],
-      "targetReviewed": false,
-      "targetAnnotationId": null,
-      "stainId": "20260820-001"
-    },
-    {
-      "id": "450015+450057-2026-08-19-B-68115-20260820-002-to-450015+450057-2026-08-20-B",
-      "unit": "450015+450057",
-      "sourceEventId": "450015+450057-2026-08-19-B",
-      "targetEventId": "450015+450057-2026-08-20-B",
-      "serial": "68115",
-      "sourceDate": "2026-08-19",
-      "targetDate": "2026-08-20",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-68115-20260820-002-to-450015+450057-2026-08-20-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-68115-20260820-002-to-450015+450057-2026-08-20-B-target.jpg",
-      "sourceBox": [
-        10187,
-        825,
-        10253,
-        850
-      ],
-      "targetBox": [
-        10947,
-        818,
-        11018,
-        843
-      ],
-      "sourceFocus": [
-        207,
-        167,
-        273,
+        168,
+        280,
         192
       ],
       "targetFocus": null,
@@ -13479,35 +13438,35 @@
       ],
       "targetReviewed": false,
       "targetAnnotationId": null,
-      "stainId": "20260820-002"
+      "stainId": "20260819-002"
     },
     {
-      "id": "450015+450057-2026-08-19-B-64215-20260820-001-to-450015+450057-2026-08-20-B",
+      "id": "450015+450057-2026-08-19-B-68115-20260819-003-to-450015+450057-2026-08-20-B",
       "unit": "450015+450057",
       "sourceEventId": "450015+450057-2026-08-19-B",
       "targetEventId": "450015+450057-2026-08-20-B",
-      "serial": "64215",
+      "serial": "68115",
       "sourceDate": "2026-08-19",
       "targetDate": "2026-08-20",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-001-to-450015+450057-2026-08-20-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-001-to-450015+450057-2026-08-20-B-target.jpg",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-68115-20260819-003-to-450015+450057-2026-08-20-B-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-68115-20260819-003-to-450015+450057-2026-08-20-B-target.jpg",
       "sourceBox": [
-        4828,
-        864,
-        4850,
-        947
+        11235,
+        825,
+        11308,
+        850
       ],
       "targetBox": [
-        5595,
-        862,
-        5620,
-        945
+        10949,
+        816,
+        11019,
+        841
       ],
       "sourceFocus": [
-        229,
-        138,
-        251,
-        221
+        203,
+        167,
+        276,
+        192
       ],
       "targetFocus": null,
       "sourceTileSize": [
@@ -13520,171 +13479,212 @@
       ],
       "targetReviewed": false,
       "targetAnnotationId": null,
-      "stainId": "20260820-001"
+      "stainId": "20260819-003"
     },
     {
-      "id": "450015+450057-2026-08-19-B-64215-20260820-002-to-450015+450057-2026-08-20-B",
+      "id": "450015+450057-2026-08-19-B-64215-20260819-003-to-450015+450057-2026-08-20-B",
       "unit": "450015+450057",
       "sourceEventId": "450015+450057-2026-08-19-B",
       "targetEventId": "450015+450057-2026-08-20-B",
       "serial": "64215",
       "sourceDate": "2026-08-19",
       "targetDate": "2026-08-20",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-002-to-450015+450057-2026-08-20-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-002-to-450015+450057-2026-08-20-B-target.jpg",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-003-to-450015+450057-2026-08-20-B-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-003-to-450015+450057-2026-08-20-B-target.jpg",
       "sourceBox": [
-        5059,
+        4917,
+        827,
+        4946,
+        951
+      ],
+      "targetBox": [
+        4965,
         810,
-        5099,
-        952
-      ],
-      "targetBox": [
-        5817,
-        813,
-        5862,
-        955
+        4994,
+        934
       ],
       "sourceFocus": [
-        220,
-        156,
-        260,
-        298
+        225,
+        136,
+        254,
+        260
       ],
       "targetFocus": null,
       "sourceTileSize": [
         480,
-        454
+        396
       ],
       "targetTileSize": [
         480,
-        454
+        396
       ],
       "targetReviewed": false,
       "targetAnnotationId": null,
-      "stainId": "20260820-002"
+      "stainId": "20260819-003"
     },
     {
-      "id": "450015+450057-2026-08-19-B-64215-20260820-003-to-450015+450057-2026-08-20-B",
+      "id": "450015+450057-2026-08-19-B-64215-20260819-004-to-450015+450057-2026-08-20-B",
       "unit": "450015+450057",
       "sourceEventId": "450015+450057-2026-08-19-B",
       "targetEventId": "450015+450057-2026-08-20-B",
       "serial": "64215",
       "sourceDate": "2026-08-19",
       "targetDate": "2026-08-20",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-003-to-450015+450057-2026-08-20-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-003-to-450015+450057-2026-08-20-B-target.jpg",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-004-to-450015+450057-2026-08-20-B-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-004-to-450015+450057-2026-08-20-B-target.jpg",
       "sourceBox": [
-        5240,
-        864,
-        5282,
+        5587,
+        858,
+        5615,
+        944
+      ],
+      "targetBox": [
+        5604,
+        854,
+        5632,
         940
       ],
+      "sourceFocus": [
+        226,
+        137,
+        254,
+        223
+      ],
+      "targetFocus": null,
+      "sourceTileSize": [
+        480,
+        360
+      ],
+      "targetTileSize": [
+        480,
+        360
+      ],
+      "targetReviewed": false,
+      "targetAnnotationId": null,
+      "stainId": "20260819-004"
+    },
+    {
+      "id": "450015+450057-2026-08-19-B-64215-20260819-005-to-450015+450057-2026-08-20-B",
+      "unit": "450015+450057",
+      "sourceEventId": "450015+450057-2026-08-19-B",
+      "targetEventId": "450015+450057-2026-08-20-B",
+      "serial": "64215",
+      "sourceDate": "2026-08-19",
+      "targetDate": "2026-08-20",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-005-to-450015+450057-2026-08-20-B-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-005-to-450015+450057-2026-08-20-B-target.jpg",
+      "sourceBox": [
+        5818,
+        801,
+        5860,
+        951
+      ],
       "targetBox": [
-        6016,
-        867,
-        6063,
-        943
+        5826,
+        796,
+        5867,
+        946
       ],
       "sourceFocus": [
         219,
-        142,
+        165,
         261,
-        218
+        315
       ],
       "targetFocus": null,
       "sourceTileSize": [
         480,
-        360
+        480
       ],
       "targetTileSize": [
         480,
-        360
+        480
       ],
       "targetReviewed": false,
       "targetAnnotationId": null,
-      "stainId": "20260820-003"
+      "stainId": "20260819-005"
     },
     {
-      "id": "450015+450057-2026-08-19-B-64215-20260820-004-to-450015+450057-2026-08-20-B",
+      "id": "450015+450057-2026-08-19-B-64215-20260819-006-to-450015+450057-2026-08-20-B",
       "unit": "450015+450057",
       "sourceEventId": "450015+450057-2026-08-19-B",
       "targetEventId": "450015+450057-2026-08-20-B",
       "serial": "64215",
       "sourceDate": "2026-08-19",
       "targetDate": "2026-08-20",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-004-to-450015+450057-2026-08-20-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-004-to-450015+450057-2026-08-20-B-target.jpg",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-006-to-450015+450057-2026-08-20-B-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-006-to-450015+450057-2026-08-20-B-target.jpg",
       "sourceBox": [
-        8857,
-        839,
-        8879,
-        961
+        5994,
+        862,
+        6041,
+        942
       ],
       "targetBox": [
-        10146,
-        813,
-        10171,
-        935
+        6018,
+        865,
+        6065,
+        945
       ],
       "sourceFocus": [
-        229,
-        134,
-        251,
-        256
+        216,
+        140,
+        263,
+        220
       ],
       "targetFocus": null,
       "sourceTileSize": [
         480,
-        390
+        360
       ],
       "targetTileSize": [
         480,
-        390
+        360
       ],
       "targetReviewed": false,
       "targetAnnotationId": null,
-      "stainId": "20260820-004"
+      "stainId": "20260819-006"
     },
     {
-      "id": "450015+450057-2026-08-19-B-64215-20260820-005-to-450015+450057-2026-08-20-B",
+      "id": "450015+450057-2026-08-19-B-64215-20260819-007-to-450015+450057-2026-08-20-B",
       "unit": "450015+450057",
       "sourceEventId": "450015+450057-2026-08-19-B",
       "targetEventId": "450015+450057-2026-08-20-B",
       "serial": "64215",
       "sourceDate": "2026-08-19",
       "targetDate": "2026-08-20",
-      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-005-to-450015+450057-2026-08-20-B-source.jpg",
-      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260820-005-to-450015+450057-2026-08-20-B-target.jpg",
+      "sourceTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-007-to-450015+450057-2026-08-20-B-source.jpg",
+      "targetTile": "https://pub-1927c445f4a6474e82f12bf78e595f48.r2.dev/assets/compare/450015+450057-2026-08-19-B-64215-20260819-007-to-450015+450057-2026-08-20-B-target.jpg",
       "sourceBox": [
-        10114,
-        797,
-        10138,
+        11673,
+        823,
+        11701,
         952
       ],
       "targetBox": [
-        11616,
-        762,
-        11644,
-        917
+        11684,
+        803,
+        11712,
+        932
       ],
       "sourceFocus": [
-        228,
-        171,
-        252,
-        326
+        226,
+        142,
+        254,
+        271
       ],
       "targetFocus": null,
       "sourceTileSize": [
         480,
-        496
+        413
       ],
       "targetTileSize": [
         480,
-        496
+        413
       ],
       "targetReviewed": false,
       "targetAnnotationId": null,
-      "stainId": "20260820-005"
+      "stainId": "20260819-007"
     },
     {
       "id": "450015+450057-2026-08-19-B-63215-20260820-001-to-450015+450057-2026-08-20-B",

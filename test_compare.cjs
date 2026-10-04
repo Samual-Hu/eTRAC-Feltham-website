@@ -18,6 +18,27 @@ for(const [i,box] of [[0,[4511,273,5449,1194]],[1,[3916,284,4023,397]]]){
 }
 assert(Math.abs(disparate[0].top+(273+1194)/2/1210*disparate[0].height-(disparate[1].top+(284+397)/2/1210*disparate[1].height))<1e-6);
 const catalog=JSON.parse(fs.readFileSync(__dirname+'/assets/catalog.json','utf8'));
+// A redraw must not create two routes for the same ID, and return links must
+// keep the currently selected carriage rather than reset to the first one.
+assert.equal(new Set(catalog.comparisons.map(item=>item.id)).size,catalog.comparisons.length);
+const navigation=vm.createContext({URLSearchParams,location:{search:''},history:{},window:{EYYA_CATALOG:catalog}});
+vm.runInContext(fs.readFileSync(__dirname+'/assets/compare.js','utf8').split("document.querySelector('[data-compare-back]')")[0],navigation);
+for(const item of catalog.comparisons){
+  navigation.checkedItem=item;
+  const back=new URL(vm.runInContext('panoramaReturnUrl(checkedItem)',navigation),'https://example.test/');
+  assert.equal(back.searchParams.get('event'),item.sourceEventId);
+  assert.equal(back.searchParams.get('carriage'),item.serial);
+  const options=vm.runInContext('comparisonOptions(checkedItem)',navigation);
+  assert.equal(options.filter(option=>option.id===item.id).length,1);
+  assert.equal(new Set(options.map(option=>option.id)).size,options.length);
+}
+const repaired=catalog.comparisons.find(item=>item.sourceEventId==='450015+450057-2026-08-19-B'&&item.serial==='64215');
+navigation.checkedItem=repaired;
+const five=vm.runInContext('comparisonOptions(checkedItem)',navigation);
+assert.equal(five.length,5);
+assert(five[4].stainId.endsWith('007'));
+assert.notEqual(five[3].id,five[4].id);
+console.log(`Unique comparison routes and carriage-preserving return links verified for ${catalog.comparisons.length} comparisons.`);
 let checked=0,maxDrift=0,maxDriftId='';
 for(const item of catalog.comparisons){
   if(!item.sourceBox||!item.targetBox||!item.sourceTileSize||!item.targetTileSize)continue;
