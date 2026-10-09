@@ -1,5 +1,5 @@
 window.EyyaDev = (() => {
-  const requiredApiVersion = 7;
+  const requiredApiVersion = 8;
   let session;
   function watchRefresh(initial) {
     if(initial?.state !== 'running'||document.querySelector('.local-refresh-status'))return;
@@ -61,6 +61,7 @@ window.EyyaDev = (() => {
     });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || 'Unable to save review');
+    applyUpdates(result);
     return result;
   }
   async function launchAnnotation(payload) {
@@ -75,6 +76,27 @@ window.EyyaDev = (() => {
     if (!response.ok) throw new Error(result.error || 'Unable to launch the annotation app');
     return result;
   }
-  return { connect, save, launchAnnotation };
+  function applyUpdates(result) {
+    queueVersion++;queueRequest=null;
+    for (const updated of result.eventUpdates||[]) {
+      const current=window.EYYA_CATALOG.events.find(e=>e.id===updated.id);
+      if(current)Object.assign(current,updated);
+    }
+    if(result.revision)window.EYYA_CATALOG.revision=result.revision;
+    window.dispatchEvent(new CustomEvent('eyya:review-saved',{detail:result}));
+  }
+  let queueRequest;
+  let queueVersion=0;
+  function refreshQueueCounts(){if(queueRequest)return queueRequest;const version=queueVersion;const task=(async()=>{const response=await fetch('/api/dev/pipeline-review-queue',{cache:'no-store'});const result=await response.json();if(!response.ok)throw new Error(result.error||'无法读取审核进度');if(version===queueVersion)window.dispatchEvent(new CustomEvent('eyya:queue-counted',{detail:result.counts}));return result;})().finally(()=>{if(queueRequest===task)queueRequest=null;});queueRequest=task;return task;}
+  return { connect, save, launchAnnotation, applyUpdates, refreshQueueCounts };
 })();
-document.addEventListener('DOMContentLoaded', () => window.EyyaDev.connect());
+document.addEventListener('DOMContentLoaded', async () => {
+ const session=await window.EyyaDev.connect();if(!session?.enabled)return;
+ const host=document.querySelector('.library-actions')||document.querySelector('.event-left');if(!host)return;
+ const link=document.createElement('a');link.href='/api/dev/pipeline-review-queue.html';link.className='local-review-queue-link';link.textContent='审核队列';host.append(link);
+ function show(c){let badge=link.querySelector('.local-review-count');if(!badge){badge=document.createElement('span');badge.className='local-review-count';link.append(badge);}badge.textContent=c.candidates+' 个框';let surface=link.querySelector('.local-review-surface-count');if(!surface){surface=document.createElement('small');surface.className='local-review-surface-count';surface.style.cssText='margin-left:7px;font-size:11px;color:#526c7b';link.append(surface);}surface.textContent='整图 '+c.surface_checks;link.setAttribute('aria-label',`审核队列：${c.candidates} 个待审框，${c.surface_checks} 张全景待整图检查`);link.title='接受或判为误标都会完成一条。整图检查另行计数。';}
+ async function count(){try{await window.EyyaDev.refreshQueueCounts();}catch(_){}}
+ window.addEventListener('eyya:queue-counted',e=>show(e.detail));
+ count();window.addEventListener('eyya:review-saved',count);
+});
+

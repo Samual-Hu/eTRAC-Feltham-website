@@ -8,16 +8,28 @@ const catalog=JSON.parse(process.argv.includes('--published')
 const nodes=new Map();
 const node=selector=>{if(!nodes.has(selector))nodes.set(selector,{innerHTML:'',append(){},addEventListener(){},classList:{toggle(){}},setAttribute(){}});return nodes.get(selector);};
 const context=vm.createContext({URL,URLSearchParams,Intl,Date,location:{search:'',toString(){return 'http://localhost/index.html';}},history:{pushState(){}},window:{EYYA_CATALOG:catalog,addEventListener(){},scrollTo(){}},document:{querySelector:node,addEventListener(){}}});
-vm.runInContext(fs.readFileSync(__dirname+'/assets/fleet.js','utf8'),context);
+vm.runInContext(fs.readFileSync(__dirname+'/assets/wash-status.js','utf8'),context);vm.runInContext(fs.readFileSync(__dirname+'/assets/fleet.js','utf8'),context);
 for(const type of ['severe','minor','graffiti']){
   const rows=catalog.events.filter(e=>e.mode==='panorama').flatMap(e=>e.carriages.filter(c=>c.defects.some(d=>d.type===type)));
   const expected=rows.reduce((n,c)=>n+c.defects.filter(d=>d.type===type).length,0);
   const html=vm.runInContext(`issueListing(catalog.events,'${type}')`,context);
-  assert.equal((html.match(/class="issue-panorama-card"/g)||[]).length,rows.length);
-  assert.equal((html.match(/class="issue-panorama-meta"/g)||[]).length,rows.length);
-  assert.equal((html.match(new RegExp(`class="issue-region issue-${type}"`,'g'))||[]).length,expected);
-  assert(!html.includes('<header>'));assert(!html.includes('Open panorama'));assert(!html.includes('issue-record-count'));assert(!html.includes('<i>'));
-  assert(html.includes(`${expected} recorded annotations`));
+  if(type==='minor'){
+    assert.equal((html.match(/class="minor-mark-card"/g)||[]).length,expected);
+    assert.equal((html.match(/class="minor-crop-box"/g)||[]).length,expected);
+    assert.equal((html.match(/annotation=/g)||[]).length,expected);
+    assert(!html.includes('class="issue-panorama-card"'));
+    for(const e of catalog.events.filter(e=>e.mode==='panorama'))for(const c of e.carriages)for(const d of c.defects.filter(d=>d.type==='minor')){
+      assert(html.includes(`annotation=${encodeURIComponent(d.id)}`));
+      assert(html.includes(`carriage=${c.serial}`));
+    }
+  }else{
+    assert.equal((html.match(/class="issue-panorama-card"/g)||[]).length,rows.length);
+    assert.equal((html.match(/class="issue-panorama-meta"/g)||[]).length,rows.length);
+    assert.equal((html.match(new RegExp(`class="issue-region issue-${type}"`,'g'))||[]).length,expected);
+    assert.equal((html.match(/Open panorama/g)||[]).length,rows.length);
+  }
+  assert(!html.includes('issue-record-count'));assert(!html.includes('<i>'));
+  assert(html.includes(`${expected} ${type==='minor'?'reviewed marks':'recorded annotations'}`));
   assert(html.includes(`highlight=${type}`)||rows.length===0);
 }
 const css=fs.readFileSync(__dirname+'/assets/review-refinements.css','utf8');
@@ -33,4 +45,4 @@ const boxStyle=css.match(/\.issue-region\{([^}]+)\}/)[1];
 assert(!boxStyle.includes('min-width'));assert(!boxStyle.includes('min-height'));
 assert(boxStyle.includes('border:0'));assert(boxStyle.includes('background:transparent'));
 assert(!css.includes('.issue-panorama-image:hover .issue-region'));
-console.log('All three issue galleries passed: compact in-image metadata, unnumbered boxes, panorama links, shared Minor blue and thin outlines without minimum sizes or glow.');
+console.log('Issue galleries passed: one Minor card per human annotation with exact panorama links; Severe/Graffiti retain complete panoramas and separate open links.');

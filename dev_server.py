@@ -10,7 +10,7 @@ import webbrowser
 from datetime import datetime, timezone
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import urlsplit, parse_qs
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -30,12 +30,15 @@ from stain_demo.web_review import (  # noqa: E402
 )
 
 
+from stain_demo import pipeline_review, human_masks, surface_learning, review_queue, comparison_annotation
+
 TOKEN = secrets.token_urlsafe(24)
 CLIENT_MODE = "--client" in sys.argv[1:]
 NO_BROWSER = "--no-browser" in sys.argv[1:]
-API_VERSION = 7
+API_VERSION = 8
 HISTORY_PATH = ROOT / "annotations" / "web_review_history.jsonl"
 REFRESH_STATUS = {"state": "idle"}
+EDIT_LOCK = threading.RLock()
 
 
 def refresh_website() -> None:
@@ -48,6 +51,7 @@ def refresh_website() -> None:
         print(f"Capture refresh failed; the previous catalog is still available: {exc}", flush=True)
         return
     REFRESH_STATUS.update(state="ready", revision=result["revision"])
+    if not CLIENT_MODE:surface_learning.request_training("catalog_refresh", ROOT)
     print(f"Website data ready: {len(result['events'])} captures, {len(result['comparisons'])} comparisons", flush=True)
 
 
@@ -112,6 +116,11 @@ def _valid_box(value) -> bool:
 
 
 def apply_edit(payload: dict) -> dict:
+    with EDIT_LOCK:
+        return _apply_edit(payload)
+
+
+def _apply_edit(payload: dict) -> dict:
     action = payload.get("action")
     serial, date = str(payload.get("serial", "")), str(payload.get("date", ""))
     side = payload.get("side")
@@ -131,6 +140,9 @@ def apply_edit(payload: dict) -> dict:
             raise ValueError("Capture changed; refresh the page before editing")
         if target_event_id and not valid_visit(target_event_id, str(payload.get("targetDate") or "")):
             raise ValueError("Comparison capture changed; refresh the page before editing")
+    if action == "annotation" and "imageSha256" in payload:
+        current = next((event for event in events if event["id"] == event_id), None) if event_id else None
+        comparison_annotation.validate_native_annotation(payload, current)
     document = load_overrides()
     state = document["states"].setdefault(state_key(serial, date, side, event_id), {"serial": serial, "date": date, "side": side, "annotations": [], "deleted_annotation_ids": []})
     if action == "comparison":
@@ -204,9 +216,12 @@ def apply_edit(payload: dict) -> dict:
         history.write(json.dumps({"saved_at": datetime.now(timezone.utc).isoformat(), "payload": payload}, ensure_ascii=False) + "\n")
     save_overrides(document)
     catalog = export_site_data()
+    if action in {"annotation", "delete", "comparison", "grade"}:surface_learning.request_training("web_annotation", ROOT)
     source_ids = {event_id} if event_id else {e["id"] for e in catalog["events"] if e.get("side") == side and e.get("date") == date}
     matching = next((item for item in catalog["comparisons"] if item.get("sourceEventId") in source_ids and item.get("serial") == serial and item.get("sourceDate") == date and item.get("stainId") == str(payload.get("sourceId", "")) and item.get("targetDate") == str(payload.get("targetDate", ""))), None)
-    return {"ok": True, "events": len(catalog["events"]), "comparisons": len(catalog["comparisons"]), "comparisonId": matching.get("id") if matching else None}
+    return {"ok": True, "events": len(catalog["events"]), "comparisons": len(catalog["comparisons"]), "comparisonId": matching.get("id") if matching else None,
+            "revision": catalog.get("revision"),
+            "eventUpdates": [e for e in catalog["events"] if e["id"] in source_ids | ({target_event_id} if target_event_id else set())]}
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -226,7 +241,11 @@ class Handler(SimpleHTTPRequestHandler):
         super().__init__(*args, directory=str(SITE), **kwargs)
 
     def _json(self, status: int, payload: dict) -> None:
-        encoded = json.dumps(payload, ensure_ascii=False).encode("utf-8")
+        text = json.dumps(payload, ensure_ascii=False)
+        base = public_base(SITE)
+        if base:
+            text = text.replace(base + "/assets/", "/assets/")
+        encoded = text.encode("utf-8")
         self.send_response(status)
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(encoded)))
@@ -241,6 +260,69 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         path = urlsplit(self.path).path
+        if path.startswith("/api/dev/pipeline"):
+            if CLIENT_MODE:
+                self._json(403, {"error": "Machine drafts are local review only"})
+                return
+            query = parse_qs(urlsplit(self.path).query)
+            value = lambda key: query.get(key, [""])[0]
+            try:
+                if path == "/api/dev/pipeline-validation":
+                    self._json(200, pipeline_review.full_car_audit())
+                    return
+                if path == "/api/dev/pipeline-review-queue":
+                    self._json(200, review_queue.get_queue(ROOT))
+                    return
+                if path == "/api/dev/pipeline-review-queue.html":
+                    asset = ROOT / "tools" / "review-queue.html"
+                elif path == "/api/dev/pipeline-review-queue-ui.js":
+                    asset = ROOT / "tools" / "review-queue.js"
+                elif path == "/api/dev/pipeline-validation.html":
+                    asset = ROOT / "tools" / "whole-car-review.html"
+                elif path == "/api/dev/pipeline-learning":
+                    self._json(200, surface_learning.public_status(ROOT))
+                    return
+                elif path == "/api/dev/pipeline":
+                    self._json(200, pipeline_review.get_review(value("event")))
+                    return
+                elif path == "/api/dev/pipeline-ui.js":
+                    asset = ROOT / "tools" / "pipeline-review.js"
+                elif path == "/api/dev/pipeline-human-masks":
+                    self._json(200, human_masks.get_masks(value("event")))
+                    return
+                elif path == "/api/dev/pipeline-human-mask-asset":
+                    asset = human_masks.asset_path(value("event"), value("serial"))
+                elif path == "/api/dev/pipeline-human-mask-ui.js":
+                    asset = ROOT / "tools" / "human-masks.js"
+                elif path == "/api/dev/pipeline-asset":
+                    asset = pipeline_review.asset_path(value("event"), value("serial"), value("asset"))
+                elif path == "/api/dev/pipeline-publication":
+                    self._json(200, pipeline_review.publication_audit())
+                    return
+                else:
+                    self._json(404, {"error": "Not found"})
+                    return
+                data = asset.read_bytes()
+                self.send_response(200)
+                self.send_header("Content-Type", "application/javascript; charset=utf-8" if asset.suffix == ".js" else self.guess_type(str(asset)))
+                self.send_header("Content-Length", str(len(data)))
+                self.end_headers()
+                self.wfile.write(data)
+            except ValueError as exc:
+                self._json(400, {"error": str(exc)})
+            return
+        if not CLIENT_MODE and path in {"/event.html"}:
+            source = ROOT / "site-source" / "event.html"
+            if source.is_file():
+                text = source.read_text(encoding="utf-8")
+                text = text.replace("</body>", '<script src="/api/dev/pipeline-ui.js"></script></body>')
+                data = text.encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "text/html; charset=utf-8")
+                self.send_header("Content-Length", str(len(data)))
+                self.end_headers()
+                self.wfile.write(data)
+                return
         if path == "/api/dev/status":
             self._json(200, {"enabled": not CLIENT_MODE, "mode": "customer" if CLIENT_MODE else "development", "apiVersion": API_VERSION, "token": TOKEN if not CLIENT_MODE else None, "refresh": dict(REFRESH_STATUS)})
             return
@@ -268,7 +350,7 @@ class Handler(SimpleHTTPRequestHandler):
         if CLIENT_MODE:
             self._json(403, {"error": "Customer preview is read-only"})
             return
-        if self.path not in {"/api/dev/edit", "/api/dev/launch-annotation"}:
+        if self.path not in {"/api/dev/edit", "/api/dev/launch-annotation", "/api/dev/pipeline-review"}:
             self._json(404, {"error": "Not found"})
             return
         if self.headers.get("X-Dev-Token") != TOKEN:
@@ -277,7 +359,10 @@ class Handler(SimpleHTTPRequestHandler):
         try:
             length = int(self.headers.get("Content-Length", "0"))
             payload = json.loads(self.rfile.read(length).decode("utf-8"))
-            self._json(200, launch_annotation_app(payload) if self.path == "/api/dev/launch-annotation" else apply_edit(payload))
+            if self.path == "/api/dev/pipeline-review":
+                self._json(200, pipeline_review.apply_review(payload, apply_edit))
+            else:
+                self._json(200, launch_annotation_app(payload) if self.path == "/api/dev/launch-annotation" else apply_edit(payload))
         except (ValueError, json.JSONDecodeError) as exc:
             self._json(400, {"error": str(exc)})
         except Exception as exc:
@@ -308,3 +393,4 @@ if __name__ == "__main__":
         pass
     finally:
         server.server_close()
+

@@ -1,63 +1,29 @@
-const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
-const context=vm.createContext({URLSearchParams,location:{search:''},history:{},window:{EYYA_CATALOG:{events:[],comparisons:[]}}});
-vm.runInContext(fs.readFileSync(__dirname+'/assets/compare.js','utf8').split("document.querySelector('[data-compare-back]')")[0],context);
-const geometry=vm.runInContext('alignedGeometry([[12000,1200],[8000,800]],[[500,0,700,600],[1000,100,1134,500]],[{width:900,height:800},{width:900,height:800}])',context);
-for(const [i,center] of [[0,[600,300]],[1,[1067,300]]]){
-  const nativeHeight=i?800:1200;
-  assert(Math.abs(geometry[i].left+center[0]/nativeHeight*geometry[i].height-450)<1e-6);
-  assert(geometry[i].top<=0&&geometry[i].top+geometry[i].height>=800);
-}
-assert(Math.abs(geometry[0].top+300/1200*geometry[0].height-(geometry[1].top+300/800*geometry[1].height))<1e-6);
-const disparate=vm.runInContext('alignedGeometry([[6000,1210],[6000,1210]],[[4511,273,5449,1194],[3916,284,4023,397]],[{width:900,height:550},{width:900,height:550}])',context);
-assert(disparate[1].height>disparate[0].height*2);
-for(const [i,box] of [[0,[4511,273,5449,1194]],[1,[3916,284,4023,397]]]){
-  assert(disparate[i].top<=0&&disparate[i].top+disparate[i].height>=550);
-  const y1=disparate[i].top+box[1]/1210*disparate[i].height;
-  const y2=disparate[i].top+box[3]/1210*disparate[i].height;
-  assert(y1>=-1&&y2<=551,`Focus ${i} is clipped: ${y1}, ${y2}`);
-}
-assert(Math.abs(disparate[0].top+(273+1194)/2/1210*disparate[0].height-(disparate[1].top+(284+397)/2/1210*disparate[1].height))<1e-6);
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const core=require('./assets/panorama-comparison-core.js');
 const catalog=JSON.parse(fs.readFileSync(__dirname+'/assets/catalog.json','utf8'));
-// A redraw must not create two routes for the same ID, and return links must
-// keep the currently selected carriage rather than reset to the first one.
-assert.equal(new Set(catalog.comparisons.map(item=>item.id)).size,catalog.comparisons.length);
-const navigation=vm.createContext({URLSearchParams,location:{search:''},history:{},window:{EYYA_CATALOG:catalog}});
-vm.runInContext(fs.readFileSync(__dirname+'/assets/compare.js','utf8').split("document.querySelector('[data-compare-back]')")[0],navigation);
-for(const item of catalog.comparisons){
-  navigation.checkedItem=item;
-  const back=new URL(vm.runInContext('panoramaReturnUrl(checkedItem)',navigation),'https://example.test/');
-  assert.equal(back.searchParams.get('event'),item.sourceEventId);
-  assert.equal(back.searchParams.get('carriage'),item.serial);
-  const options=vm.runInContext('comparisonOptions(checkedItem)',navigation);
-  assert.equal(options.filter(option=>option.id===item.id).length,1);
-  assert.equal(new Set(options.map(option=>option.id)).size,options.length);
-}
-const repaired=catalog.comparisons.find(item=>item.sourceEventId==='450015+450057-2026-08-19-B'&&item.serial==='64215');
-navigation.checkedItem=repaired;
-const five=vm.runInContext('comparisonOptions(checkedItem)',navigation);
-assert.equal(five.length,5);
-assert(five[4].stainId.endsWith('007'));
-assert.notEqual(five[3].id,five[4].id);
-console.log(`Unique comparison routes and carriage-preserving return links verified for ${catalog.comparisons.length} comparisons.`);
-let checked=0,maxDrift=0,maxDriftId='';
-for(const item of catalog.comparisons){
-  if(!item.sourceBox||!item.targetBox||!item.sourceTileSize||!item.targetTileSize)continue;
-  const source=catalog.events.find(e=>e.id===item.sourceEventId)?.carriages.find(c=>c.serial===item.serial);
-  const target=catalog.events.find(e=>e.id===item.targetEventId)?.carriages.find(c=>c.serial===item.serial);
-  if(!source||!target)continue;
-  const boxes=[item.sourceBox,item.targetBox],sizes=[[source.width,source.height],[target.width,target.height]];
-  const result=vm.runInContext(`alignedGeometry(${JSON.stringify(sizes)},${JSON.stringify(boxes)},[{width:900,height:550},{width:900,height:550}])`,context);
-  for(let i=0;i<2;i++){
-    const y1=result[i].top+boxes[i][1]/sizes[i][1]*result[i].height;
-    const y2=result[i].top+boxes[i][3]/sizes[i][1]*result[i].height;
-    assert(y1>=-1&&y2<=551,`Focus ${i} clipped in ${item.id}: ${y1}, ${y2}`);
-    const x1=result[i].left+boxes[i][0]/sizes[i][1]*result[i].height;
-    const x2=result[i].left+boxes[i][2]/sizes[i][1]*result[i].height;
-    assert(x2>0&&x1<900,`Focus ${i} entirely outside pane in ${item.id}: ${x1}, ${x2}`);
-    assert(result[i].top<=.1&&result[i].top+result[i].height>=549.9,`Unfilled pane in ${item.id}`);
-  }
-  const centres=boxes.map((b,i)=>result[i].top+(b[1]+b[3])/2/sizes[i][1]*result[i].height);
-  if(Math.abs(centres[0]-centres[1])>maxDrift){maxDrift=Math.abs(centres[0]-centres[1]);maxDriftId=item.id;}
+let checked=0;
+for(const event of catalog.events.filter(e=>e.mode==='panorama'))for(const car of event.carriages){
+ for(const direction of ['previous','next']){
+  const s=core.select(catalog,new URLSearchParams({event:event.id,carriage:car.serial,direction}));
+  assert(s.rows.length>=1&&s.rows.length<=2);assert(s.rows.some(r=>r.event.id===event.id));
+  assert(s.rows.every(r=>r.event.unit===event.unit&&r.event.side===event.side&&r.carriage.serial===car.serial));
+  if(s.rows.length===2)assert(s.rows[0].event.date<s.rows[1].event.date);
+  const other=s.rows.find(r=>r.event.id!==event.id);
+  if(other){const options=catalog.events.filter(e=>e.mode==='panorama'&&e.unit===event.unit&&e.side===event.side&&e.carriages.some(c=>c.serial===car.serial)&&(direction==='previous'?e.date<event.date:e.date>event.date)).sort((a,b)=>(a.date+a.time+a.id).localeCompare(b.date+b.time+b.id));assert.equal(other.event.id,(direction==='previous'?options.at(-1):options[0]).id);}
   checked++;
+ }
 }
-console.log(`Comparison frames fill both panes; ${checked} catalogued pairs remain in view (maximum unavoidable centre drift: ${Math.round(maxDrift)} px in ${maxDriftId}).`);
+for(const old of catalog.comparisons||[]){
+ const s=core.select(catalog,new URLSearchParams({comparison:old.id}));
+ assert.equal(s.event.id,old.sourceEventId);assert.equal(s.serial,old.serial);assert.deepEqual(s.focus,old.sourceBox||null);
+ assert(s.rows.length<=2);assert(s.rows.every(r=>r.carriage.serial===old.serial));
+}
+const transform={trusted:true,anchors:[[0,.01,.002],[.4,.39,.01],[1,.98,-.004]],verticalScale:1.04};
+for(const p of [[0,0],[.1,.7],[.4,.2],[.9,.8],[1,1]]){const q=core.inverse(transform,core.map(transform,p));assert(Math.abs(q[0]-p[0])<1e-8&&Math.abs(q[1]-p[1])<1e-8);assert.deepEqual(core.map({...transform,trusted:false},p),p);}
+const script=fs.readFileSync(__dirname+'/assets/compare.js','utf8');
+assert(!script.includes('Earlier date above, later date below.'));
+assert.equal(core.caption({date:'2026-08-20',time:'06:08'},{}),'20 Aug 2026 · 06:08');
+assert.equal(core.condition({assessed:true,cleanliness:'Compliant'}).colour,'#1a9d69');
+assert(script.includes('transform.imageSha256!==car.panoramaSha256'));
+assert(script.includes('for(const d of b.car.defects||[])'));
+console.log(`Two-date comparison passed for ${checked} carriage/direction selections, legacy routes, reversible body mappings and stale-image guards.`);

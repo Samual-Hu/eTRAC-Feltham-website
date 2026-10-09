@@ -418,3 +418,5 @@ body {
     margin-top: 5px;
   }
 }
+
+.magnifier{inset:12px!important;width:calc(100vw - 24px);height:calc(100dvh - 24px);box-sizing:border-box;z-index:100}.magnifier::after{content:"Native image · Scroll to zoom · Esc to hide";position:absolute;bottom:0;left:0;right:0;background:#143852;color:#fff;padding:5px 8px;font:12px system-ui}.assessment-auto{display:inline-block;margin-left:5px;color:#637787;font:11px system-ui}

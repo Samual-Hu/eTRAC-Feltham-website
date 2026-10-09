@@ -2,10 +2,10 @@
 if (capture?.mode === 'panorama') {
   const back = document.createElement('a');
   back.className = 'lifecycle-back';
-  back.href = `index.html?unit=${encodeURIComponent(capture.unit)}&side=${encodeURIComponent(capture.side || '')}`;
+  back.href = 'index.html';
   back.textContent = '‹';
-  back.title = 'Back to Surface life cycle';
-  back.setAttribute('aria-label', 'Back to Surface life cycle');
+  back.title = 'Back to fleet overview';
+  back.setAttribute('aria-label', 'Back to fleet overview');
   document.querySelector('.event-left').prepend(back);
   const inspections = catalog.events.filter(e => e.unit === capture.unit && e.side === capture.side && e.mode === 'panorama')
     .sort((a,b) => (a.date+a.time).localeCompare(b.date+b.time));

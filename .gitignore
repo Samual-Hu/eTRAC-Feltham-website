@@ -8,3 +8,8 @@ server.*.log
 __pycache__/
 assets/.site-export.lock
 .r2-upload-state.json
+
+assets/.comparison-tile-cache.json
+assets/.minor-crop-cache.json
+assets/.panorama-hash-cache.json
+assets/review_heatmaps/

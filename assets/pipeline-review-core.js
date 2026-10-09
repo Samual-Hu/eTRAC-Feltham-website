@@ -1,0 +1,5 @@
+(function(root){
+ function next(carriages,serial,candidateId){const i=carriages.findIndex(r=>r.serial===serial),row=carriages[i];if(!row)return null;const index=row.candidates.findIndex(c=>c.id===candidateId),ordered=[...row.candidates.slice(index+1),...row.candidates.slice(0,index+1)],pending=ordered.find(c=>c.decision==='pending');if(pending)return {serial,candidateId:pending.id};for(let offset=1;offset<carriages.length;offset++){const r=carriages[(i+offset)%carriages.length],c=r.candidates.find(c=>c.decision==='pending');if(c)return {serial:r.serial,candidateId:c.id};}return null;}
+ function nextCapture(rows,eventId,serial,allowSurface=false){const other=r=>r.eventId!==eventId||r.serial!==serial;return rows.find(r=>other(r)&&r.status==='candidates'&&r.pending>0)||(allowSurface?rows.find(r=>other(r)&&r.status==='surface_check'):null)||null;}
+ const api={next,nextCapture};if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.EyyaPipelineQueue=api;
+})(typeof window!=='undefined'?window:globalThis);
