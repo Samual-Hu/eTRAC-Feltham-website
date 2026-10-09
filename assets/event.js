@@ -136,4 +136,4 @@ window.addEventListener('eyya:review-saved',()=>{
 });
 
 // Adjacent-date panorama comparison; no heat overlays.
-(()=>{const s=document.createElement('script');s.src='assets/panorama-entry.js?v=20261007history';s.defer=true;document.head.append(s);})();
+(()=>{const s=document.createElement('script');s.src='assets/panorama-entry.js?v=20261009r2';s.defer=true;document.head.append(s);})();

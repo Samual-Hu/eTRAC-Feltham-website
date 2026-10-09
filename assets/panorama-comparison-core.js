@@ -12,7 +12,8 @@
   const all=visits(catalog,event,serial),near=event?neighbors(catalog,event,serial):{},current=all.find(r=>r.event.id===event?.id);
   const explicit=all.find(r=>r.event.id===(params.get('target')||old?.targetEventId)&&r.event.id!==event?.id);
   const target=explicit||(params.get('direction')==='next'?near.next:near.previous)||(params.has('direction')?null:near.next);
-  const rows=[current,target].filter(Boolean).sort((a,b)=>(a.event.date+(a.event.time||'')+a.event.id).localeCompare(b.event.date+(b.event.time||'')+b.event.id));
+  const chosen=params.has('dates')?all.filter(r=>r.event.id===event?.id||params.getAll('dates').includes(r.event.id)):[current,target].filter(Boolean);
+  const rows=chosen.sort((a,b)=>(a.event.date+(a.event.time||'')+a.event.id).localeCompare(b.event.date+(b.event.time||'')+b.event.id));
   return {event,serial,rows,all,neighbors:near,focus:old?.sourceBox||null};
  }
  function interpolation(anchors,x,inverse=false){

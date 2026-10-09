@@ -24,7 +24,7 @@ for(const type of ['severe','minor','graffiti']){
     }
   }else{
     assert.equal((html.match(/class="issue-panorama-card"/g)||[]).length,rows.length);
-    assert.equal((html.match(/class="issue-panorama-meta"/g)||[]).length,rows.length);
+    assert(!html.includes('class="issue-panorama-meta"'));
     assert.equal((html.match(new RegExp(`class="issue-region issue-${type}"`,'g'))||[]).length,expected);
     assert.equal((html.match(/Open panorama/g)||[]).length,rows.length);
   }

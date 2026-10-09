@@ -1,9 +1,11 @@
 (async()=>{
  const id=new URLSearchParams(location.search).get('event'),catalog=window.EYYA_CATALOG,event=catalog?.events.find(e=>e.id===id);if(event?.mode!=='panorama')return;
- if(!window.EyyaPanoramaCore)await new Promise((ok,no)=>{const s=document.createElement('script');s.src='assets/panorama-comparison-core.js?v=20261007history';s.onload=ok;s.onerror=no;document.head.append(s);});
- const host=document.querySelector('.event-left'),viewport=document.querySelector('[data-viewport]');if(!host||!viewport)return;host.querySelectorAll('[data-panorama-compare-button]').forEach(n=>n.remove());const buttons={};
+ const script=url=>new Promise((ok,no)=>{const s=document.createElement('script');s.src=url;s.onload=ok;s.onerror=no;document.head.append(s);});
+ if(!window.EyyaPanoramaCore)await script('assets/panorama-comparison-core.js?v=20261009r2');
+ if(!window.EyyaComparisonDates)await script('assets/comparison-dates.js?v=20261009r2');
+ const host=document.querySelector('.event-left'),viewport=document.querySelector('[data-viewport]');if(!host||!viewport)return;host.querySelectorAll('[data-panorama-compare-button]').forEach(n=>n.remove());
  const current=()=>{const panels=[...document.querySelectorAll('.event-carriage')],index=Math.max(0,Math.min(panels.length-1,Math.round(viewport.scrollLeft/Math.max(1,viewport.clientWidth))));return panels[index]?.dataset.serial||event.carriages[0]?.serial;};
- for(const [direction,label] of [['previous','Compare earlier'],['next','Compare later']]){const b=document.createElement('button');b.type='button';b.className='panorama-date-compare-button';b.dataset.panoramaCompareButton=direction;b.textContent=label;b.style.cssText='width:auto;border:1px solid #287db5;border-radius:5px;background:white;color:#075782;padding:7px 9px;margin-left:6px;white-space:nowrap;cursor:pointer;font:13px system-ui';b.onclick=()=>location.href=`compare.html?event=${encodeURIComponent(id)}&carriage=${current()}&direction=${direction}`;host.append(b);buttons[direction]=b;}
- function update(){const near=window.EyyaPanoramaCore.neighbors(catalog,event,current());for(const direction of ['previous','next']){const b=buttons[direction],target=near[direction];b.disabled=!target;b.style.opacity=target?'1':'.4';b.title=target?`${current()} · ${target.event.date} ${target.event.time||''}`:'No matching panorama on another date';}}
- viewport.addEventListener('scroll',update,{passive:true});window.addEventListener('resize',update);window.addEventListener('eyya:review-saved',update);const selected=new URLSearchParams(location.search).get('carriage');if(selected)document.querySelector(`[data-serial="${selected}"]`)?.scrollIntoView({block:'nearest',inline:'start',behavior:'instant'});update();
+ const picker=window.EyyaComparisonDates.install(host,{catalog,event,serial:current});
+ viewport.addEventListener('scroll',picker.update,{passive:true});window.addEventListener('resize',picker.update);
+ const selected=new URLSearchParams(location.search).get('carriage');if(selected)document.querySelector(`[data-serial="${selected}"]`)?.scrollIntoView({block:'nearest',inline:'start',behavior:'instant'});picker.update();
 })();
