@@ -7,7 +7,7 @@ const catalog=JSON.parse(process.argv.includes('--published')
   :fs.readFileSync(__dirname+'/assets/catalog.json','utf8'));
 const nodes=new Map();
 const node=selector=>{if(!nodes.has(selector))nodes.set(selector,{innerHTML:'',append(){},addEventListener(){},classList:{toggle(){}},setAttribute(){}});return nodes.get(selector);};
-const context=vm.createContext({URL,URLSearchParams,Intl,Date,location:{search:'',toString(){return 'http://localhost/index.html';}},history:{pushState(){}},window:{EYYA_CATALOG:catalog,addEventListener(){},scrollTo(){}},document:{querySelector:node,addEventListener(){}}});
+const context=vm.createContext({URL,URLSearchParams,Intl,Date,location:{search:'',toString(){return 'http://localhost/index.html';}},history:{pushState(){}},window:{EYYA_CATALOG:catalog,EyyaTrainPicker:{render(){}},addEventListener(){},scrollTo(){}},document:{querySelector:node,addEventListener(){}}});
 vm.runInContext(fs.readFileSync(__dirname+'/assets/wash-status.js','utf8'),context);vm.runInContext(fs.readFileSync(__dirname+'/assets/fleet.js','utf8'),context);
 for(const type of ['severe','minor','graffiti']){
   const rows=catalog.events.filter(e=>e.mode==='panorama').flatMap(e=>e.carriages.filter(c=>c.defects.some(d=>d.type===type)));

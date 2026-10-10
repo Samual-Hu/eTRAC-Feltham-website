@@ -4,7 +4,7 @@ const nodes=new Map(),listeners={};
 const node=s=>{if(!nodes.has(s))nodes.set(s,{value:'',innerHTML:'',append(){},addEventListener(){},classList:{toggle(){}},setAttribute(){}});return nodes.get(s);};
 let redirected='';
 const location={search:'',toString(){return 'http://localhost/index.html';},replace(url){redirected=url;}};
-const ctx=vm.createContext({URL,URLSearchParams,Intl,Date,console,location,history:{pushState(){}},window:{EYYA_CATALOG:catalog,addEventListener(){},scrollTo(){}},document:{querySelector:node,addEventListener:(name,fn)=>{listeners[name]=fn;}}});
+const ctx=vm.createContext({URL,URLSearchParams,Intl,Date,console,location,history:{pushState(){}},window:{EYYA_CATALOG:catalog,EyyaTrainPicker:{render(){}},addEventListener(){},scrollTo(){}},document:{querySelector:node,addEventListener:(name,fn)=>{listeners[name]=fn;}}});
 const run=s=>vm.runInContext(s,ctx);
 run(fs.readFileSync(__dirname+'/assets/wash-status.js','utf8'));run(fs.readFileSync(__dirname+'/assets/fleet.js','utf8'));
 assert.equal(new Set(catalog.events.map(e=>e.id)).size,catalog.events.length);
